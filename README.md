@@ -25,3 +25,9 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 
 
 bootstrap/app.php -> routes/web.php -> middleware -> authserviceprovider -> controller
+
+## Running app
+
+Setup .env config
+
+docker-compose up -d
