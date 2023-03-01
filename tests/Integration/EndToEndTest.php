@@ -1,8 +1,13 @@
 <?php
 
+namespace Tests\Integration;
+
 use Exception;
+use DateTime;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Mail\Mailer;
+use Tests\TestCase;
+use Illuminate\Support\Facades\Mail;
 
 class EndToEndTest extends TestCase
 {
@@ -10,30 +15,10 @@ class EndToEndTest extends TestCase
 
     private $tokenFilePath = __DIR__ . '/../build/token.txt';
 
-    private $defaultHeaders = [
+    protected $defaultHeaders = [
         'api_token' => 'averysecrettokenforapiauthorization==',
         'Accept-Version' => 'v1'
     ];
-
-    public function setUp(): void
-    {
-        // Mock the mailer
-        $mock = $this
-            ->getMockBuilder('Swift_Mailer')
-            ->disableOriginalConstructor()
-            ->onlyMethods(['send', 'getTransport'])
-            ->addMethods(['setFrom', 'stop'])
-            ->getMock();
-
-        $mock->expects($this->any())
-            ->method('getTransport')
-            ->willReturnSelf();
-
-        parent::setUp();
-        $this->app['mailer']->setSwiftMailer($mock);
-
-        $this->includeRoutes($this->defaultHeaders['Accept-Version']);
-    }
 
     public function testCreateIfNotKnown()
     {
@@ -44,13 +29,13 @@ class EndToEndTest extends TestCase
             'dob' => (new DateTime('1985-05-10'))->format('Y-m-d H:i:s'),
             'email' => 'its.inevitable+auto' . rand() . '@hotmail.com'
         ];
-        $userResponse = $this->json('POST', '/user', $userDetails, $this->defaultHeaders)->response;
+        $userResponse = $this->json('POST', '/user', $userDetails, $this->defaultHeaders);
 
         self::assertTrue($userResponse['success'], print_r($userResponse, true));
         self::assertTrue(is_int($userResponse['data']['id']), print_r($userResponse, true));
 
         $tokenDetails = ['user_id' => $userResponse['data']['id']];
-        $tokenResponse = $this->json('POST', '/token', $tokenDetails, $this->defaultHeaders)->response;
+        $tokenResponse = $this->json('POST', '/token', $tokenDetails, $this->defaultHeaders);
 
         self::assertTrue($tokenResponse['success'], print_r($tokenResponse, true));
         self::assertTrue(is_string($tokenResponse['data']['token']));
@@ -63,14 +48,14 @@ class EndToEndTest extends TestCase
         $token = file_get_contents($this->tokenFilePath);
         $this->defaultHeaders['user_token'] = $token;
 
-        $tokenDetails = $this->get('/token', $this->defaultHeaders)->response;
+        $tokenDetails = $this->get('/token', $this->defaultHeaders);
 
         $projectDetails = [
             'name' => 'testProject',
             'user_id' => $tokenDetails->original['data'][0]['user_id']
         ];
 
-        $projectResponse = $this->json('POST', '/project', $projectDetails, $this->defaultHeaders)->response;
+        $projectResponse = $this->json('POST', '/project', $projectDetails, $this->defaultHeaders);
 
         self::assertTrue($projectResponse['success'], print_r($projectResponse, true));
         self::assertTrue(is_int($projectResponse['data']['id']), print_r($projectResponse, true));
@@ -84,7 +69,7 @@ class EndToEndTest extends TestCase
             'active_rules' => ['Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoFeatureWithoutNarrative'],
             'rules_version' => '1.3.0',
         ];
-        $analysisResponse = $this->json('POST', '/analysis', $analysisData, $this->defaultHeaders)->response;
+        $analysisResponse = $this->json('POST', '/analysis', $analysisData, $this->defaultHeaders);
 
         self::assertTrue($analysisResponse['success'], print_r($analysisResponse, true));
         self::assertArrayHasKey('id', $analysisResponse['data']);

@@ -17,7 +17,7 @@ class CreateUserTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->timestamp('dob');
+            $table->timestamp('dob')->nullable();
             $table->string('email')->unique();
             $table->string('password_hash')->nullable();
             $table->boolean('enabled');

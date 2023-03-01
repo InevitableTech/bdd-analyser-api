@@ -1,7 +1,8 @@
 <?php
 
-use Laravel\Lumen\Testing\DatabaseMigrations;
-use Laravel\Lumen\Testing\DatabaseTransactions;
+namespace Tests\Integration;
+
+use Tests\TestCase;
 
 class AnalysisTest extends TestCase
 {
@@ -9,17 +10,11 @@ class AnalysisTest extends TestCase
 
     private $endpoint = '/analysis';
 
-    private $defaultHeaders = [
+    protected $defaultHeaders = [
         'api_token' => 'averysecrettokenforapiauthorization==',
         'user_token' => 'kahlsjdhfjh2h34234k2h4j2j3hk4h2jak==',
         'accept-version' => 'v1'
     ];
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->includeRoutes('v1');
-    }
 
     /**
      * A basic test example.
@@ -33,7 +28,7 @@ class AnalysisTest extends TestCase
 
         $this->assertEquals(
             $this->app->version(),
-            $this->response->getContent()
+            $token->getContent()
         );
     }
 
@@ -44,22 +39,27 @@ class AnalysisTest extends TestCase
      */
     public function testGetAnalaysis()
     {
-        $this->json('GET', $this->endpoint . '/1', [], $this->defaultHeaders)
-            ->seeJson([
+        $response = $this->json('GET', $this->endpoint . '/1', [], $this->defaultHeaders);
+
+        $response
+            ->assertStatus(200)
+            ->assertJson([
                 'success' => true,
-                'run_at' => '2023-01-01 00:00:00',
-                'rules_version' => 'v1',
-                'id' => 1,
-                'outcomes' => ["file1" => ["line 45" => "issue", "message" => "something"]],
-                'summary' => ['files' => 12],
-                'active_rules' => ["Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoEmptyFeature"],
-                'uri' => '/analysis/1',
-                'user_id' => 1,
-                'project_id' => 1,
+                'data' => [
+                    'run_at' => '2023-01-01 00:00:00',
+                    'rules_version' => 'v1',
+                    'id' => 1,
+                    'outcomes' => ["file1" => ["line 45" => "issue", "message" => "something"]],
+                    'summary' => ['files' => 12],
+                    'active_rules' => ["Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoEmptyFeature"],
+                    'uri' => '/analysis/1',
+                    'user_id' => 1,
+                    'project_id' => 1,
+                ]
             ])
         ;
 
-        $this->response
+        $response
             ->assertJsonStructure([
                 'success',
                 'data' => [

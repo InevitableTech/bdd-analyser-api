@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class AnalysisController extends Controller
 {
-    protected $validateInputs = [
+    protected $createInputs = [
         'run_at' => 'required|string',
         'outcomes' => 'required',
         'summary' => 'required',
@@ -15,6 +15,8 @@ class AnalysisController extends Controller
         'rules_version' => 'required',
         'project_id' => 'required|int'
     ];
+
+    protected $updateInputs = false;
 
     protected $expose = [
         'id',

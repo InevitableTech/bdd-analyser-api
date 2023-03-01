@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Builder;
 
 class OrganisationController extends Controller
 {
-    protected $validateInputs = [
+    protected $createInputs = [
+        'name' => 'required|string'
+    ];
+
+    protected $updateInputs = [
         'name' => 'required|string'
     ];
 
