@@ -1,7 +1,8 @@
 <?php
 
-use Laravel\Lumen\Testing\DatabaseMigrations;
-use Laravel\Lumen\Testing\DatabaseTransactions;
+namespace Tests\Integration;
+
+use Tests\TestCase;
 
 class OrganisationTest extends TestCase
 {
@@ -9,32 +10,11 @@ class OrganisationTest extends TestCase
 
     private $endpoint = '/organisation';
 
-    private $defaultHeaders = [
+    protected $defaultHeaders = [
         'api_token' => 'averysecrettokenforapiauthorization==',
         'user_token' => 'kahlsjdhfjh2h34234k2h4j2j3hk4h2jak==',
         'accept-version' => 'v1'
     ];
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->includeRoutes('v1');
-    }
-
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testApiVersion()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
 
     /**
      * A basic test example.
@@ -43,13 +23,18 @@ class OrganisationTest extends TestCase
      */
     public function testGetOrganisation()
     {
-        $this->json('GET', $this->endpoint, [], $this->defaultHeaders)
-            ->seeJson([
+        $response = $this->json('GET', $this->endpoint, [], $this->defaultHeaders);
+
+        $response->assertJson([
                 'success' => true,
-                'name' => 'InevitableTech.uk',
+                'data' => [
+                    [
+                    'name' => 'InevitableTech.uk',
+                    ]
+                ]
             ]);
 
-        $this->response
+        $response
             ->assertJsonStructure([
                 'success',
                 'data' => [

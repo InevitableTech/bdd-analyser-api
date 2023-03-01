@@ -9,6 +9,8 @@ use Illuminate\Support\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
+    protected $defer = true;
+
     /**
      * Register any application services.
      *
@@ -31,7 +33,7 @@ class AuthServiceProvider extends ServiceProvider
         // should return either a User instance or null. You're free to obtain
         // the User instance via an API token or any other method necessary.
 
-        $this->app['auth']->viaRequest('api', function ($request) {
+        $this->app['auth']->viaRequest('token', function ($request) {
             if ($request->header('user_token')) {
                 $token = Token::where('token', '=', $request->header('user_token'))
                     ->where('expires_on', '>', new \DateTime())

@@ -10,9 +10,13 @@ use App\Models\User;
 
 class ProjectController extends Controller
 {
-    protected $validateInputs = [
+    protected $createInputs = [
         'name' => 'required|string',
         'user_id' => 'required|int',
+    ];
+
+    protected $updateInputs = [
+        'name' => 'required|string',
     ];
 
     protected $expose = [

@@ -15,14 +15,14 @@
 
 $router->group(['prefix' => 'user'], function () use ($router) {
     $router->post('/', 'UserController@create');
+    $router->get('/id/{email}', 'UserController@getId');
 });
 
 $router->group(['prefix' => 'token'], function () use ($router) {
     $router->post('/', 'TokenController@create');
-    $router->get('/{id}', 'TokenController@find');
 });
 
-$router->group(['middleware' => 'authenticate'], function () use ($router) {
+$router->group(['middleware' => 'authenticate:api'], function () use ($router) {
     $router->group(['prefix' => 'analysis'], function () use ($router) {
         $router->post('/', 'AnalysisController@create');
         $router->get('/{id}', 'AnalysisController@find');
@@ -57,6 +57,6 @@ $router->group(['middleware' => 'authenticate'], function () use ($router) {
     $router->group(['prefix' => 'token'], function () use ($router) {
         $router->get('/', 'TokenController@findAll');
         $router->put('/{id}', 'TokenController@update');
-        $router->delete('/{id}', 'TokenController@delete');
+        $router->post('/refresh', 'TokenController@refresh');
     });
 });

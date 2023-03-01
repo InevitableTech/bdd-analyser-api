@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -9,11 +10,17 @@ use App\Events\UserCreatedEvent;
 
 class UserController extends Controller
 {
-    protected $validateInputs = [
+    protected $createInputs = [
+        'firstname' => 'required|string',
+        'lastname' => 'required|string',
+        'dob' => 'date',
+        'email' => 'required|email'
+    ];
+
+    protected $updateInputs = [
         'firstname' => 'required|string',
         'lastname' => 'required|string',
         'dob' => 'required|date',
-        'email' => 'required|email'
     ];
 
     protected $expose = [
@@ -42,13 +49,25 @@ class UserController extends Controller
 
     public function mapInputToModel(Request $request): array
     {
-        return [
+        $data = [
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
-            'dob' => new \DateTime($request->input('dob')),
             'email' => $request->input('email'),
             'enabled' => true,
         ];
+
+        if ($dob = $request->input('dob')) {
+            $data['dob'] = new \DateTime($dob);
+        }
+
+        return $data;
+    }
+
+    public function getId(Request $request, string $email): array
+    {
+        $user = User::where('email', '=', $email)->first();
+
+        return $this->createResponse([['user_id' => $user->id]]);
     }
 
     protected function afterCreate(Request $request, Model $model): void

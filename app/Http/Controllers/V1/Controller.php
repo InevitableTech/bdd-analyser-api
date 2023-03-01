@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\V1;
 
-use Laravel\Lumen\Routing\Controller as BaseController;
+use Exception;
+use Illuminate\Routing\Controller as BaseController;
 use App\Model\User;
 use App\Events\ExampleEvent;
 use Illuminate\Http\Request;
@@ -19,12 +20,14 @@ abstract class Controller extends BaseController
 
     protected $expose = [];
 
-    protected $validateInputs = [];
+    protected $createInputs = [];
+
+    protected $updateInputs = [];
 
     public function create(Request $request): array
     {
         try {
-            $this->validate($request, $this->validateInputs);
+            $request->validate($this->createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return array(
                 'success' => false,
@@ -65,6 +68,12 @@ abstract class Controller extends BaseController
 
     public function update(Request $request, int $id): array
     {
+        if (! $this->updateInputs) {
+            throw new Exception('Update operation not allowed.');
+        }
+
+        $request->validate($this->updateInputs);
+
         $model = $this->getModel();
         $data = $model::update(['id' => $id], $this->mapInputToModel($request));
 

@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Services\ApiVersionService;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,5 +16,16 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return app()->version();
+});
+
+/**
+ * We set a placeholder in the namespace that we will later resolve in the middle layer with the
+ * request version number.
+ */
+$router->group([
+    'middleware' => ['authorise', 'api_versioning'],
+    'namespace' => 'App\Http\Controllers\\' . ApiVersionService::PLACEHOLDER
+], function ($router) {
+    require __DIR__ . '/api_v1.php';
 });
