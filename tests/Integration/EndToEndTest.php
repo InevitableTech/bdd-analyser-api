@@ -20,6 +20,12 @@ class EndToEndTest extends TestCase
         'Accept-Version' => 'v1'
     ];
 
+    public function setUp(): void
+    {
+        parent::setUp();
+        Mail::fake();
+    }
+
     public function testCreateIfNotKnown()
     {
         // Create user, create token endpoint to be made available without authorisation.
