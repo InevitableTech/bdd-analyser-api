@@ -15,13 +15,6 @@ class OrganisationController extends Controller
         'name' => 'required|string'
     ];
 
-    protected $expose = [
-        'id',
-        'name',
-        'created_at',
-        'updated_at'
-    ];
-
     public function findByCriteria(Request $request, string $model): Builder
     {
         return $model::whereHas('projects', function ($project) use ($request) {

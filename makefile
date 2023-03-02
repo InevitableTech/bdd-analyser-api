@@ -12,3 +12,7 @@ tests:
 
 command:
 	docker-compose run api $(c)
+
+.PHONY: artisan
+artisan:
+	docker-compose run api php artisan $(a)

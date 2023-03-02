@@ -8,6 +8,9 @@ use App\Model\User;
 use App\Events\ExampleEvent;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,15 +19,11 @@ abstract class Controller extends BaseController
 {
     protected $limit = 100;
 
-    protected $model;
-
-    protected $expose = [];
-
     protected $createInputs = [];
 
     protected $updateInputs = [];
 
-    public function create(Request $request): array
+    public function create(Request $request): JsonResource
     {
         try {
             $request->validate($this->createInputs);
@@ -39,22 +38,22 @@ abstract class Controller extends BaseController
         $data = $model::create($this->mapInputToModel($request));
         $this->afterCreate($request, $data);
 
-        return $this->createResponse($this->transform($data));
+        return $this->getResource($data);
     }
 
-    public function find(Request $request, int $id): array
+    public function find(Request $request, int $id): JsonResource
     {
         $modelName = $this->getModel();
         $model = $this->findByCriteria($request, $modelName)?->find($id);
 
         if ($model === null) {
-            return $this->createResponse([]);
+            return $this->getResource();
         }
 
-        return $this->createResponse($this->transform($model));
+        return $this->getResource($model);
     }
 
-    public function findAll(Request $request)
+    public function findAll(Request $request): ResourceCollection
     {
         $model = $this->getModel();
         $data = $this->findByCriteria($request, $model)?->get();
@@ -63,10 +62,10 @@ abstract class Controller extends BaseController
             return $this->createResponse([]);
         }
 
-        return $this->createResponse($this->transformAll($data));
+        return $this->getResourceCollection($data);
     }
 
-    public function update(Request $request, int $id): array
+    public function update(Request $request, int $id): JsonResource
     {
         if (! $this->updateInputs) {
             throw new Exception('Update operation not allowed.');
@@ -77,7 +76,7 @@ abstract class Controller extends BaseController
         $model = $this->getModel();
         $data = $model::update(['id' => $id], $this->mapInputToModel($request));
 
-        return $this->createResponse($this->transform($data));
+        return $this->getResource($data);
     }
 
     public function delete(Request $request, int $id): array
@@ -86,6 +85,20 @@ abstract class Controller extends BaseController
         $model::delete(['id' => $id]);
 
         return $this->createResponse(true);
+    }
+
+    private function getResource(Model $data = null, $namespace = '\\App\Http\\Resources\\V1\\'): JsonResource
+    {
+        $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
+
+        return new $resourceClass($data);
+    }
+
+    private function getResourceCollection(Collection $data, $namespace = '\\App\Http\\Resources\\V1\\'): AnonymousResourceCollection
+    {
+        $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
+
+        return $resourceClass::collection($data);
     }
 
     protected function getModel($namespace = '\\App\\Models\\'): string
@@ -130,36 +143,6 @@ abstract class Controller extends BaseController
             $response['message'] = $message;
             unset($response['data']);
         }
-
-        return $response;
-    }
-
-    private function getIdUrl(int $id): string
-    {
-        $route = $this->getShortModelName();
-
-        return "/$route/$id";
-    }
-
-    protected function transformAll(Collection $collection): array
-    {
-        $response = [];
-        foreach ($collection as $model) {
-            $response[] = $this->transform($model);
-        }
-
-        return $response;
-    }
-
-    protected function transform(Model $data): array
-    {
-        $response = [];
-
-        foreach ($this->expose as $property) {
-            $response[$property] = $data->$property;
-        }
-
-        $response['uri'] = strtolower($this->getIdUrl($data->id));
 
         return $response;
     }

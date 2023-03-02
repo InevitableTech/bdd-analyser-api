@@ -18,19 +18,6 @@ class AnalysisController extends Controller
 
     protected $updateInputs = false;
 
-    protected $expose = [
-        'id',
-        'run_at',
-        'rules_version',
-        'summary',
-        'active_rules',
-        'outcomes',
-        'project_id',
-        'user_id',
-        'created_at',
-        'updated_at'
-    ];
-
     protected function findByCriteria(Request $request, string $model): Builder
     {
         return $model::whereRelation('user', 'user_id', $request->user()->id);

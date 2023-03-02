@@ -5,6 +5,8 @@ namespace App\Http\Controllers\V1;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Token;
+use App\Resources\TokenResource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
@@ -19,15 +21,7 @@ class TokenController extends Controller
         'token' => 'required|string',
     ];
 
-    protected $expose = [
-        'id',
-        'token',
-        'user_id',
-        'expires_on',
-        'created_at'
-    ];
-
-    public function create(Request $request): array
+    public function create(Request $request): JsonResource
     {
         // Create only if we've not got an active one already.
         $token = Token::whereRelation('user', 'user_id', $request->input('user_id'))
@@ -37,7 +31,7 @@ class TokenController extends Controller
             return parent::create($request);
         }
 
-        return $this->createResponse($this->transform($token));
+        return $this->getResource($token);
     }
 
     public function findByCriteria(Request $request, string $model): Builder

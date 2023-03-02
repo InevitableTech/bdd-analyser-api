@@ -23,17 +23,6 @@ class UserController extends Controller
         'dob' => 'required|date',
     ];
 
-    protected $expose = [
-        'id',
-        'firstname',
-        'lastname',
-        'dob',
-        'email',
-        'created_at',
-        'updated_at',
-        'enabled'
-    ];
-
     public function findByCriteria(Request $request, string $model): ?Builder
     {
         if ($request->input('email')) {
@@ -65,7 +54,7 @@ class UserController extends Controller
 
     public function getId(Request $request, string $email): array
     {
-        $user = User::where('email', '=', $email)->first();
+        $user = User::where('email', '=', $email)->firstOrFail();
 
         return $this->createResponse([['user_id' => $user->id]]);
     }

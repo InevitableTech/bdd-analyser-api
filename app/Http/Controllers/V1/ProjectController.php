@@ -19,14 +19,6 @@ class ProjectController extends Controller
         'name' => 'required|string',
     ];
 
-    protected $expose = [
-        'id',
-        'name',
-        'created_at',
-        'updated_at',
-        'enabled'
-    ];
-
     public function mapInputToModel(Request $request): array
     {
         return [
