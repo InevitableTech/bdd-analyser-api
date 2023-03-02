@@ -54,11 +54,11 @@ class EndToEndTest extends TestCase
         $token = file_get_contents($this->tokenFilePath);
         $this->defaultHeaders['user_token'] = $token;
 
-        $tokenDetails = $this->get('/token', $this->defaultHeaders);
+        $tokenDetails = $this->json('GET', '/token', $this->defaultHeaders);
 
         $projectDetails = [
             'name' => 'testProject',
-            'user_id' => $tokenDetails->original['data'][0]['user_id']
+            'user_id' => $tokenDetails['data'][0]['user_id']
         ];
 
         $projectResponse = $this->json('POST', '/project', $projectDetails, $this->defaultHeaders);

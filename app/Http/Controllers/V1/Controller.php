@@ -98,7 +98,7 @@ abstract class Controller extends BaseController
     {
         $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
 
-        return $resourceClass::collection($data);
+        return $resourceClass::collection($data)->additional(['success' => true]);
     }
 
     protected function getModel($namespace = '\\App\\Models\\'): string

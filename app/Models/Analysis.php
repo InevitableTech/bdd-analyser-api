@@ -13,7 +13,6 @@ class Analysis extends Model
         'outcomes' => 'array',
         'summary' => 'array',
         'active_rules' => 'array',
-        'run_at' => 'datetime:Y-m-d H:i:s'
     ];
 
     protected $fillable = [

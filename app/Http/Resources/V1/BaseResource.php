@@ -22,6 +22,18 @@ abstract class BaseResource extends JsonResource
         return $array;
     }
 
+    /**
+     * Get additional data that should be returned with the resource array.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(Request $request): array
+    {
+        return [
+            'success' => true,
+        ];
+    }
+
     protected function expose(Model $data): array
     {
         $response = [];
