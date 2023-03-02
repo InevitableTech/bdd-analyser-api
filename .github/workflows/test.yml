@@ -32,13 +32,13 @@ jobs:
 
     - name: Setup app
       env:
-        DB_CONNECTION=mysql
-        DB_HOST=mysql
-        DB_PORT=3306
-        DB_DATABASE=bdd_analyser_console
-        DB_USERNAME=api
-        DB_PASSWORD=secret
-        AUTH_TOKEN=averysecrettokenforapiauthorization==
+        DB_CONNECTION: mysql
+        DB_HOST: mysql
+        DB_PORT: 3306
+        DB_DATABASE: bdd_analyser_console
+        DB_USERNAME: api
+        DB_PASSWORD: secret
+        AUTH_TOKEN: averysecrettokenforapiauthorization==
       run: |
         make artisan key:generate
         make run
