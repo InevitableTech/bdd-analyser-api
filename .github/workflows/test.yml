@@ -40,6 +40,7 @@ jobs:
         DB_PASSWORD: secret
         AUTH_TOKEN: averysecrettokenforapiauthorization==
       run: |
+        cp .env.example .env
         make artisan a=key:generate
         make run
         make rebuild-db
