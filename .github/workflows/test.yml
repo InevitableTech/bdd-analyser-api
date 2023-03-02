@@ -40,7 +40,7 @@ jobs:
         DB_PASSWORD: secret
         AUTH_TOKEN: averysecrettokenforapiauthorization==
       run: |
-        make artisan key:generate
+        make artisan a=key:generate
         make run
         make rebuild-db
 
