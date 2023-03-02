@@ -7,5 +7,4 @@ Homestead.yaml
 /storage
 rabbitmq
 docker
-bootstrap/cache
 tests/build/*
