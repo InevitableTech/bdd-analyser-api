@@ -6,7 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.3|^8.0",
-        "illuminate/mail": "*",
+        "illuminate/mail": "^10.2",
         "laravel/laravel": "^10.0",
         "laravel/octane": "^1.4"
     },

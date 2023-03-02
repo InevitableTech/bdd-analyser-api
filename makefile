@@ -2,9 +2,12 @@ rebuild-db:
 	docker-compose run api php artisan migrate:fresh
 	docker-compose run api php artisan db:seed
 
+update:
+	docker-compose run api composer update
+
 run:
 	docker-compose up -d
-	docker-compose run api "php artisan config:clear"
+	docker-compose run api php artisan config:clear
 
 .PHONY: tests
 tests:
