@@ -15,6 +15,6 @@ class OrganisationResource extends BaseResource
     ];
 
     protected $relations = [
-        'projects' => 'id'
+        'projects' => ['id', 'name']
     ];
 }

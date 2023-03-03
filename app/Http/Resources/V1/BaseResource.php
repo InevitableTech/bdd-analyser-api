@@ -49,7 +49,7 @@ abstract class BaseResource extends JsonResource
         }
 
         foreach ($this->relations as $relation => $pluck) {
-            $response['relations'][$relation] = $this->resource->$relation()->pluck($pluck);
+            $response['relations'][$relation] = $this->resource->$relation()->pluck($pluck[0], $pluck[1]);
         }
 
         return $response;

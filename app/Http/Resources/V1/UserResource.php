@@ -19,7 +19,7 @@ class UserResource extends BaseResource
     ];
 
     protected $relations = [
-        'projects' => 'project_id',
-        'analysis' => 'analysis.id'
+        'projects' => ['project_id', 'name'],
+        'analysis' => ['analysis.id', 'run_at']
     ];
 }

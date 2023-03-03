@@ -19,4 +19,9 @@ class AnalysisResource extends BaseResource
         'created_at',
         'updated_at'
     ];
+
+    protected $relations = [
+        'user' => ['id', 'firstname'],
+        'project' => ['id', 'name']
+    ];
 }

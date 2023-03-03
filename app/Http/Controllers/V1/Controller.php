@@ -29,10 +29,9 @@ abstract class Controller extends BaseController
         try {
             $request->validate($this->createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            return new JsonResource(array(
-                'success' => false,
-                'message' => $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
-            ));
+            throw new Exception(
+                $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
+            );
         }
 
         $model = $this->getModel();
