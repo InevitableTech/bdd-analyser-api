@@ -10,6 +10,9 @@ abstract class BaseResource extends JsonResource
 {
     protected $expose = [];
 
+    /**
+     * 'relation' => ['value' => 'column'], usually used like this: 'analysis' => ['id' => 'name']
+     */
     protected $relations = [];
 
     /**
