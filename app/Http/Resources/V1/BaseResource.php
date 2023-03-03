@@ -10,6 +10,8 @@ abstract class BaseResource extends JsonResource
 {
     protected $expose = [];
 
+    protected $relations = [];
+
     /**
      * Transform the resource into an array.
      *
@@ -42,7 +44,13 @@ abstract class BaseResource extends JsonResource
             $response[$property] = $this->$property;
         }
 
-        $response['uri'] = strtolower($this->getIdUrl($data->id));
+        if ($data->id) {
+            $response['uri'] = strtolower($this->getIdUrl($data->id));
+        }
+
+        foreach ($this->relations as $relation => $pluck) {
+            $response['relations'][$relation] = $this->resource->$relation()->pluck($pluck);
+        }
 
         return $response;
     }

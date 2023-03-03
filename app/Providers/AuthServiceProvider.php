@@ -35,11 +35,10 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->app['auth']->viaRequest('token', function ($request) {
             if ($request->header('user_token')) {
-                $token = Token::where('token', '=', $request->header('user_token'))
-                    ->where('expires_on', '>', new \DateTime())
-                    ->firstOrFail();
-
-                return $token->user()->first();
+                return User::whereHas('tokens', function ($query) use ($request) {
+                    return $query->where('token', '=', $request->header('user_token'))
+                        ->where('expires_on', '>', new \DateTime());
+                })->firstOrFail();
             }
         });
     }

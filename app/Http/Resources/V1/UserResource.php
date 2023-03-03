@@ -17,4 +17,9 @@ class UserResource extends BaseResource
         'updated_at',
         'enabled'
     ];
+
+    protected $relations = [
+        'projects' => 'project_id',
+        'analysis' => 'analysis.id'
+    ];
 }

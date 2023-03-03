@@ -33,14 +33,19 @@ class User extends Authenticatable implements AuthenticatableContract, Authoriza
         'password',
     ];
 
+    public function organisations(): HasManyThrough
+    {
+        return $this->hasManyThrough(Organisation::class, Project::class);
+    }
+
     public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class);
     }
 
-    public function analysis(): HasManyThrough
+    public function analysis(): HasMany
     {
-        return $this->hasManyThrough(Analysis::class, Project::class);
+        return $this->hasMany(Analysis::class);
     }
 
     public function tokens(): HasMany

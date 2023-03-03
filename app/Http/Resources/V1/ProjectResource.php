@@ -12,6 +12,11 @@ class ProjectResource extends BaseResource
         'name',
         'created_at',
         'updated_at',
-        'enabled'
+        'enabled',
+    ];
+
+    protected $relations = [
+        'analysis' => 'id',
+        'organisation' => 'id'
     ];
 }

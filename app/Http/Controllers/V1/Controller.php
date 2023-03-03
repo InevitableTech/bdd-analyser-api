@@ -14,6 +14,7 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
+use App\Http\Resources\V1;
 
 abstract class Controller extends BaseController
 {
@@ -28,10 +29,10 @@ abstract class Controller extends BaseController
         try {
             $request->validate($this->createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            return array(
+            return new JsonResource(array(
                 'success' => false,
                 'message' => $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
-            );
+            ));
         }
 
         $model = $this->getModel();
@@ -114,13 +115,6 @@ abstract class Controller extends BaseController
     protected function getShortModelName(): string
     {
         return str_replace('Controller', '', substr(strrchr(get_called_class(), '\\'), 1));
-    }
-
-    protected function getUserForToken(string $token): User
-    {
-        $token = Token::find(['token' => $token]);
-
-        return User::findId($token->user_project()->user_id);
     }
 
     protected function afterCreate(Request $request, Model $model): void
