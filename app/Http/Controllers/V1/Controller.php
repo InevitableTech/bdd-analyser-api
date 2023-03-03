@@ -56,7 +56,7 @@ abstract class Controller extends BaseController
     public function findAll(Request $request): ResourceCollection
     {
         $model = $this->getModel();
-        $data = $this->findByCriteria($request, $model)?->get();
+        $data = $this->findByCriteria($request, $model)?->take(100)->get();
 
         if (! $data) {
             return $this->createResponse([]);
