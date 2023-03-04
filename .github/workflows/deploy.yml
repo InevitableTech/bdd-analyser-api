@@ -53,9 +53,9 @@ jobs:
           /var/sites/bdd-analysis-api/release/deploy/deploy.sh "/var/sites/bdd-analysis-api/"
   OnFailure:
     runs-on: ubuntu-latest
-      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-      steps:
-        - run: echo 'The triggering workflow failed'
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
 
   health-check:
     runs-on: self-hosted
