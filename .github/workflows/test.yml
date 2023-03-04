@@ -2,8 +2,8 @@ name: Test
 
 on: [push]
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
 jobs:
   test:
@@ -70,3 +70,47 @@ jobs:
       with:
         name: bdd-analyser-api-app
         path: release.zip
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: [test]
+    # if: github.ref == 'refs/heads/main'
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: bdd-analyser-api-app
+
+    - name: Display structure of downloaded files
+      run: ls -R
+
+    - name: Move artifact to server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: "release.zip"
+        target: "/var/tmp/"
+
+    - name: Deploy app to server
+      uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        port: ${{ secrets.PORT }}
+        script: |
+          ls
+          unzip /var/tmp/release.zip /var/sites/bdd-analysis-api/release/
+          chmod a+x /var/sites/bdd-analysis-api/release/deploy/deploy.sh
+          /var/sites/bdd-analysis-api/release/deploy/deploy.sh "/var/sites/bdd-analysis-api/"
+  # on-failure:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+  #   steps:
+  #     - run: echo 'The triggering workflow failed'
