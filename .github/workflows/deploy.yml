@@ -13,14 +13,6 @@ jobs:
     environment: production
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - name: Wait for tests to succeed
-      uses: lewagon/wait-on-check-action@v1.3.1
-      with:
-        ref: ${{ github.ref }}
-        check-name: 'Run tests'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        wait-interval: 10
-
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
@@ -51,7 +43,7 @@ jobs:
           /var/sites/bdd-analysis-api/release/deploy/deploy.sh "/var/sites/bdd-analysis-api/"
   OnFailure:
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo 'The triggering workflow failed'
 
