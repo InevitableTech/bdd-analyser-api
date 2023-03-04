@@ -3,11 +3,9 @@ name: Deploy
 on:
   workflow_run:
     workflows: [Test]
-    types: [completed]
-    branches: [main]
-
-permissions:
-  contents: read
+    types:
+      - completed
+    # branches: [main]
 
 jobs:
   Deploy:
@@ -53,13 +51,13 @@ jobs:
           /var/sites/bdd-analysis-api/release/deploy/deploy.sh "/var/sites/bdd-analysis-api/"
   OnFailure:
     runs-on: ubuntu-latest
-      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-      steps:
-        - run: echo 'The triggering workflow failed'
-
-  health-check:
-    runs-on: self-hosted
-    needs: deploy
+    # if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-    - name: Check if app still responds as it should.
-      run: curl https://bdd-analyser-api.inevitabletech.uk/
+      - run: echo 'The triggering workflow failed'
+
+  # health-check:
+  #   runs-on: self-hosted
+  #   needs: deploy
+  #   steps:
+  #   - name: Check if app still responds as it should.
+  #     run: curl https://bdd-analyser-api.inevitabletech.uk/
