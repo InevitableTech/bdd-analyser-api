@@ -44,6 +44,11 @@ jobs:
 
         make artisan a=key:generate
         make run
+
+        cat .env
+
+        docker ps
+
         make rebuild-db
 
     - name: Run test suite
