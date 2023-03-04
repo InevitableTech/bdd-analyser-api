@@ -5,6 +5,9 @@ rebuild-db:
 update:
 	docker-compose run api composer update
 
+install-dirs:
+	docker-compose run api mkdir -p storage/logs bootstrap/cache
+
 run:
 	docker-compose up -d
 	docker-compose run api php artisan config:clear

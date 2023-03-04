@@ -43,10 +43,8 @@ jobs:
         echo AUTH_TOKEN=averysecrettokenforapiauthorization== >> .env
 
         make artisan a=key:generate
+        make install-dirs
         make run
-
-        cat .env
-
         docker ps
         docker-compose logs api
 
