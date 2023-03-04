@@ -6,7 +6,7 @@ update:
 	docker-compose run api composer update
 
 install-dirs:
-	docker-compose run api mkdir -p storage/logs bootstrap/cache
+	docker-compose run api mkdir -p storage/logs bootstrap/cache tests/build
 
 run:
 	docker-compose up -d
