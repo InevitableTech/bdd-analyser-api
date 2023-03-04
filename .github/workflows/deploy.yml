@@ -8,15 +8,18 @@ on:
     # branches: [main]
 
 jobs:
-  Deploy:
+  on-success:
     runs-on: ubuntu-latest
     environment: production
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Download artifact from build job
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: bdd-analyser-api-app
+
+    - name: Display structure of downloaded files
+      run: ls -R
 
     - name: Move artifact to server
       uses: appleboy/scp-action@master
@@ -41,7 +44,7 @@ jobs:
           unzip /var/tmp/release.zip /var/sites/bdd-analysis-api/release/
           chmod a+x /var/sites/bdd-analysis-api/release/deploy/deploy.sh
           /var/sites/bdd-analysis-api/release/deploy/deploy.sh "/var/sites/bdd-analysis-api/"
-  OnFailure:
+  on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
