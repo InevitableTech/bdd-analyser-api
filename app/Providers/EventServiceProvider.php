@@ -12,12 +12,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\ProjectCreatedEvent::class => [
-            \App\Listeners\ProjectCreatedListener::class,
-        ],
         \App\Events\UserCreatedEvent::class => [
-            \App\Listeners\UserCreatedListener::class,
-        ]
+            \App\Listeners\SendWelcomeEmailListener::class,
+        ],
     ];
 
     /**
@@ -25,7 +22,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
     }
 
     /**

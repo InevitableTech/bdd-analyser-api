@@ -13,50 +13,50 @@
 |
 */
 
-$router->group(['prefix' => 'user'], function () use ($router) {
-    $router->post('/', 'UserController@create');
-    $router->get('/id/{email}', 'UserController@getId');
+Route::group(['prefix' => 'user'], function () {
+    Route::post('/', 'UserController@create');
+    Route::get('/id/{email}', 'UserController@getId');
 });
 
-$router->group(['prefix' => 'token'], function () use ($router) {
-    $router->post('/', 'TokenController@create');
+Route::group(['prefix' => 'token'], function () {
+    Route::post('/', 'TokenController@create');
 });
 
-$router->group(['middleware' => 'authenticate:api'], function () use ($router) {
-    $router->group(['prefix' => 'analysis'], function () use ($router) {
-        $router->post('/', 'AnalysisController@create');
-        $router->get('/{id}', 'AnalysisController@find');
-        $router->get('/', 'AnalysisController@findAll');
-        $router->put('/{id}', 'AnalysisController@update');
-        $router->delete('/{id}', 'AnalysisController@delete');
+Route::group(['middleware' => 'authenticate:api'], function () {
+    Route::group(['prefix' => 'analysis'], function () {
+        Route::post('/', 'AnalysisController@create');
+        Route::get('/{id}', 'AnalysisController@find');
+        Route::get('/', 'AnalysisController@findAll');
+        Route::put('/{id}', 'AnalysisController@update');
+        Route::delete('/{id}', 'AnalysisController@delete');
     });
 
-    $router->group(['prefix' => 'user'], function () use ($router) {
-        $router->get('/', 'UserController@findAll');
-        $router->get('/{id}', 'UserController@find');
-        $router->put('/{id}', 'UserController@update');
-        $router->delete('/{id}', 'UserController@delete');
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/', 'UserController@findAll');
+        Route::get('/{id}', 'UserController@find');
+        Route::put('/{id}', 'UserController@update');
+        Route::delete('/{id}', 'UserController@delete');
     });
 
-    $router->group(['prefix' => 'project'], function () use ($router) {
-        $router->post('/', 'ProjectController@create');
-        $router->get('/{id}', 'ProjectController@find');
-        $router->get('/', 'ProjectController@findAll');
-        $router->put('/{id}', 'ProjectController@update');
-        $router->delete('/{id}', 'ProjectController@delete');
+    Route::group(['prefix' => 'project'], function () {
+        Route::post('/', 'ProjectController@create');
+        Route::get('/{id}', 'ProjectController@find');
+        Route::get('/', 'ProjectController@findAll');
+        Route::put('/{id}', 'ProjectController@update');
+        Route::delete('/{id}', 'ProjectController@delete');
     });
 
-    $router->group(['prefix' => 'organisation'], function () use ($router) {
-        $router->post('/', 'OrganisationController@create');
-        $router->get('/{id}', 'OrganisationController@find');
-        $router->get('/', 'OrganisationController@findAll');
-        $router->put('/{id}', 'OrganisationController@update');
-        $router->delete('/{id}', 'OrganisationController@delete');
+    Route::group(['prefix' => 'organisation'], function () {
+        Route::post('/', 'OrganisationController@create');
+        Route::get('/{id}', 'OrganisationController@find');
+        Route::get('/', 'OrganisationController@findAll');
+        Route::put('/{id}', 'OrganisationController@update');
+        Route::delete('/{id}', 'OrganisationController@delete');
     });
 
-    $router->group(['prefix' => 'token'], function () use ($router) {
-        $router->get('/', 'TokenController@findAll');
-        $router->put('/{id}', 'TokenController@update');
-        $router->post('/refresh', 'TokenController@refresh');
+    Route::group(['prefix' => 'token'], function () {
+        Route::get('/', 'TokenController@findAll');
+        Route::put('/{id}', 'TokenController@update');
+        Route::post('/refresh', 'TokenController@refresh');
     });
 });

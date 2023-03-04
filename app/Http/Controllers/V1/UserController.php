@@ -20,18 +20,7 @@ class UserController extends Controller
     protected $updateInputs = [
         'firstname' => 'required|string',
         'lastname' => 'required|string',
-        'dob' => 'required|date',
-    ];
-
-    protected $expose = [
-        'id',
-        'firstname',
-        'lastname',
-        'dob',
-        'email',
-        'created_at',
-        'updated_at',
-        'enabled'
+        'dob' => 'date',
     ];
 
     public function findByCriteria(Request $request, string $model): ?Builder
@@ -47,31 +36,15 @@ class UserController extends Controller
         return null;
     }
 
-    public function mapInputToModel(Request $request): array
-    {
-        $data = [
-            'firstname' => $request->input('firstname'),
-            'lastname' => $request->input('lastname'),
-            'email' => $request->input('email'),
-            'enabled' => true,
-        ];
-
-        if ($dob = $request->input('dob')) {
-            $data['dob'] = new \DateTime($dob);
-        }
-
-        return $data;
-    }
-
     public function getId(Request $request, string $email): array
     {
-        $user = User::where('email', '=', $email)->first();
+        $user = User::where('email', '=', $email)->firstOrFail();
 
         return $this->createResponse([['user_id' => $user->id]]);
     }
 
-    protected function afterCreate(Request $request, Model $model): void
+    public function afterCreate(Request $request, Model $model): void
     {
-        event(new UserCreatedEvent($model));
+        UserCreatedEvent::dispatch($model);
     }
 }

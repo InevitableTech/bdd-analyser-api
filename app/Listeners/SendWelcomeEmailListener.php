@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewUser;
 
-class UserCreatedListener implements ShouldQueue
+class SendWelcomeEmailListener implements ShouldQueue
 {
     /**
      * Create the event listener.

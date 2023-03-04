@@ -5,6 +5,8 @@ namespace App\Http\Controllers\V1;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Token;
+use App\Resources\TokenResource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
@@ -19,15 +21,16 @@ class TokenController extends Controller
         'token' => 'required|string',
     ];
 
-    protected $expose = [
-        'id',
-        'token',
-        'user_id',
-        'expires_on',
-        'created_at'
-    ];
+    protected function beforeCreate(Request $request, array $input): array
+    {
+        $input['token'] = Str::random(60);
+        $input['expires_on'] = new DateTime('+3 months');
+        $input['allowed_endpoints'] = '*';
 
-    public function create(Request $request): array
+        return $input;
+    }
+
+    public function create(Request $request): JsonResource
     {
         // Create only if we've not got an active one already.
         $token = Token::whereRelation('user', 'user_id', $request->input('user_id'))
@@ -37,7 +40,7 @@ class TokenController extends Controller
             return parent::create($request);
         }
 
-        return $this->createResponse($this->transform($token));
+        return $this->getResource($token);
     }
 
     public function findByCriteria(Request $request, string $model): Builder
@@ -49,25 +52,5 @@ class TokenController extends Controller
         }
 
         return $token;
-    }
-
-    public function mapInputToModel(Request $request): array
-    {
-        $userId = $request->input('user_id');
-
-        return [
-            // Token needs to be saved encrypted.
-            'token' => Str::random(60),
-            'expires_on' => new DateTime('+3 months'),
-            'user_id' => $userId,
-            'allowed_endpoints' => '*' // This is the token that allows access to all. Probably for the app.
-        ];
-    }
-
-    public function refresh()
-    {
-        // Expire the old one.
-        // Create a new one fresh one and return.
-        // To call refresh, you must have an expired token? along with user_id?
     }
 }

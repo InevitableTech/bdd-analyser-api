@@ -8,76 +8,78 @@ use App\Model\User;
 use App\Events\ExampleEvent;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Builder;
+use App\Http\Resources\V1;
 
 abstract class Controller extends BaseController
 {
     protected $limit = 100;
 
-    protected $model;
-
-    protected $expose = [];
+    protected $transform = [];
 
     protected $createInputs = [];
 
     protected $updateInputs = [];
 
-    public function create(Request $request): array
+    public function create(Request $request): JsonResource
     {
         try {
-            $request->validate($this->createInputs);
+            $inputs = $request->validate($this->createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            return array(
-                'success' => false,
-                'message' => $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
+            throw new Exception(
+                $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
             );
         }
 
         $model = $this->getModel();
-        $data = $model::create($this->mapInputToModel($request));
+        $inputs = $this->beforeCreate($request, $inputs);
+        $data = $model::create($inputs);
         $this->afterCreate($request, $data);
 
-        return $this->createResponse($this->transform($data));
+        return $this->getResource($data);
     }
 
-    public function find(Request $request, int $id): array
+    public function find(Request $request, int $id): JsonResource
     {
         $modelName = $this->getModel();
         $model = $this->findByCriteria($request, $modelName)?->find($id);
 
         if ($model === null) {
-            return $this->createResponse([]);
+            return $this->getResource();
         }
 
-        return $this->createResponse($this->transform($model));
+        return $this->getResource($model);
     }
 
-    public function findAll(Request $request)
+    public function findAll(Request $request): ResourceCollection
     {
         $model = $this->getModel();
-        $data = $this->findByCriteria($request, $model)?->get();
+        $data = $this->findByCriteria($request, $model)?->take(100)->get();
 
         if (! $data) {
             return $this->createResponse([]);
         }
 
-        return $this->createResponse($this->transformAll($data));
+        return $this->getResourceCollection($data);
     }
 
-    public function update(Request $request, int $id): array
+    public function update(Request $request, int $id): JsonResource
     {
         if (! $this->updateInputs) {
             throw new Exception('Update operation not allowed.');
         }
 
-        $request->validate($this->updateInputs);
+        $inputs = $request->validate($this->updateInputs);
 
         $model = $this->getModel();
-        $data = $model::update(['id' => $id], $this->mapInputToModel($request));
+        $data = $model::update(['id' => $id], $inputs);
 
-        return $this->createResponse($this->transform($data));
+        return $this->getResource($data);
     }
 
     public function delete(Request $request, int $id): array
@@ -88,14 +90,23 @@ abstract class Controller extends BaseController
         return $this->createResponse(true);
     }
 
+    protected function getResource(Model $data = null, $namespace = '\\App\Http\\Resources\\V1\\'): JsonResource
+    {
+        $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
+
+        return new $resourceClass($data);
+    }
+
+    protected function getResourceCollection(Collection $data, $namespace = '\\App\Http\\Resources\\V1\\'): AnonymousResourceCollection
+    {
+        $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
+
+        return $resourceClass::collection($data)->additional(['success' => true]);
+    }
+
     protected function getModel($namespace = '\\App\\Models\\'): string
     {
         return $namespace . $this->getShortModelName();
-    }
-
-    protected function mapInputToModel(Request $request): array
-    {
-        return [];
     }
 
     protected function getShortModelName(): string
@@ -103,11 +114,9 @@ abstract class Controller extends BaseController
         return str_replace('Controller', '', substr(strrchr(get_called_class(), '\\'), 1));
     }
 
-    protected function getUserForToken(string $token): User
+    protected function beforeCreate(Request $request, array $inputs): array
     {
-        $token = Token::find(['token' => $token]);
-
-        return User::findId($token->user_project()->user_id);
+        return $inputs;
     }
 
     protected function afterCreate(Request $request, Model $model): void
@@ -130,36 +139,6 @@ abstract class Controller extends BaseController
             $response['message'] = $message;
             unset($response['data']);
         }
-
-        return $response;
-    }
-
-    private function getIdUrl(int $id): string
-    {
-        $route = $this->getShortModelName();
-
-        return "/$route/$id";
-    }
-
-    protected function transformAll(Collection $collection): array
-    {
-        $response = [];
-        foreach ($collection as $model) {
-            $response[] = $this->transform($model);
-        }
-
-        return $response;
-    }
-
-    protected function transform(Model $data): array
-    {
-        $response = [];
-
-        foreach ($this->expose as $property) {
-            $response[$property] = $data->$property;
-        }
-
-        $response['uri'] = strtolower($this->getIdUrl($data->id));
 
         return $response;
     }

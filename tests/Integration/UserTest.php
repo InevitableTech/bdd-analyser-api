@@ -26,8 +26,10 @@ class UserTest extends TestCase
         $response = $this->json('GET', $this->endpoint, [], $this->defaultHeaders);
         $response->assertJson([
                 'success' => true,
-                'data' => [
-                    ['email' => 'its.inevitable@hotmail.com',]
+                'data' =>  [
+                    [
+                    'email' => 'its.inevitable@hotmail.com',
+                    ],
                 ]
             ]);
 

@@ -19,11 +19,6 @@ class Token extends Model
 
     public function project(): BelongsTo
     {
-        // select * from `tokens` where exists (select * from `users` inner join `project_user` on
-        // `project_user`.`id` = `users`.`project_user_id` where `tokens`.`id` = `project_user`.`token_id` and `user_id` = 1))
-
-        // token <- project_user -> project/user
-
         return $this->belongsTo(Project::class);
     }
 

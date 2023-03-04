@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - 'main'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: Swap current app for tested app version.
+      run: |
+        rm -rf old
+        mv current old
+        mv new current
+
+  health-check:
+    runs-on: self-hosted
+    steps:
+    - name: Check if app still responds as it should.
+      run: curl https://bdd-analyser-api.inevitabletech.uk/
