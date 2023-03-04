@@ -48,6 +48,7 @@ jobs:
         cat .env
 
         docker ps
+        docker-compose logs api
 
         make rebuild-db
 
