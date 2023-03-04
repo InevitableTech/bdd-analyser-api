@@ -17,10 +17,14 @@ class OrganisationController extends Controller
 
     public function findByCriteria(Request $request, string $model): Builder
     {
-        return $model::whereHas('projects', function ($project) use ($request) {
-            return $project->whereHas('users', function ($user) use ($request) {
-                return $user->where('user_id', $request->user()->id);
-            });
-        });
+        return $model::whereHas(
+            'projects',
+            fn ($project) => $project
+            ->whereHas(
+                'users',
+                fn ($user) => $user
+                ->where('user_id', $request->user()->id)
+            )
+        );
     }
 }

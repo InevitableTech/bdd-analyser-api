@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use App\Models;
-use App\Observers;
 
 class EventServiceProvider extends ServiceProvider
 {

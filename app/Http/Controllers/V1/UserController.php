@@ -42,4 +42,9 @@ class UserController extends Controller
 
         return $this->createResponse([['user_id' => $user->id]]);
     }
+
+    public function afterCreate(Request $request, Model $model): void
+    {
+        UserCreatedEvent::dispatch($model);
+    }
 }
