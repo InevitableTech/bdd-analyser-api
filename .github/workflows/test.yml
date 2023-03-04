@@ -59,3 +59,13 @@ jobs:
 
     - name: Run test suite
       run: make tests
+
+    - name: create zip and archive
+      run: |
+        zip release.zip ./* -r
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: bdd-analyser-api-app
+        path: release.zip
