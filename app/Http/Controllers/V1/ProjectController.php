@@ -12,19 +12,19 @@ class ProjectController extends Controller
 {
     protected $createInputs = [
         'name' => 'required|string',
-        'user_id' => 'required|int',
     ];
 
     protected $updateInputs = [
         'name' => 'required|string',
     ];
 
-    public function mapInputToModel(Request $request): array
+    public function beforeCreate(Request $request, array $input): array
     {
-        return [
-            'name' => $request->input('name'),
-            'enabled' => true
-        ];
+        $request->validate(['user_id' => 'required|int']);
+
+        $input['enabled'] = true;
+
+        return $input;
     }
 
     public function findByCriteria(Request $request, string $model): Builder
@@ -40,6 +40,6 @@ class ProjectController extends Controller
 
     public function afterCreate(Request $request, Model $model): void
     {
-        event(new ProjectCreatedEvent($model, User::find($request->input('user_id'))));
+        $model->users()->attach($request->input('user_id'));
     }
 }

@@ -23,11 +23,4 @@ class OrganisationController extends Controller
             });
         });
     }
-
-    public function mapInputToModel(Request $request): array
-    {
-        return [
-            'name' => $request->input('name')
-        ];
-    }
 }

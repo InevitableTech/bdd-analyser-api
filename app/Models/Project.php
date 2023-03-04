@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends Model
 {
+    protected $attributes = [
+        'enabled' => true
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

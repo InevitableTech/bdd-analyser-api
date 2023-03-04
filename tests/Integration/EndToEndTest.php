@@ -9,11 +9,16 @@ use Illuminate\Mail\Mailer;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Mail;
 
+/**
+ * This file is meant to be run in its entirety - as one big test.
+ */
 class EndToEndTest extends TestCase
 {
     protected $baseUrl = 'http://localhost:8000';
 
     private $tokenFilePath = __DIR__ . '/../build/token.txt';
+
+    private static $data = [];
 
     protected $defaultHeaders = [
         'api_token' => 'averysecrettokenforapiauthorization==',
@@ -32,43 +37,68 @@ class EndToEndTest extends TestCase
         $userDetails = [
             'firstname' => 'test',
             'lastname' => 'ing',
-            'dob' => (new DateTime('1985-05-10'))->format('Y-m-d H:i:s'),
+            'dob' => (new DateTime('1985-05-10'))->format('d/m/Y'),
             'email' => 'its.inevitable+auto' . rand() . '@hotmail.com'
         ];
+
         $userResponse = $this->json('POST', '/user', $userDetails, $this->defaultHeaders);
 
-        self::assertTrue($userResponse['success'], print_r($userResponse, true));
-        self::assertTrue(is_int($userResponse['data']['id']), print_r($userResponse, true));
+        self::assertTrue($userResponse['success']);
+        self::assertTrue(is_int($userResponse['data']['id']));
 
-        $tokenDetails = ['user_id' => $userResponse['data']['id']];
+        self::$data['userId'] = $userResponse['data']['id'];
+    }
+
+    public function testCreateToken()
+    {
+        $tokenDetails = ['user_id' => self::$data['userId']];
         $tokenResponse = $this->json('POST', '/token', $tokenDetails, $this->defaultHeaders);
 
-        self::assertTrue($tokenResponse['success'], print_r($tokenResponse, true));
+        self::assertTrue($tokenResponse['success']);
         self::assertTrue(is_string($tokenResponse['data']['token']));
 
         file_put_contents($this->tokenFilePath, $tokenResponse['data']['token']);
     }
 
-    public function testPerformAnalysis()
+    public function testGetExistingToken()
     {
         $token = file_get_contents($this->tokenFilePath);
         $this->defaultHeaders['user_token'] = $token;
 
         $tokenDetails = $this->json('GET', '/token', $this->defaultHeaders);
 
+        self::assertTrue(is_int($tokenDetails['data'][0]['user_id']));
+
+        self::$data['userId'] = $tokenDetails['data'][0]['user_id'];
+    }
+
+    public function testCreateProject()
+    {
+        $token = file_get_contents($this->tokenFilePath);
+        $this->defaultHeaders['user_token'] = $token;
+
         $projectDetails = [
             'name' => 'testProject',
-            'user_id' => $tokenDetails['data'][0]['user_id']
+            'user_id' => self::$data['userId']
         ];
 
         $projectResponse = $this->json('POST', '/project', $projectDetails, $this->defaultHeaders);
 
-        self::assertTrue($projectResponse['success'], print_r($projectResponse, true));
-        self::assertTrue(is_int($projectResponse['data']['id']), print_r($projectResponse, true));
+        self::assertTrue($projectResponse['success']);
+        self::assertTrue(is_int($projectResponse['data']['id']));
+
+        self::$data['projectId'] = $projectResponse['data']['id'];
+    }
+
+    public function testCreateAnalysis()
+    {
+        $token = file_get_contents($this->tokenFilePath);
+        $this->defaultHeaders['user_token'] = $token;
 
         // We've now got enough to send the analysis across.
         $analysisData = [
-            'project_id' => $projectResponse['data']['id'],
+            'user_id' => self::$data['userId'],
+            'project_id' => self::$data['projectId'],
             'run_at' => (new \DateTime('now'))->format('Y-m-d H:i:s'),
             'outcomes' => ['abc123' => 'issue1'],
             'summary' => ['files' => 3],
@@ -77,7 +107,8 @@ class EndToEndTest extends TestCase
         ];
         $analysisResponse = $this->json('POST', '/analysis', $analysisData, $this->defaultHeaders);
 
-        self::assertTrue($analysisResponse['success'], print_r($analysisResponse, true));
+        self::assertTrue($analysisResponse['success']);
         self::assertArrayHasKey('id', $analysisResponse['data']);
+        self::assertTrue(is_int($analysisResponse['data']['id']));
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use App\Models;
+use App\Observers;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -12,12 +14,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\ProjectCreatedEvent::class => [
-            \App\Listeners\ProjectCreatedListener::class,
-        ],
         \App\Events\UserCreatedEvent::class => [
-            \App\Listeners\UserCreatedListener::class,
-        ]
+            \App\Listeners\SendWelcomeEmailListener::class,
+        ],
     ];
 
     /**
@@ -25,7 +24,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
     }
 
     /**

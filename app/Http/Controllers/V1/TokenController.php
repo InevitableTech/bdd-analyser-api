@@ -21,6 +21,15 @@ class TokenController extends Controller
         'token' => 'required|string',
     ];
 
+    protected function beforeCreate(Request $request, array $input): array
+    {
+        $input['token'] = Str::random(60);
+        $input['expires_on'] = new DateTime('+3 months');
+        $input['allowed_endpoints'] = '*';
+
+        return $input;
+    }
+
     public function create(Request $request): JsonResource
     {
         // Create only if we've not got an active one already.
@@ -43,19 +52,6 @@ class TokenController extends Controller
         }
 
         return $token;
-    }
-
-    public function mapInputToModel(Request $request): array
-    {
-        $userId = $request->input('user_id');
-
-        return [
-            // Token needs to be saved encrypted.
-            'token' => Str::random(60),
-            'expires_on' => new DateTime('+3 months'),
-            'user_id' => $userId,
-            'allowed_endpoints' => '*' // This is the token that allows access to all. Probably for the app.
-        ];
     }
 
     public function refresh()

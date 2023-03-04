@@ -13,6 +13,9 @@ run:
 tests:
 	docker-compose run api ./vendor/bin/phpunit --config=./phpunit.xml $(f)
 
+e2e:
+	docker-compose run api ./vendor/bin/phpunit --config=./phpunit.xml ./tests/Integration/EndToEndTest.php
+
 command:
 	docker-compose run api $(c)
 

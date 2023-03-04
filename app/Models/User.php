@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DateTime;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,10 +11,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable implements AuthenticatableContract, AuthorizableContract
 {
     use HasFactory;
+
+    protected $attributes = [
+        'enabled' => true,
+    ];
+
+    protected $casts = [
+        'dob' => 'datetime:Y-m-d H:i:s',
+    ];
+
+    protected $dateFormat = 'Y-m-d H:i:s';
 
     /**
      * The attributes that are mass assignable.
@@ -32,6 +44,11 @@ class User extends Authenticatable implements AuthenticatableContract, Authoriza
     protected $hidden = [
         'password',
     ];
+
+    public function setDobAttribute(string $value)
+    {
+        $this->attributes['dob'] = (new DateTime($value))->format('Y-m-d H:i:s');
+    }
 
     public function organisations(): HasManyThrough
     {

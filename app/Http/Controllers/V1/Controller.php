@@ -20,6 +20,8 @@ abstract class Controller extends BaseController
 {
     protected $limit = 100;
 
+    protected $transform = [];
+
     protected $createInputs = [];
 
     protected $updateInputs = [];
@@ -27,7 +29,7 @@ abstract class Controller extends BaseController
     public function create(Request $request): JsonResource
     {
         try {
-            $request->validate($this->createInputs);
+            $inputs = $request->validate($this->createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
             throw new Exception(
                 $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
@@ -35,7 +37,8 @@ abstract class Controller extends BaseController
         }
 
         $model = $this->getModel();
-        $data = $model::create($this->mapInputToModel($request));
+        $inputs = $this->beforeCreate($request, $inputs);
+        $data = $model::create($inputs);
         $this->afterCreate($request, $data);
 
         return $this->getResource($data);
@@ -71,10 +74,10 @@ abstract class Controller extends BaseController
             throw new Exception('Update operation not allowed.');
         }
 
-        $request->validate($this->updateInputs);
+        $inputs = $request->validate($this->updateInputs);
 
         $model = $this->getModel();
-        $data = $model::update(['id' => $id], $this->mapInputToModel($request));
+        $data = $model::update(['id' => $id], $inputs);
 
         return $this->getResource($data);
     }
@@ -87,14 +90,14 @@ abstract class Controller extends BaseController
         return $this->createResponse(true);
     }
 
-    private function getResource(Model $data = null, $namespace = '\\App\Http\\Resources\\V1\\'): JsonResource
+    protected function getResource(Model $data = null, $namespace = '\\App\Http\\Resources\\V1\\'): JsonResource
     {
         $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
 
         return new $resourceClass($data);
     }
 
-    private function getResourceCollection(Collection $data, $namespace = '\\App\Http\\Resources\\V1\\'): AnonymousResourceCollection
+    protected function getResourceCollection(Collection $data, $namespace = '\\App\Http\\Resources\\V1\\'): AnonymousResourceCollection
     {
         $resourceClass = $namespace . $this->getShortModelName() . 'Resource';
 
@@ -106,14 +109,14 @@ abstract class Controller extends BaseController
         return $namespace . $this->getShortModelName();
     }
 
-    protected function mapInputToModel(Request $request): array
-    {
-        return [];
-    }
-
     protected function getShortModelName(): string
     {
         return str_replace('Controller', '', substr(strrchr(get_called_class(), '\\'), 1));
+    }
+
+    protected function beforeCreate(Request $request, array $inputs): array
+    {
+        return $inputs;
     }
 
     protected function afterCreate(Request $request, Model $model): void

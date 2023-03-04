@@ -47,7 +47,7 @@ class AnalysisTest extends TestCase
                 'success' => true,
                 'data' => [
                     [
-                        'run_at' => '2023-01-01 00:00:00',
+                        'run_at' => '2023-01-01T00:00:00.000000Z',
                         'rules_version' => 'v1',
                         'id' => 1,
                         'outcomes' => ["file1" => ["line 45" => "issue", "message" => "something"]],
