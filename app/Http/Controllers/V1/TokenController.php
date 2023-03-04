@@ -53,11 +53,4 @@ class TokenController extends Controller
 
         return $token;
     }
-
-    public function refresh()
-    {
-        // Expire the old one.
-        // Create a new one fresh one and return.
-        // To call refresh, you must have an expired token? along with user_id?
-    }
 }
