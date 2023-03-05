@@ -15,6 +15,8 @@ if [[ -z "$1" ]]; then
     exit 1;
 fi
 
+currentPath="$1/current"
+
 [ -z "$ENVIRONMENT" ] && echo "Need to set ENVIRONMENT" && exit 1;
 [ -z "$DB_DATABASE" ] && echo "Need to set DB_DATABSE" && exit 1;
 [ -z "$DB_USERNAME" ] && echo "Need to set DB_USERNAME" && exit 1;
@@ -39,6 +41,12 @@ toActive=$(cat "$1/inactive.txt")
 # Copy to correct place.
 newPath="$1/$toActive"
 
+inactive='green'
+if [[ $toActive == 'green' ]]; then
+    inactive='blue'
+fi
+oldPath="$1/$inactive"
+
 echo "Deploy to '$toActive' environment, path: '$newPath'"
 echo
 if [[ $ENVIRONMENT == 'local' ]]; then
@@ -46,7 +54,8 @@ if [[ $ENVIRONMENT == 'local' ]]; then
 fi
 
 # Issue, this path is relative to where the script is being executed from. Amend where the script is run from.
-rm -rf "$newPath/*"
+rm -rf "$newPath"
+mkdir -p $newPath
 cp -R ./* "$newPath"
 
 # Copy env files.
@@ -63,19 +72,17 @@ echo "AUTH_TOKEN=$AUTH_TOKEN" >> "$newPath/.env"
 
 # Migrate db changes.
 # Swap this for a docker-compose run.
-make artisan a="key:generate"
-docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
+cd $newPath
+docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan key:generate
+docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
 
 # Activate new deployment by symlink.
 rm -rf "$1/current"
 ln -s "$newPath" "$1/current"
 
-# Store the deactivated conceptual server in file for next time.
-inactive='green'
-if [[ $toActive == 'green' ]]; then
-    inactive='blue'
-fi
-
 echo $inactive > "$1/inactive.txt"
 
-docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" restart -d api
+docker-compose -f "$oldPath/docker-compose.yml" -f "$oldPath/docker-compose-$ENVIRONMENT.yml" down -d api
+docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" up -d api
+
+echo "Activated deployment server: $toActive"
