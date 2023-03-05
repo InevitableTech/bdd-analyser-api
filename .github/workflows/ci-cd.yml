@@ -61,7 +61,7 @@ jobs:
 
     - name: create zip and archive
       run: |
-        zip release.zip ./* -r
+        zip release.zip . -r -x "tests" -x ".env" -x "docker"
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
@@ -113,8 +113,6 @@ jobs:
         port: ${{ secrets.PORT }}
         envs: ENVIRONMENT,APP_SECRETS
         script: |
-          echo $APP_SECRETS | jq -r .db_port
-
           export DB_HOST=$(echo $APP_SECRETS | jq -r .db_host)
           export DB_USERNAME=$(echo $APP_SECRETS | jq -r .db_username)
           export DB_PASSWORD=$(echo $APP_SECRETS | jq -r .db_password)
