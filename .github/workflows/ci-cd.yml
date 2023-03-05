@@ -118,6 +118,7 @@ jobs:
           export DB_PASSWORD=$(echo $APP_SECRETS | jq -r .db_username)
           export AUTH_TOKEN=$(echo $APP_SECRETS | jq -r .db_username)
 
+          rm -rf /var/sites/bdd-analyser-api/release/*
           unzip /var/tmp/release.zip -d /var/sites/bdd-analyser-api/release
           chmod a+x /var/sites/bdd-analyser-api/release/deploy/deploy.sh
           cd /var/sites/bdd-analyser-api/release/ && ./deploy/deploy.sh "/var/sites/bdd-analyser-api/"
