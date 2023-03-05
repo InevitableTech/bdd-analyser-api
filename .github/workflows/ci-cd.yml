@@ -104,14 +104,22 @@ jobs:
     steps:
     - name: Deploy app to server
       uses: appleboy/ssh-action@v0.1.8
+      env:
+        ENVIRONMENT: "production"
+        APP_SECRETS: ${{ secrets.APP_SECRETS }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
+        envs: ENVIRONMENT,APP_SECRET
         script: |
-          ls
+          export DB_HOST=$(echo $APP_SECRETS | jq -r .db_host)
+          export DB_USERNAME=$(echo $APP_SECRETS | jq -r .db_username)
+          export DB_PASSWORD=$(echo $APP_SECRETS | jq -r .db_username)
+          export AUTH_TOKEN=$(echo $APP_SECRETS | jq -r .db_username)
+
           unzip /var/tmp/release.zip -d /var/sites/bdd-analyser-api/release
           chmod a+x /var/sites/bdd-analyser-api/release/deploy/deploy.sh
           cd /var/sites/bdd-analyser-api/release/ && ./deploy/deploy.sh "/var/sites/bdd-analyser-api/"

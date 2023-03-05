@@ -1,0 +1,10 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+services:
+    api:
+        networks:
+            - bdd-analyser-api_app-network
+
+networks:
+  bdd-analyser-api_app-network:
+    external: true

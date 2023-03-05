@@ -13,11 +13,16 @@ fi
 toActive=$(cat "$1/inactive.txt")
 
 # Rollback db changes.
-php "$1/current/artisan" migrate:rollback
+docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" run api php artisan migrate:rollback
 
 # Switch to old deployment by symlink.
 rm -rf "$1/current"
 ln -s "$newPath" "$1/current"
 
 # Store the deactivated conceptual server in file for next time.
-echo $(if $toActive == 'green'; then echo 'blue'; else echo 'green';) > "$1/inactive.txt"
+inactive='green'
+if [[ $toActive == 'green' ]]; then
+    inactive='blue'
+fi
+
+echo $inactive > "$1/inactive.txt"

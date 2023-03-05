@@ -7,10 +7,19 @@
 # - migrate database changes.
 # - point nginx to new location.
 
+# exit when any command fails
+set -e
+
 if [[ -z "$1" ]]; then
     echo 'You must provide the base directory for application to deploy';
     exit 1;
 fi
+
+[ -z "$ENVIRONMENT" ] && echo "Need to set ENVIRONMENT" && exit 1;
+[ -z "$DB_HOST" ] && echo "Need to set DB_HOST" && exit 1;
+[ -z "$DB_USERNAME" ] && echo "Need to set DB_USERNAME" && exit 1;
+[ -z "$DB_PASSWORD" ] && echo "Need to set DB_PASSWORD" && exit 1;
+[ -z "$AUTH_TOKEN" ] && echo "Need to set AUTH_TOKEN" && exit 1;
 
 # Create server file.
 if [[ ! -f "$1/inactive.txt" ]]; then
@@ -25,16 +34,40 @@ toActive=$(cat "$1/inactive.txt")
 # Copy to correct place.
 newPath="$1/$toActive"
 
+echo "Deploy to '$toActive' environment, path: '$newPath'"
+echo
+if [[ $ENVIRONMENT == 'local' ]]; then
+    read -p "==> Press enter to continue"
+fi
+
 # Issue, this path is relative to where the script is being executed from. Amend where the script is run from.
-cp -R ../ "$newPath"
+rm -rf "$newPath/*"
+cp -R ./* "$newPath"
+
+# Copy env files.
+cp "./.env.example" "$newPath/.env"
+
+# Setup database creds before this.
+echo "DB_CONNECTION=$DB_CONNECTION" >> "$newPath/.env"
+echo "DB_HOST=$DB_HOST" >> "$newPath/.env"
+echo "DB_PORT=$DB_PORT" >> "$newPath/.env"
+echo "DB_DATABASE=$DB_DATABASE" >> "$newPath/.env"
+echo "DB_USERNAME=$DB_USERNAME" >> "$newPath/.env"
+echo "DB_PASSWORD=$DB_PASSWORD" >> "$newPath/.env"
+echo "AUTH_TOKEN=$AUTH_TOKEN" >> "$newPath/.env"
 
 # Migrate db changes.
 # Swap this for a docker-compose run.
-php "$newPath/artisan" migrate
+docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
 
 # Activate new deployment by symlink.
 rm -rf "$1/current"
 ln -s "$newPath" "$1/current"
 
 # Store the deactivated conceptual server in file for next time.
-echo $(if $toActive == 'green'; then echo 'blue'; else echo 'green';) > "$1/inactive.txt"
+inactive='green'
+if [[ $toActive == 'green' ]]; then
+    inactive='blue'
+fi
+
+echo $inactive > "$1/inactive.txt"

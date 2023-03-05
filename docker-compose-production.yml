@@ -1,0 +1,10 @@
+# For more information: https://laravel.com/docs/sail
+version: '3'
+services:
+    api:
+        networks:
+            - project-indexer_app-network
+
+networks:
+  project-indexer_app-network:
+    external: true
