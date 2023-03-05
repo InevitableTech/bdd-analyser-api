@@ -63,6 +63,7 @@ echo "AUTH_TOKEN=$AUTH_TOKEN" >> "$newPath/.env"
 
 # Migrate db changes.
 # Swap this for a docker-compose run.
+make artisan a="key:generate"
 docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
 
 # Activate new deployment by symlink.
@@ -76,3 +77,5 @@ if [[ $toActive == 'green' ]]; then
 fi
 
 echo $inactive > "$1/inactive.txt"
+
+docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" restart -d api
