@@ -114,12 +114,13 @@ jobs:
         envs: ENVIRONMENT,APP_SECRETS
         script: |
           export DB_HOST=$(echo $APP_SECRETS | jq -r .db_host)
+          export DB_DATABASE=$(echo $APP_SECRETS | jq -r .db_database)
           export DB_USERNAME=$(echo $APP_SECRETS | jq -r .db_username)
           export DB_PASSWORD=$(echo $APP_SECRETS | jq -r .db_password)
           export AUTH_TOKEN=$(echo $APP_SECRETS | jq -r .auth_token)
 
           rm -rf /var/sites/bdd-analyser-api/release/*
-          unzip /var/tmp/release.zip -d /var/sites/bdd-analyser-api/release
+          unzip -q /var/tmp/release.zip -d /var/sites/bdd-analyser-api/release
           chmod a+x /var/sites/bdd-analyser-api/release/deploy/deploy.sh
           cd /var/sites/bdd-analyser-api/release/ && ./deploy/deploy.sh "/var/sites/bdd-analyser-api"
   # on-failure:

@@ -16,10 +16,15 @@ if [[ -z "$1" ]]; then
 fi
 
 [ -z "$ENVIRONMENT" ] && echo "Need to set ENVIRONMENT" && exit 1;
-[ -z "$DB_HOST" ] && echo "Need to set DB_HOST" && exit 1;
+[ -z "$DB_DATABASE" ] && echo "Need to set DB_DATABSE" && exit 1;
 [ -z "$DB_USERNAME" ] && echo "Need to set DB_USERNAME" && exit 1;
 [ -z "$DB_PASSWORD" ] && echo "Need to set DB_PASSWORD" && exit 1;
 [ -z "$AUTH_TOKEN" ] && echo "Need to set AUTH_TOKEN" && exit 1;
+
+# Default values if not provided.
+DB_CONNECTION=${DB_CONNECTION:="mysql"}
+DB_PORT=${DB_PORT:="3306"}
+DB_HOST=${DB_HOST:="database"}
 
 # Create server file.
 if [[ ! -f "$1/inactive.txt" ]]; then
