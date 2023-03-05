@@ -18,7 +18,7 @@ jobs:
 
     - name: Prepull docker images
       run: |
-        docker-compose pull mysql &
+        docker-compose pull database &
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
