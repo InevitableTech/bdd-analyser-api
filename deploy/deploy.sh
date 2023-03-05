@@ -47,7 +47,7 @@ if [[ $toActive == 'green' ]]; then
 fi
 oldPath="$1/$inactive"
 
-echo "Deploy to '$toActive' environment, path: '$newPath'"
+echo "Deploy to '$toActive' environment, path: '$newPath', oldPath: '$oldPath'"
 echo
 if [[ $ENVIRONMENT == 'local' ]]; then
     read -p "==> Press enter to continue"
@@ -82,7 +82,13 @@ ln -s "$newPath" "$1/current"
 
 echo $inactive > "$1/inactive.txt"
 
-docker-compose -f "$oldPath/docker-compose.yml" -f "$oldPath/docker-compose-$ENVIRONMENT.yml" down -d api
-docker-compose -f "$newPath/docker-compose.yml" -f "$newPath/docker-compose-$ENVIRONMENT.yml" up -d api
+# Spin down active api if deployed.
+cd $oldPath
+if [[ -f docker-compose.yml ]]; then
+    docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" down -d api
+fi
+
+cd $newPath
+docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" up -d api
 
 echo "Activated deployment server: $toActive"
