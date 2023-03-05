@@ -85,7 +85,7 @@ echo $inactive > "$1/inactive.txt"
 # Spin down active api if deployed.
 cd $oldPath
 if [[ -f docker-compose.yml ]]; then
-    docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" down -d api
+    docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" down
 fi
 
 cd $newPath
