@@ -71,7 +71,7 @@ jobs:
         name: bdd-analyser-api-app
         path: release.zip
 
-  deploy:
+  upload-release:
     runs-on: ubuntu-latest
     environment: production
     needs: [test]
@@ -97,6 +97,11 @@ jobs:
         source: "release.zip"
         target: "/var/tmp/"
 
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: [upload-release]
+    steps:
     - name: Deploy app to server
       uses: appleboy/ssh-action@v0.1.8
       with:
