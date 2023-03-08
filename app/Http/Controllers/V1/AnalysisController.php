@@ -9,7 +9,7 @@ class AnalysisController extends Controller
 {
     public static $createInputs = [
         'user_id' => 'required|int',
-        'run_at' => 'required|datetime',
+        'run_at' => 'required|date',
         'outcomes' => 'required|json',
         'summary' => 'required|json',
         'active_rules' => 'required|json',

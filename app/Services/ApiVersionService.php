@@ -7,6 +7,8 @@ use Illuminate\Routing\Route;
 
 class ApiVersionService
 {
+    private static $versions = ['v1'];
+
     public static $placeholder = '{api-version}';
 
     public static function get(Request $request): ?string

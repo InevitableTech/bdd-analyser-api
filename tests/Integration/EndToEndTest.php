@@ -100,9 +100,9 @@ class EndToEndTest extends TestCase
             'user_id' => self::$data['userId'],
             'project_id' => self::$data['projectId'],
             'run_at' => (new \DateTime('now'))->format('Y-m-d H:i:s'),
-            'outcomes' => ['abc123' => 'issue1'],
-            'summary' => ['files' => 3],
-            'active_rules' => ['Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoFeatureWithoutNarrative'],
+            'outcomes' => json_encode(['abc123' => 'issue1']),
+            'summary' => json_encode(['files' => 3]),
+            'active_rules' => json_encode(['Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoFeatureWithoutNarrative']),
             'rules_version' => '1.3.0',
         ];
         $analysisResponse = $this->json('POST', '/analysis', $analysisData, $this->defaultHeaders);

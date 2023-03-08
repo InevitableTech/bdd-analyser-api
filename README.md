@@ -10,7 +10,15 @@ The API that will power the BDD analyser console and receive analysis reports fr
 
 Setup .env config
 
+make install-dirs
+
+make rebuild-db
+
 docker-compose up -d
+
+## Running tests
+
+make tests
 
 ## Generating API docs
 

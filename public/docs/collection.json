@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "bdd-analyser-api",
-        "_postman_id": "453eb56f-94fa-4a3e-b0aa-e23a9eb4482f",
+        "_postman_id": "d83cd216-3f2a-4e51-a0f3-10ce18447acf",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -82,7 +82,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"firstname\":\"voluptate\",\"lastname\":\"et\",\"dob\":\"2023-03-08T23:19:41\",\"email\":\"pmarks@example.com\"}"
+                            "raw": "{\"firstname\":\"aut\",\"lastname\":\"fuga\",\"dob\":\"2023-03-08T23:32:12\",\"email\":\"lilla.terry@example.com\"}"
                         },
                         "description": ""
                     },
@@ -100,7 +100,7 @@
                                 {
                                     "id": "email",
                                     "key": "email",
-                                    "value": "jamal.oberbrunner%40example.com",
+                                    "value": "rhea14%40example.org",
                                     "description": ""
                                 }
                             ]
@@ -159,7 +159,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":4}"
+                            "raw": "{\"user_id\":12}"
                         },
                         "description": ""
                     },
@@ -195,7 +195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":12,\"run_at\":\"blanditiis\",\"outcomes\":\"[\\\"rerum\\\",\\\"vitae\\\"]\",\"summary\":\"[\\\"sunt\\\",\\\"a\\\"]\",\"active_rules\":\"[\\\"laborum\\\",\\\"quos\\\"]\",\"rules_version\":\"qui\",\"project_id\":14}"
+                            "raw": "{\"user_id\":16,\"run_at\":\"2023-03-08T23:32:12\",\"outcomes\":\"[\\\"fuga\\\",\\\"magni\\\"]\",\"summary\":\"[\\\"in\\\",\\\"voluptatem\\\"]\",\"active_rules\":\"[\\\"sed\\\",\\\"eius\\\"]\",\"rules_version\":\"quis\",\"project_id\":8}"
                         },
                         "description": ""
                     },
@@ -213,7 +213,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "recusandae",
+                                    "value": "suscipit",
                                     "description": "The ID of the analysi."
                                 }
                             ]
@@ -287,7 +287,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eum",
+                                    "value": "facilis",
                                     "description": "The ID of the analysi."
                                 }
                             ]
@@ -328,7 +328,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "id",
+                                    "value": "laudantium",
                                     "description": "The ID of the analysi."
                                 }
                             ]
@@ -469,7 +469,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"firstname\":\"ut\",\"lastname\":\"consequuntur\",\"dob\":\"2023-03-08T23:19:41\"}"
+                            "raw": "{\"firstname\":\"delectus\",\"lastname\":\"laborum\",\"dob\":\"2023-03-08T23:32:12\"}"
                         },
                         "description": ""
                     },
@@ -546,7 +546,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"velit\",\"user_id\":8}"
+                            "raw": "{\"name\":\"velit\",\"user_id\":16}"
                         },
                         "description": ""
                     },
@@ -664,7 +664,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"non\"}"
+                            "raw": "{\"name\":\"repellat\"}"
                         },
                         "description": ""
                     },
@@ -741,7 +741,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"repellat\"}"
+                            "raw": "{\"name\":\"optio\"}"
                         },
                         "description": ""
                     },
@@ -859,7 +859,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"adipisci\"}"
+                            "raw": "{\"name\":\"minima\"}"
                         },
                         "description": ""
                     },
@@ -977,7 +977,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"consequuntur\"}"
+                            "raw": "{\"token\":\"aliquam\"}"
                         },
                         "description": ""
                     },
