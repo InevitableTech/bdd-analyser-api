@@ -8,3 +8,4 @@ Homestead.yaml
 rabbitmq
 docker
 tests/build/*
+.scribe

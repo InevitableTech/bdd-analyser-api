@@ -20,4 +20,4 @@ To generate docs run the following command
 make artisan a="docs:generate v1"
 ```
 
-This will generate documentation for version 1.
+This will generate documentation for version 1. To view the documentation visit `http://localhost:8000/docs/index.html`.
