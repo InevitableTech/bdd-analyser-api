@@ -11,3 +11,13 @@ The API that will power the BDD analyser console and receive analysis reports fr
 Setup .env config
 
 docker-compose up -d
+
+## Generating API docs
+
+To generate docs run the following command
+
+```
+make artisan a="docs:generate v1"
+```
+
+This will generate documentation for version 1.

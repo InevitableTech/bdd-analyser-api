@@ -7,17 +7,15 @@ use Illuminate\Database\Eloquent\Builder;
 
 class AnalysisController extends Controller
 {
-    protected $createInputs = [
+    public static $createInputs = [
         'user_id' => 'required|int',
-        'run_at' => 'required|string',
-        'outcomes' => 'required',
-        'summary' => 'required',
-        'active_rules' => 'required',
+        'run_at' => 'required|datetime',
+        'outcomes' => 'required|json',
+        'summary' => 'required|json',
+        'active_rules' => 'required|json',
         'rules_version' => 'required',
         'project_id' => 'required|int'
     ];
-
-    protected $updateInputs = false;
 
     protected function findByCriteria(Request $request, string $model): Builder
     {

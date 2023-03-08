@@ -27,4 +27,4 @@ artisan:
 	docker-compose run api php artisan $(a)
 
 chown:
-	sudo chown -R forceedge01:forceedge01 app config tests public vendor
+	sudo chown -R forceedge01:forceedge01 app config tests public vendor database

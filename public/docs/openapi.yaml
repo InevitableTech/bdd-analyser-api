@@ -1,0 +1,1339 @@
+openapi: 3.0.3
+info:
+  title: bdd-analyser-api
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /:
+    get:
+      summary: ''
+      operationId: get
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  /user:
+    post:
+      summary: ''
+      operationId: postUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstname:
+                  type: string
+                  description: ''
+                  example: voluptate
+                lastname:
+                  type: string
+                  description: ''
+                  example: et
+                dob:
+                  type: string
+                  description: 'This field must be a valid date.'
+                  example: '2023-03-08T23:19:41'
+                email:
+                  type: string
+                  description: 'This field must be a valid email address.'
+                  example: pmarks@example.com
+              required:
+                - firstname
+                - lastname
+                - email
+    get:
+      summary: ''
+      operationId: getUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/user/id/{email}':
+    get:
+      summary: ''
+      operationId: getUserIdEmail
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: email
+        description: ''
+        example: jamal.oberbrunner@example.com
+        required: true
+        schema:
+          type: string
+  /token:
+    post:
+      summary: ''
+      operationId: postToken
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 4
+              required:
+                - user_id
+    get:
+      summary: ''
+      operationId: getToken
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  /analysis:
+    post:
+      summary: ''
+      operationId: postAnalysis
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 12
+                run_at:
+                  type: string
+                  description: ''
+                  example: blanditiis
+                outcomes:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["rerum","vitae"]'
+                summary:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["sunt","a"]'
+                active_rules:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["laborum","quos"]'
+                rules_version:
+                  type: string
+                  description: ''
+                  example: qui
+                project_id:
+                  type: integer
+                  description: ''
+                  example: 14
+              required:
+                - user_id
+                - run_at
+                - outcomes
+                - summary
+                - active_rules
+                - rules_version
+                - project_id
+    get:
+      summary: ''
+      operationId: getAnalysis
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/analysis/{id}':
+    get:
+      summary: ''
+      operationId: getAnalysisId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      operationId: putAnalysisId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    delete:
+      summary: ''
+      operationId: deleteAnalysisId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the analysi.'
+        example: recusandae
+        required: true
+        schema:
+          type: string
+  '/user/{id}':
+    get:
+      summary: ''
+      operationId: getUserId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      operationId: putUserId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstname:
+                  type: string
+                  description: ''
+                  example: ut
+                lastname:
+                  type: string
+                  description: ''
+                  example: consequuntur
+                dob:
+                  type: string
+                  description: 'This field must be a valid date.'
+                  example: '2023-03-08T23:19:41'
+              required:
+                - firstname
+                - lastname
+    delete:
+      summary: ''
+      operationId: deleteUserId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /project:
+    post:
+      summary: ''
+      operationId: postProject
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: velit
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 8
+              required:
+                - name
+                - user_id
+    get:
+      summary: ''
+      operationId: getProject
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/project/{id}':
+    get:
+      summary: ''
+      operationId: getProjectId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      operationId: putProjectId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: non
+              required:
+                - name
+    delete:
+      summary: ''
+      operationId: deleteProjectId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the project.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /organisation:
+    post:
+      summary: ''
+      operationId: postOrganisation
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: repellat
+              required:
+                - name
+    get:
+      summary: ''
+      operationId: getOrganisation
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/organisation/{id}':
+    get:
+      summary: ''
+      operationId: getOrganisationId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    put:
+      summary: ''
+      operationId: putOrganisationId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: adipisci
+              required:
+                - name
+    delete:
+      summary: ''
+      operationId: deleteOrganisationId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the organisation.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/token/{id}':
+    put:
+      summary: ''
+      operationId: putTokenId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: ''
+                  example: consequuntur
+              required:
+                - token
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the token.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: apiKey
+      name: api_token
+      in: header
+      description: ''
+security:
+  -
+    default: []

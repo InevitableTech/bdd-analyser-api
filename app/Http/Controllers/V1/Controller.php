@@ -22,14 +22,14 @@ abstract class Controller extends BaseController
 
     protected $transform = [];
 
-    protected $createInputs = [];
+    public static $createInputs = [];
 
-    protected $updateInputs = [];
+    public static $updateInputs = [];
 
     public function create(Request $request): JsonResource
     {
         try {
-            $inputs = $request->validate($this->createInputs);
+            $inputs = $request->validate(static::$createInputs);
         } catch (\Illuminate\Validation\ValidationException $e) {
             throw new Exception(
                 $e->getMessage() . implode(': ', \Illuminate\Support\Arr::flatten($e->errors()))
@@ -70,11 +70,11 @@ abstract class Controller extends BaseController
 
     public function update(Request $request, int $id): JsonResource
     {
-        if (! $this->updateInputs) {
+        if (! static::$updateInputs) {
             throw new Exception('Update operation not allowed.');
         }
 
-        $inputs = $request->validate($this->updateInputs);
+        $inputs = $request->validate(static::$updateInputs);
 
         $model = $this->getModel();
         $data = $model::update(['id' => $id], $inputs);
@@ -88,6 +88,24 @@ abstract class Controller extends BaseController
         $model::delete(['id' => $id]);
 
         return $this->createResponse(true);
+    }
+
+    /**
+     * This method facilitates the doc generation. Intention is to override in case you want to declare additional
+     * rules not defined in the inputs array.
+     */
+    public static function createInputRules(): array
+    {
+        return static::$createInputs;
+    }
+
+    /**
+     * This method facilitates the doc generation. Intention is to override in case you want to declare additional
+     * rules not defined in the inputs array.
+     */
+    public static function updateInputRules(): array
+    {
+        return static::$updateInputs;
     }
 
     protected function getResource(Model $data = null, $namespace = '\\App\Http\\Resources\\V1\\'): JsonResource

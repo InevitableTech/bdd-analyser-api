@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Crypt;
 
 class TokenController extends Controller
 {
-    protected $createInputs = [
+    public static $createInputs = [
         'user_id' => 'required|int',
     ];
 
-    protected $updateInputs = [
+    public static $updateInputs = [
         'token' => 'required|string',
     ];
 

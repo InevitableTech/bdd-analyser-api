@@ -1,0 +1,1004 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "bdd-analyser-api",
+        "_postman_id": "453eb56f-94fa-4a3e-b0aa-e23a9eb4482f",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET \/",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "\/",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/\/"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"firstname\":\"voluptate\",\"lastname\":\"et\",\"dob\":\"2023-03-08T23:19:41\",\"email\":\"pmarks@example.com\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET user\/id\/{email}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/id\/:email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/id\/:email",
+                            "variable": [
+                                {
+                                    "id": "email",
+                                    "key": "email",
+                                    "value": "jamal.oberbrunner%40example.com",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":4}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST analysis",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":12,\"run_at\":\"blanditiis\",\"outcomes\":\"[\\\"rerum\\\",\\\"vitae\\\"]\",\"summary\":\"[\\\"sunt\\\",\\\"a\\\"]\",\"active_rules\":\"[\\\"laborum\\\",\\\"quos\\\"]\",\"rules_version\":\"qui\",\"project_id\":14}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET analysis\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "recusandae",
+                                    "description": "The ID of the analysi."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET analysis",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT analysis\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "eum",
+                                    "description": "The ID of the analysi."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE analysis\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "id",
+                                    "description": "The ID of the analysi."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET user\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT user\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"firstname\":\"ut\",\"lastname\":\"consequuntur\",\"dob\":\"2023-03-08T23:19:41\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE user\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST project",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "project",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/project"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"velit\",\"user_id\":8}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET project\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "project\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/project\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the project."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET project",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "project",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/project"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT project\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "project\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/project\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the project."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"non\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE project\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "project\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/project\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the project."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST organisation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "organisation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/organisation"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"repellat\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET organisation\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "organisation\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/organisation\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the organisation."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET organisation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "organisation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/organisation"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT organisation\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "organisation\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/organisation\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the organisation."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"adipisci\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE organisation\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "organisation\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/organisation\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the organisation."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT token\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the token."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"consequuntur\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "in",
+                "value": "header",
+                "type": "string"
+            },
+            {
+                "key": "key",
+                "value": "api_token",
+                "type": "string"
+            }
+        ]
+    }
+}

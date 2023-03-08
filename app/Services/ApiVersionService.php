@@ -7,9 +7,7 @@ use Illuminate\Routing\Route;
 
 class ApiVersionService
 {
-    private static $versions = ['v1'];
-
-    public const PLACEHOLDER = '{api-version}';
+    public static $placeholder = '{api-version}';
 
     public static function get(Request $request): ?string
     {
@@ -25,14 +23,19 @@ class ApiVersionService
         return false;
     }
 
+    public static function getPlaceholder(): string
+    {
+        return self::$placeholder;
+    }
+
     public static function setVersionedControllerInRoute(Route $route, string $version): void
     {
         $version = ucfirst($version);
         $action = $route->getAction();
 
-        $action['namespace'] = str_replace(self::PLACEHOLDER, $version, $action['namespace']);
-        $action['uses'] = str_replace(self::PLACEHOLDER, $version, $action['uses']);
-        $action['controller'] = str_replace(self::PLACEHOLDER, $version, $action['controller']);
+        $action['namespace'] = str_replace(self::$placeholder, $version, $action['namespace']);
+        $action['uses'] = str_replace(self::$placeholder, $version, $action['uses']);
+        $action['controller'] = str_replace(self::$placeholder, $version, $action['controller']);
 
         $route->setAction($action);
     }

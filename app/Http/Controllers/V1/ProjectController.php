@@ -10,13 +10,21 @@ use App\Models\User;
 
 class ProjectController extends Controller
 {
-    protected $createInputs = [
+    public static $createInputs = [
         'name' => 'required|string',
     ];
 
-    protected $updateInputs = [
+    public static $updateInputs = [
         'name' => 'required|string',
     ];
+
+    /**
+     * Add user id to the doc block.
+     */
+    public static function createInputRules(): array
+    {
+        return array_merge(parent::createInputRules(), ['user_id' => 'required|int']);
+    }
 
     public function beforeCreate(Request $request, array $input): array
     {

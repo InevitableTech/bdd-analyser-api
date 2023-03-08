@@ -10,14 +10,14 @@ use App\Events\UserCreatedEvent;
 
 class UserController extends Controller
 {
-    protected $createInputs = [
+    public static $createInputs = [
         'firstname' => 'required|string',
         'lastname' => 'required|string',
         'dob' => 'date',
         'email' => 'required|email'
     ];
 
-    protected $updateInputs = [
+    public static $updateInputs = [
         'firstname' => 'required|string',
         'lastname' => 'required|string',
         'dob' => 'date',

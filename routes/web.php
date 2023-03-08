@@ -25,7 +25,7 @@ $router->get('/', function () use ($router) {
  */
 $router->group([
     'middleware' => ['authorise', 'api_versioning'],
-    'namespace' => 'App\Http\Controllers\\' . ApiVersionService::PLACEHOLDER
+    'namespace' => 'App\Http\Controllers\\' . App\Services\ApiVersionService::getPlaceholder()
 ], function ($router) {
     require __DIR__ . '/api_v1.php';
 });
