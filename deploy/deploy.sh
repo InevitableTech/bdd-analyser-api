@@ -75,9 +75,10 @@ echo "AUTH_TOKEN=$AUTH_TOKEN" >> "$newPath/.env"
 cd $newPath
 docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan key:generate
 docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
+docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan config:cache
 
 # Activate new deployment by symlink.
-rm -rf "$1/current"
+rm -rf "$1/current" || true
 ln -s "$newPath" "$1/current"
 
 echo $inactive > "$1/inactive.txt"

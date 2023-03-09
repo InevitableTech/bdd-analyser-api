@@ -73,8 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     needs: [test]
-    # if: github.ref == 'refs/heads/main'
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: github.ref == 'refs/heads/main'
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
@@ -124,8 +123,3 @@ jobs:
           unzip -q /var/tmp/release.zip -d /var/sites/bdd-analyser-api/release
           chmod a+x /var/sites/bdd-analyser-api/release/deploy/deploy.sh
           cd /var/sites/bdd-analyser-api/release/ && ./deploy/deploy.sh "/var/sites/bdd-analyser-api"
-  # on-failure:
-  #   runs-on: ubuntu-latest
-  #   if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-  #   steps:
-  #     - run: echo 'The triggering workflow failed'
