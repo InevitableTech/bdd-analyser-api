@@ -14,6 +14,8 @@ class Analysis extends Model
         'outcomes' => 'array',
         'summary' => 'array',
         'active_rules' => 'array',
+        'active_steps' => 'array',
+        'violations' => 'array',
         'run_at' => 'datetime:Y-m-d H:i:s'
     ];
 

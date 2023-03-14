@@ -10,11 +10,14 @@ class AnalysisController extends Controller
     public static $createInputs = [
         'user_id' => 'required|int',
         'run_at' => 'required|date',
-        'outcomes' => 'required|json',
+        'violations' => 'required|json',
         'summary' => 'required|json',
         'active_rules' => 'required|json',
-        'rules_version' => 'required',
-        'project_id' => 'required|int'
+        'active_steps' => 'required|json',
+        'rules_version' => 'required|string',
+        'project_id' => 'required|int',
+        'branch' => 'string',
+        'commit_hash' => 'string'
     ];
 
     protected function findByCriteria(Request $request, string $model): Builder

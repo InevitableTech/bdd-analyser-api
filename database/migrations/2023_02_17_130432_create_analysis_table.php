@@ -17,10 +17,13 @@ class CreateAnalysisTable extends Migration
             $table->id();
             $table->timestamp('run_at');
             $table->string('rules_version');
-            $table->json('outcomes');
+            $table->json('violations');
             $table->json('summary');
+            $table->json('active_steps');
             $table->json('active_rules');
+            $table->json('severities');
             $table->string('branch')->nullable();
+            $table->string('commit_hash')->nullable();
             $table->timestamps();
 
             $table->foreignId('project_id')->constrained()->onDelete('cascade');
