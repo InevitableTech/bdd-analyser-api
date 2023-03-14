@@ -28,3 +28,6 @@ artisan:
 
 chown:
 	sudo chown -R forceedge01:forceedge01 app config tests public vendor database
+
+docs:
+	docker-compose run api php artisan docs:generate v1

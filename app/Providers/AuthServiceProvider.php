@@ -39,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
                 return User::whereHas(
                     'tokens',
                     fn ($query) => $query
-                        ->where('token', '=', Crypt::encryptString($request->header('user_token')))
+                        ->where('token', '=', $request->header('user_token'))
                             ->where('expires_on', '>', new \DateTime())
                 )->firstOrFail();
             }

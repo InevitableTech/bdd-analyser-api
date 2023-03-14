@@ -13,9 +13,8 @@
 |
 */
 
-Route::group(['prefix' => 'user'], function () {
-    Route::get('/id/{email}', 'UserController@getId');
-    Route::post('/auth', 'UserController@auth');
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('/', 'AuthController@auth');
 });
 
 Route::group(['middleware' => 'authenticate:api'], function () {
@@ -28,6 +27,7 @@ Route::group(['middleware' => 'authenticate:api'], function () {
     });
 
     Route::group(['prefix' => 'user'], function () {
+        Route::get('/id/{email}', 'UserController@getId');
         Route::post('/', 'UserController@create');
         Route::get('/', 'UserController@findAll');
         Route::get('/{id}', 'UserController@find');

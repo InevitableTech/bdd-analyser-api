@@ -23,7 +23,7 @@ class TokenController extends Controller
 
     protected function beforeCreate(Request $request, array $input): array
     {
-        $input['token'] = Crypt::encryptString(Str::random(60));
+        $input['token'] = Crypt::encryptString(Str::random(30));
         $input['expires_on'] = new DateTime('+3 months');
         $input['allowed_endpoints'] = json_encode(['policies' => '*']);
 
@@ -53,10 +53,5 @@ class TokenController extends Controller
         }
 
         return $token;
-    }
-
-    protected function afterFind(Request $request, Model $model): void
-    {
-        $model->token = Crypt::decryptString($model->token);
     }
 }

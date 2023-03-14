@@ -28,6 +28,22 @@ return [
      */
     'routes' => [
         [
+            'include' => [
+                'auth'
+            ],
+
+            'apply' => [
+                /*
+                 * Additional headers to be added to the example requests
+                 */
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json',
+                    'Accept-Version' => 'v1',
+                ],
+            ],
+        ],
+        [
             /*
              * Specify conditions to determine what routes will be a part of this group.
              * A route must fulfill ALL conditions to be included.
@@ -62,7 +78,7 @@ return [
              * The route can be referenced by name or path here. Wildcards are supported.
              */
             'exclude' => [
-                '/health', 'admin.*', 'sanctum/*', '_ignition/*'
+                '/health', 'admin.*', 'sanctum/*', '_ignition/*', 'auth'
             ],
 
             /*
@@ -129,7 +145,7 @@ return [
                      */
                     'cookies' => [
                         // 'name' => 'value'
-                        'user_token' => 'kahlsjdhfjh2h34234k2h4j2j3hk4h2jak==',
+                        'user_token' => 'eyJpdiI6IkNGclFESGNiV25WZHZHeUU1TmQrZ0E9PSIsInZhbHVlIjoiTWNub2lTcDZiL2d1TUo2QmUxSmV0dE1WUEg5aW9tTFppbmMzemJJMG0ydXZKZWtSYzk5S1ZZQnBmb0gxK1d6dyIsIm1hYyI6IjA5OTYyNzc5ZmM4NmNhZmY4MzMyMGU5NzU2ZjE1ZWZjY2YwMjhiMjJhN2I0YzA5YWQ5M2I1MGIwNDQyNTliNjYiLCJ0YWciOiIifQ==',
                     ],
                 ],
             ],

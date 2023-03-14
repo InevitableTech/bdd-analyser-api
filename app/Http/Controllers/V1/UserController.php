@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Events\UserCreatedEvent;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,25 +22,6 @@ class UserController extends Controller
         'lastname' => 'required|string',
         'dob' => 'date',
     ];
-
-    public function auth(Request $request)
-    {
-        // Auth means we recognise the user, they may not have a token? Issue?
-        $request->validate([
-            'email' => 'string|required',
-            'password' => 'string|required'
-        ]);
-
-        $user = User::where('email', $request->input('email'))
-            ->where('enabled', 1)
-            ->first();
-
-        if ($user && Hash::check($request->input('password'), $user->password_hash)) {
-            return $this->getResource($user);
-        }
-
-        throw new \Exception('Not found.');
-    }
 
     public function findByCriteria(Request $request, string $model): ?Builder
     {
