@@ -23,6 +23,7 @@ class CreateUserTable extends Migration
             $table->boolean('enabled');
             $table->boolean('verified')->nullable();
             $table->timestamp('last_login')->nullable();
+            $table->integer('created_by_token_id')->nullable();
             $table->timestamps();
         });
     }

@@ -23,16 +23,17 @@ class TokenController extends Controller
 
     protected function beforeCreate(Request $request, array $input): array
     {
-        $input['token'] = Str::random(60);
+        $input['token'] = Crypt::encryptString(Str::random(60));
         $input['expires_on'] = new DateTime('+3 months');
-        $input['allowed_endpoints'] = '*';
+        $input['allowed_endpoints'] = json_encode(['policies' => '*']);
 
         return $input;
     }
 
     public function create(Request $request): JsonResource
     {
-        // Create only if we've not got an active one already.
+        // They must login to the console, generate a token and then register it with the CLI tool.
+        // Its the only way.
         $token = Token::whereRelation('user', 'user_id', $request->input('user_id'))
             ->where('expires_on', '>', new \DateTime())->first();
 
@@ -52,5 +53,10 @@ class TokenController extends Controller
         }
 
         return $token;
+    }
+
+    protected function afterFind(Request $request, Model $model): void
+    {
+        $model->token = Crypt::decryptString($model->token);
     }
 }

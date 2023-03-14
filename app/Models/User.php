@@ -42,7 +42,7 @@ class User extends Authenticatable implements AuthenticatableContract, Authoriza
      * @var array
      */
     protected $hidden = [
-        'password',
+        'password', 'password_hash'
     ];
 
     public function setDobAttribute(string $value)

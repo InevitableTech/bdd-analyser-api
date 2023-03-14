@@ -6,6 +6,7 @@ use App\Models\Token;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -38,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
                 return User::whereHas(
                     'tokens',
                     fn ($query) => $query
-                        ->where('token', '=', $request->header('user_token'))
+                        ->where('token', '=', Crypt::encryptString($request->header('user_token')))
                             ->where('expires_on', '>', new \DateTime())
                 )->firstOrFail();
             }

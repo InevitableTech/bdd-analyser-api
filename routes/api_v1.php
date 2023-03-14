@@ -14,12 +14,8 @@
 */
 
 Route::group(['prefix' => 'user'], function () {
-    Route::post('/', 'UserController@create');
     Route::get('/id/{email}', 'UserController@getId');
-});
-
-Route::group(['prefix' => 'token'], function () {
-    Route::post('/', 'TokenController@create');
+    Route::post('/auth', 'UserController@auth');
 });
 
 Route::group(['middleware' => 'authenticate:api'], function () {
@@ -32,6 +28,7 @@ Route::group(['middleware' => 'authenticate:api'], function () {
     });
 
     Route::group(['prefix' => 'user'], function () {
+        Route::post('/', 'UserController@create');
         Route::get('/', 'UserController@findAll');
         Route::get('/{id}', 'UserController@find');
         Route::put('/{id}', 'UserController@update');
@@ -58,5 +55,6 @@ Route::group(['middleware' => 'authenticate:api'], function () {
         Route::get('/', 'TokenController@findAll');
         Route::put('/{id}', 'TokenController@update');
         Route::post('/refresh', 'TokenController@refresh');
+        Route::post('/', 'TokenController@create');
     });
 });

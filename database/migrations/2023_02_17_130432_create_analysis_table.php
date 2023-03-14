@@ -15,11 +15,12 @@ class CreateAnalysisTable extends Migration
     {
         Schema::create('analysis', function (Blueprint $table) {
             $table->id();
-            $table->timeStamp('run_at');
+            $table->timestamp('run_at');
             $table->string('rules_version');
             $table->json('outcomes');
             $table->json('summary');
             $table->json('active_rules');
+            $table->string('branch')->nullable();
             $table->timestamps();
 
             $table->foreignId('project_id')->constrained()->onDelete('cascade');

@@ -44,10 +44,22 @@ abstract class Controller extends BaseController
         return $this->getResource($data);
     }
 
+    protected function afterFind(Request $request, Model $model): void
+    {
+    }
+
+    protected function afterFindAll(Request $request, $collection): void
+    {
+        foreach ($collection as $model) {
+            $this->afterFind($request, $model);
+        }
+    }
+
     public function find(Request $request, int $id): JsonResource
     {
         $modelName = $this->getModel();
         $model = $this->findByCriteria($request, $modelName)?->find($id);
+        $this->afterFind($request, $model);
 
         if ($model === null) {
             return $this->getResource();
@@ -60,6 +72,7 @@ abstract class Controller extends BaseController
     {
         $model = $this->getModel();
         $data = $this->findByCriteria($request, $model)?->take(100)->get();
+        $this->afterFindAll($request, $data);
 
         if (! $data) {
             return $this->createResponse([]);
