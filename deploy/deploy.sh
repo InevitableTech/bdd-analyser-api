@@ -54,7 +54,7 @@ if [[ $ENVIRONMENT == 'local' ]]; then
 fi
 
 # Issue, this path is relative to where the script is being executed from. Amend where the script is run from.
-rm -rf "$newPath"
+rm -rf "$newPath" || true
 mkdir -p $newPath
 cp -R ./* "$newPath"
 
