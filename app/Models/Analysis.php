@@ -11,22 +11,26 @@ class Analysis extends Model
     protected $table = 'analysis';
 
     protected $casts = [
-        'outcomes' => 'array',
-        'summary' => 'array',
+        'summary' => 'json',
         'active_rules' => 'array',
         'active_steps' => 'array',
         'violations' => 'array',
+        'severities' => 'array',
         'run_at' => 'datetime:Y-m-d H:i:s'
     ];
 
     protected $fillable = [
         'run_at',
-        'outcomes',
+        'violations',
         'summary',
         'active_rules',
+        'active_steps',
+        'severities',
+        'branch',
+        'commit_hash',
         'rules_version',
         'project_id',
-        'user_id'
+        'user_id',
     ];
 
     public function setRunAtAttribute(string $value)

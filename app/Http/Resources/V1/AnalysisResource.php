@@ -27,4 +27,22 @@ class AnalysisResource extends BaseResource
         'user' => ['id', 'firstname'],
         'project' => ['id', 'name']
     ];
+
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        $array = $this->expose($this->resource);
+
+        $array['summary'] = json_decode($this->resource->summary, true);
+        $array['violations'] = json_decode($this->resource->violations, true);
+        $array['active_steps'] = json_decode($this->resource->active_steps, true);
+        $array['active_rules'] = json_decode($this->resource->active_rules, true);
+        $array['severities'] = json_decode($this->resource->severities, true);
+
+        return $array;
+    }
 }

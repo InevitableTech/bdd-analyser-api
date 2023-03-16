@@ -15,6 +15,7 @@ class AnalysisController extends Controller
         'active_rules' => 'required|json',
         'active_steps' => 'required|json',
         'rules_version' => 'required|string',
+        'severities' => 'required|json',
         'project_id' => 'required|int',
         'branch' => 'string',
         'commit_hash' => 'string'

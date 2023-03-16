@@ -10,6 +10,7 @@ class ProjectResource extends BaseResource
     protected $expose = [
         'id',
         'name',
+        'repo_url',
         'created_at',
         'updated_at',
         'enabled',
