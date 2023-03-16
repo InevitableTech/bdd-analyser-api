@@ -1,0 +1,47 @@
+[
+    {
+        "type": "step",
+        "rule": "Forceedge01\\BDDStaticAnalyserRules\\Rules\\OnlyValidOrderAllowed",
+        "file": "/automation-analyser/testproject/features/cucumber.feature",
+        "lineNumber": 28,
+        "severity": "1",
+        "scenario": "Verification of Login Function",
+        "scenarioLineNumber": 23,
+        "violatingLine": "Then user should see \"My Account\"",
+        "rawStep": "Then user should see \"My Account\" ",
+        "message": "Expected step to start with keyword \"when\", got \"then\" instead. Are you missing a \"when\" step?",
+        "cleanStep": "user should see \"{string}\"",
+        "uniqueScenarioId": "/automation-analyser/testproject/features/cucumber.feature:28",
+        "id": 1
+    },
+    {
+        "type": "step",
+        "rule": "Forceedge01\\BDDStaticAnalyserRules\\Rules\\OnlyValidOrderAllowed",
+        "file": "/automation-analyser/testproject/features/cucumber.feature",
+        "lineNumber": 35,
+        "severity": "1",
+        "scenario": "Unsuccessful login",
+        "scenarioLineNumber": 30,
+        "violatingLine": "Then error message displayed with wrong password",
+        "rawStep": "Then error message displayed with wrong password",
+        "message": "Expected step to start with keyword \"when\", got \"then\" instead. Are you missing a \"when\" step?",
+        "cleanStep": "error message displayed with wrong password",
+        "uniqueScenarioId": "/automation-analyser/testproject/features/cucumber.feature:35",
+        "id": 2
+    },
+    {
+        "type": "step",
+        "rule": "Forceedge01\\BDDStaticAnalyserRules\\Rules\\OnlyFirstPersonLanguageAllowed",
+        "file": "/automation-analyser/testproject/features/cucumber.feature",
+        "lineNumber": 8,
+        "severity": "1",
+        "scenario": "Create a New User",
+        "scenarioLineNumber": 7,
+        "violatingLine": "When user fills \"registration email textbox\" with \"chitrali.sharma27@gmail.com\"",
+        "rawStep": "When user fills \"registration email textbox\" with \"chitrali.sharma27@gmail.com\"  ",
+        "message": "Steps should be written in first person pov only. This makes the scenario more relatable to yourself and encourages you to put yourself into the users position when writing or reading the scenario.",
+        "cleanStep": "user fills \"{string}\" with \"{string}\"",
+        "uniqueScenarioId": "/automation-analyser/testproject/features/cucumber.feature:8",
+        "id": 3
+    }
+]

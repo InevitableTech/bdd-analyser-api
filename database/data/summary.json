@@ -1,0 +1,45 @@
+{
+    "files": 12,
+    "backgrounds":
+    {
+        "/automation-analyser/testproject/features/cucumber.feature2": "/automation-analyser/testproject/features/cucumber.feature2",
+        "/automation-analyser/testproject/features/no-scenarios.feature1": "/automation-analyser/testproject/features/no-scenarios.feature1",
+        "/automation-analyser/testproject/features/test.feature7": "/automation-analyser/testproject/features/test.feature7",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature2": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature2",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/no-scenarios.feature1": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/no-scenarios.feature1",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature7": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature7"
+    },
+    "scenarios":
+    {
+        "/automation-analyser/testproject/features/correct/no-violations.feature7": "/automation-analyser/testproject/features/correct/no-violations.feature7",
+        "/automation-analyser/testproject/features/cucumber.feature7": "/automation-analyser/testproject/features/cucumber.feature7",
+        "/automation-analyser/testproject/features/cucumber.feature17": "/automation-analyser/testproject/features/cucumber.feature17",
+        "/automation-analyser/testproject/features/cucumber.feature23": "/automation-analyser/testproject/features/cucumber.feature23",
+        "/automation-analyser/testproject/features/cucumber.feature30": "/automation-analyser/testproject/features/cucumber.feature30",
+        "/automation-analyser/testproject/features/no-feature-without-narrative.feature4": "/automation-analyser/testproject/features/no-feature-without-narrative.feature4",
+        "/automation-analyser/testproject/features/test.feature13": "/automation-analyser/testproject/features/test.feature13",
+        "/automation-analyser/testproject/features/test.feature28": "/automation-analyser/testproject/features/test.feature28",
+        "/automation-analyser/testproject/features/test.feature34": "/automation-analyser/testproject/features/test.feature34",
+        "/automation-analyser/testproject/features/test.feature40": "/automation-analyser/testproject/features/test.feature40",
+        "/automation-analyser/testproject/features/test.feature52": "/automation-analyser/testproject/features/test.feature52",
+        "/automation-analyser/testproject/features/test.feature58": "/automation-analyser/testproject/features/test.feature58",
+        "/automation-analyser/testproject/features/test.feature76": "/automation-analyser/testproject/features/test.feature76",
+        "/automation-analyser/testproject/features/test2.feature6": "/automation-analyser/testproject/features/test2.feature6",
+        "/automation-analyser/testproject/features/test2.feature13": "/automation-analyser/testproject/features/test2.feature13",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/correct/no-violations.feature7": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/correct/no-violations.feature7",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature7": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature7",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature17": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature17",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature23": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature23",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature30": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/cucumber.feature30",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/no-feature-without-narrative.feature4": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/no-feature-without-narrative.feature4",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature13": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature13",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature28": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature28",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature34": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature34",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature40": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature40",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature52": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature52",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature58": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature58",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature76": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature76",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6",
+        "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13"
+    }
+}
