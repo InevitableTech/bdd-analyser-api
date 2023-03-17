@@ -17,8 +17,8 @@ class AnalysisController extends Controller
         'rules_version' => 'required|string',
         'severities' => 'required|json',
         'project_id' => 'required|int',
-        'branch' => 'string',
-        'commit_hash' => 'string'
+        'branch' => 'nullable|string',
+        'commit_hash' => 'nullable|string'
     ];
 
     public static $updateInputs = [
