@@ -81,7 +81,7 @@ abstract class Controller extends BaseController
         return $this->getResourceCollection($data);
     }
 
-    public function update(Request $request, int $id): JsonResource
+    public function update(Request $request, int $id): array
     {
         if (! static::$updateInputs) {
             throw new Exception('Update operation not allowed.');
@@ -90,9 +90,9 @@ abstract class Controller extends BaseController
         $inputs = $request->validate(static::$updateInputs);
 
         $model = $this->getModel();
-        $data = $model::update(['id' => $id], $inputs);
+        $data = $model::where('id', $id)->update($inputs);
 
-        return $this->getResource($data);
+        return $this->createResponse($data);
     }
 
     public function delete(Request $request, int $id): array
