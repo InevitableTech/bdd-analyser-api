@@ -15,6 +15,7 @@ class AnalysisResource extends BaseResource
         'active_rules',
         'active_steps',
         'violations',
+        'violations_meta',
         'branch',
         'commit_hash',
         'project_id',

@@ -18,6 +18,8 @@ class CreateProjectTable extends Migration
             $table->string('name');
             $table->boolean('enabled');
             $table->string('repo_url')->nullable();
+            $table->string('main_branch')->nullable();
+            $table->json('published_tags')->nullable();
             $table->timestamps();
 
             $table->foreignId('organisation_id')->nullable()->constrained()->onDelete('cascade');

@@ -11,6 +11,8 @@ class ProjectResource extends BaseResource
         'id',
         'name',
         'repo_url',
+        'main_branch',
+        'published_tags',
         'created_at',
         'updated_at',
         'enabled',

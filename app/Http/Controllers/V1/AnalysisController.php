@@ -21,6 +21,10 @@ class AnalysisController extends Controller
         'commit_hash' => 'string'
     ];
 
+    public static $updateInputs = [
+        'violations_meta' => 'required|json',
+    ];
+
     protected function findByCriteria(Request $request, string $model): Builder
     {
         return $model::whereRelation('user', 'user_id', $request->user()->id);

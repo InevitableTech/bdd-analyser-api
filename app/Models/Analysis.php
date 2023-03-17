@@ -15,6 +15,7 @@ class Analysis extends Model
         'active_rules' => 'array',
         'active_steps' => 'array',
         'violations' => 'array',
+        'violations_meta' => 'array',
         'severities' => 'array',
         'run_at' => 'datetime:Y-m-d H:i:s'
     ];
@@ -22,6 +23,7 @@ class Analysis extends Model
     protected $fillable = [
         'run_at',
         'violations',
+        'violations_meta',
         'summary',
         'active_rules',
         'active_steps',

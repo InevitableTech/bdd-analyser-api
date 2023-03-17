@@ -18,6 +18,7 @@ class CreateAnalysisTable extends Migration
             $table->timestamp('run_at');
             $table->string('rules_version');
             $table->json('violations');
+            $table->json('violations_meta')->nullable();
             $table->json('summary');
             $table->json('active_steps');
             $table->json('active_rules');
