@@ -68,11 +68,18 @@ abstract class Controller extends BaseController
         return $this->getResource($model);
     }
 
+    /**
+     * @queryParam order string Example: desc
+     * @queryParam offset number Example: 30
+     * @queryParam limit number Example: 100
+     * @queryParam orderBy string Example: name
+     * @queryParam relations boolean Example: 1
+     */
     public function findAll(Request $request): ResourceCollection
     {
         $model = $this->getModel();
         $data = $this->findByCriteria($request, $model)
-            ?->orderBy('id', $request->query('order', 'desc'))
+            ?->orderBy($request->query('orderBy', 'id'), $request->query('order', 'desc'))
             ->skip($request->query('offset', 0))
             ->take($request->query('limit', 100))
             ->get();

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "bdd-analyser-api",
-        "_postman_id": "9ad8cf14-d067-4a0d-bfbf-b153319bd3dd",
+        "_postman_id": "554b8f1e-a599-460b-9c39-a9c7c779dfc8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -45,7 +45,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"genoveva84@example.org\",\"password\":\"+Z2P;150X\\\/$\"}"
+                            "raw": "{\"email\":\"beahan.macy@example.net\",\"password\":\"B.xAmEk?~u\"}"
                         },
                         "description": ""
                     },
@@ -59,239 +59,6 @@
                             "path": "\/",
                             "query": [],
                             "raw": "{{baseUrl}}\/\/"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "POST analysis",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "analysis",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/analysis"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"user_id\":8,\"run_at\":\"2023-03-14T13:29:52\",\"outcomes\":\"[\\\"sed\\\",\\\"in\\\"]\",\"summary\":\"[\\\"non\\\",\\\"mollitia\\\"]\",\"active_rules\":\"[\\\"rerum\\\",\\\"et\\\"]\",\"rules_version\":\"modi\",\"project_id\":13}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET analysis\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "analysis\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/analysis\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "doloremque",
-                                    "description": "The ID of the analysi."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET analysis",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "analysis",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/analysis"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT analysis\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "analysis\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/analysis\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "omnis",
-                                    "description": "The ID of the analysi."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE analysis\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "analysis\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/analysis\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "veritatis",
-                                    "description": "The ID of the analysi."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept-Version",
-                                "value": "v1"
-                            },
-                            {
-                                "key": "user_token",
-                                "value": "string:token"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET user\/id\/{email}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "user\/id\/:email",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/user\/id\/:email",
-                            "variable": [
-                                {
-                                    "id": "email",
-                                    "key": "email",
-                                    "value": "candida68%40example.com",
-                                    "description": ""
-                                }
-                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -347,8 +114,49 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"firstname\":\"animi\",\"lastname\":\"veniam\",\"dob\":\"2023-03-14T13:29:52\",\"email\":\"rosenbaum.savion@example.net\"}"
+                            "raw": "{\"firstname\":\"aliquid\",\"lastname\":\"aut\",\"dob\":\"2023-03-19T16:23:50\",\"email\":\"jbernhard@example.org\",\"password\":\"?-Z?r*K!#Mug8}g![\"}"
                         },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET user\/id\/{email}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "user\/id\/:email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/user\/id\/:email",
+                            "variable": [
+                                {
+                                    "id": "email",
+                                    "key": "email",
+                                    "value": "hdavis%40example.org",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
                         "description": ""
                     },
                     "response": []
@@ -359,8 +167,39 @@
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/user"
+                            "query": [
+                                {
+                                    "key": "order",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "30",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "100",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "orderBy",
+                                    "value": "name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "relations",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/user?order=desc&offset=30&limit=100&orderBy=name&relations=1"
                         },
                         "method": "GET",
                         "header": [
@@ -465,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"firstname\":\"ut\",\"lastname\":\"fuga\",\"dob\":\"2023-03-14T13:29:52\"}"
+                            "raw": "{\"firstname\":\"et\",\"lastname\":\"cupiditate\",\"last_login\":\"2023-03-19T16:23:50\",\"verified\":false,\"dob\":\"2023-03-19T16:23:50\",\"password\":\"\\\"k^CxrSR3hut3&\"}"
                         },
                         "description": ""
                     },
@@ -485,6 +324,191 @@
                                     "key": "id",
                                     "value": "1",
                                     "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token",
+                            "query": [
+                                {
+                                    "key": "order",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "30",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "100",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "orderBy",
+                                    "value": "name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "relations",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/token?order=desc&offset=30&limit=100&orderBy=name&relations=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT token\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the token."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"description\":\"Maiores harum voluptas ullam.\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":9,\"description\":\"Nobis beatae qui sit possimus aut sed facere.\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE token\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "token\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/token\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the token."
                                 }
                             ]
                         },
@@ -542,7 +566,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sit\",\"user_id\":10}"
+                            "raw": "{\"name\":\"quaerat\",\"main_branch\":\"assumenda\",\"user_id\":5}"
                         },
                         "description": ""
                     },
@@ -595,8 +619,39 @@
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "project",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/project"
+                            "query": [
+                                {
+                                    "key": "order",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "30",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "100",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "orderBy",
+                                    "value": "name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "relations",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/project?order=desc&offset=30&limit=100&orderBy=name&relations=1"
                         },
                         "method": "GET",
                         "header": [
@@ -660,7 +715,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"debitis\"}"
+                            "raw": "{\"name\":\"ut\",\"main_branch\":\"quis\",\"published_tags\":\"neque\"}"
                         },
                         "description": ""
                     },
@@ -737,7 +792,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"modi\"}"
+                            "raw": "{\"name\":\"maxime\"}"
                         },
                         "description": ""
                     },
@@ -790,8 +845,39 @@
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "organisation",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/organisation"
+                            "query": [
+                                {
+                                    "key": "order",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "30",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "100",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "orderBy",
+                                    "value": "name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "relations",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/organisation?order=desc&offset=30&limit=100&orderBy=name&relations=1"
                         },
                         "method": "GET",
                         "header": [
@@ -855,7 +941,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"hic\"}"
+                            "raw": "{\"name\":\"commodi\"}"
                         },
                         "description": ""
                     },
@@ -903,13 +989,57 @@
                     "response": []
                 },
                 {
-                    "name": "GET token",
+                    "name": "POST analysis",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "token",
+                            "path": "analysis",
                             "query": [],
-                            "raw": "{{baseUrl}}\/token"
+                            "raw": "{{baseUrl}}\/analysis"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":17,\"run_at\":\"2023-03-19T16:23:50\",\"violations\":\"[\\\"explicabo\\\",\\\"earum\\\"]\",\"summary\":\"[\\\"dolorum\\\",\\\"magnam\\\"]\",\"active_rules\":\"[\\\"omnis\\\",\\\"iure\\\"]\",\"active_steps\":\"[\\\"perferendis\\\",\\\"impedit\\\"]\",\"rules_version\":\"maxime\",\"severities\":\"[\\\"dolor\\\",\\\"excepturi\\\"]\",\"project_id\":7,\"branch\":\"sit\",\"commit_hash\":\"et\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET analysis\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/analysis\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "repellat",
+                                    "description": "The ID of the analysi."
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -936,19 +1066,83 @@
                     "response": []
                 },
                 {
-                    "name": "PUT token\/{id}",
+                    "name": "GET analysis",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "token\/:id",
+                            "path": "analysis",
+                            "query": [
+                                {
+                                    "key": "order",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "30",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "100",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "orderBy",
+                                    "value": "name",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "relations",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/analysis?order=desc&offset=30&limit=100&orderBy=name&relations=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept-Version",
+                                "value": "v1"
+                            },
+                            {
+                                "key": "user_token",
+                                "value": "string:token"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT analysis\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "analysis\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/token\/:id",
+                            "raw": "{{baseUrl}}\/analysis\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the token."
+                                    "value": "aspernatur",
+                                    "description": "The ID of the analysi."
                                 }
                             ]
                         },
@@ -973,22 +1167,30 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"voluptas\"}"
+                            "raw": "{\"violations_meta\":\"[\\\"consequatur\\\",\\\"quam\\\"]\"}"
                         },
                         "description": ""
                     },
                     "response": []
                 },
                 {
-                    "name": "POST token",
+                    "name": "DELETE analysis\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "token",
+                            "path": "analysis\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/token"
+                            "raw": "{{baseUrl}}\/analysis\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ut",
+                                    "description": "The ID of the analysi."
+                                }
+                            ]
                         },
-                        "method": "POST",
+                        "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1007,10 +1209,7 @@
                                 "value": "string:token"
                             }
                         ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"user_id\":20}"
-                        },
+                        "body": null,
                         "description": ""
                     },
                     "response": []

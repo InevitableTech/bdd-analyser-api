@@ -54,11 +54,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: genoveva84@example.org
+                  example: beahan.macy@example.net
                 password:
                   type: string
                   description: ''
-                  example: +Z2P;150X/$
+                  example: 'B.xAmEk?~u'
               required:
                 - email
                 - password
@@ -106,328 +106,6 @@ paths:
       responses: {  }
       tags:
         - Endpoints
-  /analysis:
-    post:
-      summary: ''
-      operationId: postAnalysis
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: integer
-                  description: ''
-                  example: 8
-                run_at:
-                  type: string
-                  description: 'This field must be a valid date.'
-                  example: '2023-03-14T13:29:52'
-                outcomes:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["sed","in"]'
-                summary:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["non","mollitia"]'
-                active_rules:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["rerum","et"]'
-                rules_version:
-                  type: string
-                  description: ''
-                  example: modi
-                project_id:
-                  type: integer
-                  description: ''
-                  example: 13
-              required:
-                - user_id
-                - run_at
-                - outcomes
-                - summary
-                - active_rules
-                - rules_version
-                - project_id
-    get:
-      summary: ''
-      operationId: getAnalysis
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-  '/analysis/{id}':
-    get:
-      summary: ''
-      operationId: getAnalysisId
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-    put:
-      summary: ''
-      operationId: putAnalysisId
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-    delete:
-      summary: ''
-      operationId: deleteAnalysisId
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the analysi.'
-        example: doloremque
-        required: true
-        schema:
-          type: string
-  '/user/id/{email}':
-    get:
-      summary: ''
-      operationId: getUserIdEmail
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-    parameters:
-      -
-        in: path
-        name: email
-        description: ''
-        example: candida68@example.com
-        required: true
-        schema:
-          type: string
   /user:
     post:
       summary: ''
@@ -482,26 +160,125 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: animi
+                  example: aliquid
                 lastname:
                   type: string
                   description: ''
-                  example: veniam
+                  example: aut
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-14T13:29:52'
+                  example: '2023-03-19T16:23:50'
                 email:
                   type: string
                   description: 'This field must be a valid email address.'
-                  example: rosenbaum.savion@example.net
+                  example: jbernhard@example.org
+                password:
+                  type: string
+                  description: 'This field must be at least 8 characters.'
+                  example: '?-Z?r*K!#Mug8}g!['
               required:
                 - firstname
                 - lastname
                 - email
+                - password
     get:
       summary: ''
       operationId: getUser
+      description: ''
+      parameters:
+        -
+          in: query
+          name: order
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: offset
+          description: ''
+          example: 30.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 30.0
+        -
+          in: query
+          name: limit
+          description: ''
+          example: 100.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 100.0
+        -
+          in: query
+          name: orderBy
+          description: ''
+          example: name
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: name
+        -
+          in: query
+          name: relations
+          description: ''
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: ''
+            example: true
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/user/id/{email}':
+    get:
+      summary: ''
+      operationId: getUserIdEmail
       description: ''
       parameters:
         -
@@ -542,6 +319,15 @@ paths:
       responses: {  }
       tags:
         - Endpoints
+    parameters:
+      -
+        in: path
+        name: email
+        description: ''
+        example: hdavis@example.org
+        required: true
+        schema:
+          type: string
   '/user/{id}':
     get:
       summary: ''
@@ -639,18 +425,29 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: ut
+                  example: et
                 lastname:
                   type: string
                   description: ''
-                  example: fuga
+                  example: cupiditate
+                last_login:
+                  type: string
+                  description: 'This field must be a valid date.'
+                  example: '2023-03-19T16:23:50'
+                verified:
+                  type: boolean
+                  description: ''
+                  example: false
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-14T13:29:52'
+                  example: '2023-03-19T16:23:50'
+                password:
+                  type: string
+                  description: 'This field must be at least 8 characters.'
+                  example: '"k^CxrSR3hut3&'
               required:
-                - firstname
-                - lastname
+                - password
     delete:
       summary: ''
       operationId: deleteUserId
@@ -699,6 +496,267 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /token:
+    get:
+      summary: ''
+      operationId: getToken
+      description: ''
+      parameters:
+        -
+          in: query
+          name: order
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: offset
+          description: ''
+          example: 30.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 30.0
+        -
+          in: query
+          name: limit
+          description: ''
+          example: 100.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 100.0
+        -
+          in: query
+          name: orderBy
+          description: ''
+          example: name
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: name
+        -
+          in: query
+          name: relations
+          description: ''
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: ''
+            example: true
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    post:
+      summary: ''
+      operationId: postToken
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 9
+                description:
+                  type: string
+                  description: ''
+                  example: 'Nobis beatae qui sit possimus aut sed facere.'
+              required:
+                - user_id
+  '/token/{id}':
+    put:
+      summary: ''
+      operationId: putTokenId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  description: ''
+                  example: 'Maiores harum voluptas ullam.'
+    delete:
+      summary: ''
+      operationId: deleteTokenId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the token.'
         example: 1
         required: true
         schema:
@@ -757,11 +815,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sit
+                  example: quaerat
+                main_branch:
+                  type: string
+                  description: ''
+                  example: assumenda
                 user_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 5
               required:
                 - name
                 - user_id
@@ -770,6 +832,56 @@ paths:
       operationId: getProject
       description: ''
       parameters:
+        -
+          in: query
+          name: order
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: offset
+          description: ''
+          example: 30.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 30.0
+        -
+          in: query
+          name: limit
+          description: ''
+          example: 100.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 100.0
+        -
+          in: query
+          name: orderBy
+          description: ''
+          example: name
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: name
+        -
+          in: query
+          name: relations
+          description: ''
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: ''
+            example: true
         -
           in: header
           name: api_token
@@ -905,7 +1017,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: debitis
+                  example: ut
+                main_branch:
+                  type: string
+                  description: ''
+                  example: quis
+                published_tags:
+                  type: string
+                  description: ''
+                  example: neque
               required:
                 - name
     delete:
@@ -1014,7 +1134,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: modi
+                  example: maxime
               required:
                 - name
     get:
@@ -1022,6 +1142,56 @@ paths:
       operationId: getOrganisation
       description: ''
       parameters:
+        -
+          in: query
+          name: order
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: offset
+          description: ''
+          example: 30.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 30.0
+        -
+          in: query
+          name: limit
+          description: ''
+          example: 100.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 100.0
+        -
+          in: query
+          name: orderBy
+          description: ''
+          example: name
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: name
+        -
+          in: query
+          name: relations
+          description: ''
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: ''
+            example: true
         -
           in: header
           name: api_token
@@ -1157,7 +1327,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: hic
+                  example: commodi
               required:
                 - name
     delete:
@@ -1212,53 +1382,10 @@ paths:
         required: true
         schema:
           type: integer
-  /token:
-    get:
-      summary: ''
-      operationId: getToken
-      description: ''
-      parameters:
-        -
-          in: header
-          name: api_token
-          description: ''
-          example: '{YOUR_API_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept-Version
-          description: ''
-          example: v1
-          schema:
-            type: string
-        -
-          in: header
-          name: user_token
-          description: ''
-          example: 'string:token'
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
+  /analysis:
     post:
       summary: ''
-      operationId: postToken
+      operationId: postAnalysis
       description: ''
       parameters:
         -
@@ -1309,13 +1436,197 @@ paths:
                 user_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 17
+                run_at:
+                  type: string
+                  description: 'This field must be a valid date.'
+                  example: '2023-03-19T16:23:50'
+                violations:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["explicabo","earum"]'
+                summary:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["dolorum","magnam"]'
+                active_rules:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["omnis","iure"]'
+                active_steps:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["perferendis","impedit"]'
+                rules_version:
+                  type: string
+                  description: ''
+                  example: maxime
+                severities:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["dolor","excepturi"]'
+                project_id:
+                  type: integer
+                  description: ''
+                  example: 7
+                branch:
+                  type: string
+                  description: ''
+                  example: sit
+                commit_hash:
+                  type: string
+                  description: ''
+                  example: et
               required:
                 - user_id
-  '/token/{id}':
+                - run_at
+                - violations
+                - summary
+                - active_rules
+                - active_steps
+                - rules_version
+                - severities
+                - project_id
+    get:
+      summary: ''
+      operationId: getAnalysis
+      description: ''
+      parameters:
+        -
+          in: query
+          name: order
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: offset
+          description: ''
+          example: 30.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 30.0
+        -
+          in: query
+          name: limit
+          description: ''
+          example: 100.0
+          required: false
+          schema:
+            type: number
+            description: ''
+            example: 100.0
+        -
+          in: query
+          name: orderBy
+          description: ''
+          example: name
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: name
+        -
+          in: query
+          name: relations
+          description: ''
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: ''
+            example: true
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+  '/analysis/{id}':
+    get:
+      summary: ''
+      operationId: getAnalysisId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
     put:
       summary: ''
-      operationId: putTokenId
+      operationId: putAnalysisId
       description: ''
       parameters:
         -
@@ -1363,21 +1674,64 @@ paths:
             schema:
               type: object
               properties:
-                token:
+                violations_meta:
                   type: string
-                  description: ''
-                  example: voluptas
+                  description: 'This field must be a valid JSON string.'
+                  example: '["consequatur","quam"]'
               required:
-                - token
+                - violations_meta
+    delete:
+      summary: ''
+      operationId: deleteAnalysisId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: api_token
+          description: ''
+          example: '{YOUR_API_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+        -
+          in: header
+          name: user_token
+          description: ''
+          example: 'string:token'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the token.'
-        example: 1
+        description: 'The ID of the analysi.'
+        example: repellat
         required: true
         schema:
-          type: integer
+          type: string
 tags:
   -
     name: Endpoints

@@ -77,26 +77,11 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GET-">
                                 <a href="#endpoints-GET-">GET /</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTanalysis">
-                                <a href="#endpoints-POSTanalysis">POST analysis</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETanalysis--id-">
-                                <a href="#endpoints-GETanalysis--id-">GET analysis/{id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETanalysis">
-                                <a href="#endpoints-GETanalysis">GET analysis</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTanalysis--id-">
-                                <a href="#endpoints-PUTanalysis--id-">PUT analysis/{id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEanalysis--id-">
-                                <a href="#endpoints-DELETEanalysis--id-">DELETE analysis/{id}</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTuser">
+                                <a href="#endpoints-POSTuser">POST user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETuser-id--email-">
                                 <a href="#endpoints-GETuser-id--email-">GET user/id/{email}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTuser">
-                                <a href="#endpoints-POSTuser">POST user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETuser">
                                 <a href="#endpoints-GETuser">GET user</a>
@@ -109,6 +94,18 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEuser--id-">
                                 <a href="#endpoints-DELETEuser--id-">DELETE user/{id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETtoken">
+                                <a href="#endpoints-GETtoken">GET token</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTtoken--id-">
+                                <a href="#endpoints-PUTtoken--id-">PUT token/{id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTtoken">
+                                <a href="#endpoints-POSTtoken">POST token</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEtoken--id-">
+                                <a href="#endpoints-DELETEtoken--id-">DELETE token/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTproject">
                                 <a href="#endpoints-POSTproject">POST project</a>
@@ -140,14 +137,20 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEorganisation--id-">
                                 <a href="#endpoints-DELETEorganisation--id-">DELETE organisation/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETtoken">
-                                <a href="#endpoints-GETtoken">GET token</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTanalysis">
+                                <a href="#endpoints-POSTanalysis">POST analysis</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTtoken--id-">
-                                <a href="#endpoints-PUTtoken--id-">PUT token/{id}</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETanalysis--id-">
+                                <a href="#endpoints-GETanalysis--id-">GET analysis/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTtoken">
-                                <a href="#endpoints-POSTtoken">POST token</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETanalysis">
+                                <a href="#endpoints-GETanalysis">GET analysis</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTanalysis--id-">
+                                <a href="#endpoints-PUTanalysis--id-">PUT analysis/{id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEanalysis--id-">
+                                <a href="#endpoints-DELETEanalysis--id-">DELETE analysis/{id}</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -160,7 +163,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 14, 2023</li>
+        <li>Last updated: March 19, 2023</li>
     </ul>
 </div>
 
@@ -204,8 +207,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Accept: application/json" \
     --header "Accept-Version: v1" \
     --data "{
-    \"email\": \"genoveva84@example.org\",
-    \"password\": \"+Z2P;150X\\/$\"
+    \"email\": \"beahan.macy@example.net\",
+    \"password\": \"B.xAmEk?~u\"
 }"
 </code></pre></div>
 
@@ -223,8 +226,8 @@ const headers = {
 };
 
 let body = {
-    "email": "genoveva84@example.org",
-    "password": "+Z2P;150X\/$"
+    "email": "beahan.macy@example.net",
+    "password": "B.xAmEk?~u"
 };
 
 fetch(url, {
@@ -327,10 +330,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTauth"
-               value="genoveva84@example.org"
+               value="beahan.macy@example.net"
                data-component="body">
     <br>
-<p>Example: <code>genoveva84@example.org</code></p>
+<p>Example: <code>beahan.macy@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -338,10 +341,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTauth"
-               value="+Z2P;150X/$"
+               value="B.xAmEk?~u"
                data-component="body">
     <br>
-<p>Example: <code>+Z2P;150X/$</code></p>
+<p>Example: <code>B.xAmEk?~u</code></p>
         </div>
         </form>
 
@@ -485,7 +488,7 @@ fetch(url, {
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTanalysis">POST analysis</h2>
+                    <h2 id="endpoints-POSTuser">POST user</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -493,33 +496,31 @@ fetch(url, {
 
 
 
-<span id="example-requests-POSTanalysis">
+<span id="example-requests-POSTuser">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/analysis" \
+    "http://localhost:8000/user" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"user_id\": 8,
-    \"run_at\": \"2023-03-14T13:29:52\",
-    \"outcomes\": \"[\\\"sed\\\",\\\"in\\\"]\",
-    \"summary\": \"[\\\"non\\\",\\\"mollitia\\\"]\",
-    \"active_rules\": \"[\\\"rerum\\\",\\\"et\\\"]\",
-    \"rules_version\": \"modi\",
-    \"project_id\": 13
+    \"firstname\": \"aliquid\",
+    \"lastname\": \"aut\",
+    \"dob\": \"2023-03-19T16:23:50\",
+    \"email\": \"jbernhard@example.org\",
+    \"password\": \"?-Z?r*K!#Mug8}g![\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/analysis"
+    "http://localhost:8000/user"
 );
 
 const headers = {
@@ -531,13 +532,11 @@ const headers = {
 };
 
 let body = {
-    "user_id": 8,
-    "run_at": "2023-03-14T13:29:52",
-    "outcomes": "[\"sed\",\"in\"]",
-    "summary": "[\"non\",\"mollitia\"]",
-    "active_rules": "[\"rerum\",\"et\"]",
-    "rules_version": "modi",
-    "project_id": 13
+    "firstname": "aliquid",
+    "lastname": "aut",
+    "dob": "2023-03-19T16:23:50",
+    "email": "jbernhard@example.org",
+    "password": "?-Z?r*K!#Mug8}g!["
 };
 
 fetch(url, {
@@ -548,45 +547,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTanalysis">
+<span id="example-responses-POSTuser">
 </span>
-<span id="execution-results-POSTanalysis" hidden>
+<span id="execution-results-POSTuser" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTanalysis"></span>:
+                id="execution-response-status-POSTuser"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTanalysis" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTuser" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTanalysis" hidden>
+<span id="execution-error-POSTuser" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTanalysis"></code></pre>
+    <pre><code id="execution-error-message-POSTuser"></code></pre>
 </span>
-<form id="form-POSTanalysis" data-method="POST"
-      data-path="analysis"
+<form id="form-POSTuser" data-method="POST"
+      data-path="user"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTanalysis', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTuser', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTanalysis"
-                    onclick="tryItOut('POSTanalysis');">Try it out ⚡
+                    id="btn-tryout-POSTuser"
+                    onclick="tryItOut('POSTuser');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTanalysis"
-                    onclick="cancelTryOut('POSTanalysis');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTuser"
+                    onclick="cancelTryOut('POSTuser');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTanalysis" hidden>Send Request 💥
+                    id="btn-executetryout-POSTuser" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>analysis</code></b>
+            <b><code>user</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -594,7 +593,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="POSTanalysis"
+               name="api_token" class="auth-value"               data-endpoint="POSTuser"
                value="{YOUR_API_TOKEN}"
                data-component="header">
     <br>
@@ -605,7 +604,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTanalysis"
+               name="Content-Type"                data-endpoint="POSTuser"
                value="application/json"
                data-component="header">
     <br>
@@ -616,7 +615,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTanalysis"
+               name="Accept"                data-endpoint="POSTuser"
                value="application/json"
                data-component="header">
     <br>
@@ -627,7 +626,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="POSTanalysis"
+               name="Accept-Version"                data-endpoint="POSTuser"
                value="v1"
                data-component="header">
     <br>
@@ -638,7 +637,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="user_token"                data-endpoint="POSTanalysis"
+               name="user_token"                data-endpoint="POSTuser"
                value="string:token"
                data-component="header">
     <br>
@@ -646,679 +645,61 @@ fetch(url, {
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="user_id"                data-endpoint="POSTanalysis"
-               value="8"
-               data-component="body">
-    <br>
-<p>Example: <code>8</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>run_at</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>firstname</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="run_at"                data-endpoint="POSTanalysis"
-               value="2023-03-14T13:29:52"
+               name="firstname"                data-endpoint="POSTuser"
+               value="aliquid"
                data-component="body">
     <br>
-<p>This field must be a valid date. Example: <code>2023-03-14T13:29:52</code></p>
+<p>Example: <code>aliquid</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>outcomes</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>lastname</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="outcomes"                data-endpoint="POSTanalysis"
-               value="["sed","in"]"
+               name="lastname"                data-endpoint="POSTuser"
+               value="aut"
                data-component="body">
     <br>
-<p>This field must be a valid JSON string. Example: <code>["sed","in"]</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>summary</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>dob</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="dob"                data-endpoint="POSTuser"
+               value="2023-03-19T16:23:50"
+               data-component="body">
+    <br>
+<p>This field must be a valid date. Example: <code>2023-03-19T16:23:50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="summary"                data-endpoint="POSTanalysis"
-               value="["non","mollitia"]"
+               name="email"                data-endpoint="POSTuser"
+               value="jbernhard@example.org"
                data-component="body">
     <br>
-<p>This field must be a valid JSON string. Example: <code>["non","mollitia"]</code></p>
+<p>This field must be a valid email address. Example: <code>jbernhard@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>active_rules</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="active_rules"                data-endpoint="POSTanalysis"
-               value="["rerum","et"]"
+               name="password"                data-endpoint="POSTuser"
+               value="?-Z?r*K!#Mug8}g!["
                data-component="body">
     <br>
-<p>This field must be a valid JSON string. Example: <code>["rerum","et"]</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>rules_version</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="rules_version"                data-endpoint="POSTanalysis"
-               value="modi"
-               data-component="body">
-    <br>
-<p>Example: <code>modi</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>project_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="project_id"                data-endpoint="POSTanalysis"
-               value="13"
-               data-component="body">
-    <br>
-<p>Example: <code>13</code></p>
+<p>This field must be at least 8 characters. Example: <code>?-Z?r*K!#Mug8}g![</code></p>
         </div>
         </form>
-
-                    <h2 id="endpoints-GETanalysis--id-">GET analysis/{id}</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETanalysis--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/analysis/doloremque" \
-    --header "api_token: {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Accept-Version: v1" \
-    --header "user_token: string:token"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/analysis/doloremque"
-);
-
-const headers = {
-    "api_token": "{YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Accept-Version": "v1",
-    "user_token": "string:token",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETanalysis--id-">
-    </span>
-<span id="execution-results-GETanalysis--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETanalysis--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETanalysis--id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETanalysis--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETanalysis--id-"></code></pre>
-</span>
-<form id="form-GETanalysis--id-" data-method="GET"
-      data-path="analysis/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETanalysis--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETanalysis--id-"
-                    onclick="tryItOut('GETanalysis--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETanalysis--id-"
-                    onclick="cancelTryOut('GETanalysis--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETanalysis--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>analysis/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="GETanalysis--id-"
-               value="{YOUR_API_TOKEN}"
-               data-component="header">
-    <br>
-<p>Example: <code>{YOUR_API_TOKEN}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="GETanalysis--id-"
-               value="v1"
-               data-component="header">
-    <br>
-<p>Example: <code>v1</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="user_token"                data-endpoint="GETanalysis--id-"
-               value="string:token"
-               data-component="header">
-    <br>
-<p>Example: <code>string:token</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="id"                data-endpoint="GETanalysis--id-"
-               value="doloremque"
-               data-component="url">
-    <br>
-<p>The ID of the analysi. Example: <code>doloremque</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETanalysis">GET analysis</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETanalysis">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/analysis" \
-    --header "api_token: {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Accept-Version: v1" \
-    --header "user_token: string:token"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/analysis"
-);
-
-const headers = {
-    "api_token": "{YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Accept-Version": "v1",
-    "user_token": "string:token",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETanalysis">
-    </span>
-<span id="execution-results-GETanalysis" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETanalysis"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETanalysis" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETanalysis" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETanalysis"></code></pre>
-</span>
-<form id="form-GETanalysis" data-method="GET"
-      data-path="analysis"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETanalysis', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETanalysis"
-                    onclick="tryItOut('GETanalysis');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETanalysis"
-                    onclick="cancelTryOut('GETanalysis');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETanalysis" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>analysis</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="GETanalysis"
-               value="{YOUR_API_TOKEN}"
-               data-component="header">
-    <br>
-<p>Example: <code>{YOUR_API_TOKEN}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETanalysis"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETanalysis"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="GETanalysis"
-               value="v1"
-               data-component="header">
-    <br>
-<p>Example: <code>v1</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="user_token"                data-endpoint="GETanalysis"
-               value="string:token"
-               data-component="header">
-    <br>
-<p>Example: <code>string:token</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-PUTanalysis--id-">PUT analysis/{id}</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-PUTanalysis--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/analysis/omnis" \
-    --header "api_token: {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Accept-Version: v1" \
-    --header "user_token: string:token"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/analysis/omnis"
-);
-
-const headers = {
-    "api_token": "{YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Accept-Version": "v1",
-    "user_token": "string:token",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTanalysis--id-">
-</span>
-<span id="execution-results-PUTanalysis--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTanalysis--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTanalysis--id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTanalysis--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTanalysis--id-"></code></pre>
-</span>
-<form id="form-PUTanalysis--id-" data-method="PUT"
-      data-path="analysis/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTanalysis--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTanalysis--id-"
-                    onclick="tryItOut('PUTanalysis--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTanalysis--id-"
-                    onclick="cancelTryOut('PUTanalysis--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTanalysis--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>analysis/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="PUTanalysis--id-"
-               value="{YOUR_API_TOKEN}"
-               data-component="header">
-    <br>
-<p>Example: <code>{YOUR_API_TOKEN}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="PUTanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="PUTanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="PUTanalysis--id-"
-               value="v1"
-               data-component="header">
-    <br>
-<p>Example: <code>v1</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="user_token"                data-endpoint="PUTanalysis--id-"
-               value="string:token"
-               data-component="header">
-    <br>
-<p>Example: <code>string:token</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="id"                data-endpoint="PUTanalysis--id-"
-               value="omnis"
-               data-component="url">
-    <br>
-<p>The ID of the analysi. Example: <code>omnis</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-DELETEanalysis--id-">DELETE analysis/{id}</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-DELETEanalysis--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/analysis/veritatis" \
-    --header "api_token: {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Accept-Version: v1" \
-    --header "user_token: string:token"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/analysis/veritatis"
-);
-
-const headers = {
-    "api_token": "{YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Accept-Version": "v1",
-    "user_token": "string:token",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEanalysis--id-">
-</span>
-<span id="execution-results-DELETEanalysis--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEanalysis--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEanalysis--id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEanalysis--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEanalysis--id-"></code></pre>
-</span>
-<form id="form-DELETEanalysis--id-" data-method="DELETE"
-      data-path="analysis/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEanalysis--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEanalysis--id-"
-                    onclick="tryItOut('DELETEanalysis--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEanalysis--id-"
-                    onclick="cancelTryOut('DELETEanalysis--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEanalysis--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>analysis/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="DELETEanalysis--id-"
-               value="{YOUR_API_TOKEN}"
-               data-component="header">
-    <br>
-<p>Example: <code>{YOUR_API_TOKEN}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="DELETEanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="DELETEanalysis--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="DELETEanalysis--id-"
-               value="v1"
-               data-component="header">
-    <br>
-<p>Example: <code>v1</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="user_token"                data-endpoint="DELETEanalysis--id-"
-               value="string:token"
-               data-component="header">
-    <br>
-<p>Example: <code>string:token</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="id"                data-endpoint="DELETEanalysis--id-"
-               value="veritatis"
-               data-component="url">
-    <br>
-<p>The ID of the analysi. Example: <code>veritatis</code></p>
-            </div>
-                    </form>
 
                     <h2 id="endpoints-GETuser-id--email-">GET user/id/{email}</h2>
 
@@ -1334,7 +715,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/user/id/candida68@example.com" \
+    --get "http://localhost:8000/user/id/hdavis@example.org" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1344,7 +725,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/user/id/candida68@example.com"
+    "http://localhost:8000/user/id/hdavis@example.org"
 );
 
 const headers = {
@@ -1465,212 +846,12 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="GETuser-id--email-"
-               value="candida68@example.com"
+               value="hdavis@example.org"
                data-component="url">
     <br>
-<p>Example: <code>candida68@example.com</code></p>
+<p>Example: <code>hdavis@example.org</code></p>
             </div>
                     </form>
-
-                    <h2 id="endpoints-POSTuser">POST user</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-POSTuser">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/user" \
-    --header "api_token: {YOUR_API_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Accept-Version: v1" \
-    --header "user_token: string:token" \
-    --data "{
-    \"firstname\": \"animi\",
-    \"lastname\": \"veniam\",
-    \"dob\": \"2023-03-14T13:29:52\",
-    \"email\": \"rosenbaum.savion@example.net\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/user"
-);
-
-const headers = {
-    "api_token": "{YOUR_API_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Accept-Version": "v1",
-    "user_token": "string:token",
-};
-
-let body = {
-    "firstname": "animi",
-    "lastname": "veniam",
-    "dob": "2023-03-14T13:29:52",
-    "email": "rosenbaum.savion@example.net"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTuser">
-</span>
-<span id="execution-results-POSTuser" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTuser"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTuser" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTuser" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTuser"></code></pre>
-</span>
-<form id="form-POSTuser" data-method="POST"
-      data-path="user"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTuser', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTuser"
-                    onclick="tryItOut('POSTuser');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTuser"
-                    onclick="cancelTryOut('POSTuser');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTuser" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="POSTuser"
-               value="{YOUR_API_TOKEN}"
-               data-component="header">
-    <br>
-<p>Example: <code>{YOUR_API_TOKEN}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTuser"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTuser"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="POSTuser"
-               value="v1"
-               data-component="header">
-    <br>
-<p>Example: <code>v1</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="user_token"                data-endpoint="POSTuser"
-               value="string:token"
-               data-component="header">
-    <br>
-<p>Example: <code>string:token</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>firstname</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="firstname"                data-endpoint="POSTuser"
-               value="animi"
-               data-component="body">
-    <br>
-<p>Example: <code>animi</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>lastname</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="lastname"                data-endpoint="POSTuser"
-               value="veniam"
-               data-component="body">
-    <br>
-<p>Example: <code>veniam</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>dob</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="dob"                data-endpoint="POSTuser"
-               value="2023-03-14T13:29:52"
-               data-component="body">
-    <br>
-<p>This field must be a valid date. Example: <code>2023-03-14T13:29:52</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="email"                data-endpoint="POSTuser"
-               value="rosenbaum.savion@example.net"
-               data-component="body">
-    <br>
-<p>This field must be a valid email address. Example: <code>rosenbaum.savion@example.net</code></p>
-        </div>
-        </form>
 
                     <h2 id="endpoints-GETuser">GET user</h2>
 
@@ -1686,7 +867,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/user" \
+    --get "http://localhost:8000/user?order=desc&amp;offset=30&amp;limit=100&amp;orderBy=name&amp;relations=1" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1698,6 +879,16 @@ fetch(url, {
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/user"
 );
+
+const params = {
+    "order": "desc",
+    "offset": "30",
+    "limit": "100",
+    "orderBy": "name",
+    "relations": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "api_token": "{YOUR_API_TOKEN}",
@@ -1810,7 +1001,73 @@ fetch(url, {
     <br>
 <p>Example: <code>string:token</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="GETuser"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Example: <code>desc</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>offset</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="offset"                data-endpoint="GETuser"
+               value="30"
+               data-component="query">
+    <br>
+<p>Example: <code>30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETuser"
+               value="100"
+               data-component="query">
+    <br>
+<p>Example: <code>100</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>orderBy</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="orderBy"                data-endpoint="GETuser"
+               value="name"
+               data-component="query">
+    <br>
+<p>Example: <code>name</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>relations</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETuser" style="display: none">
+            <input type="radio" name="relations"
+                   value="1"
+                   data-endpoint="GETuser"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETuser" style="display: none">
+            <input type="radio" name="relations"
+                   value="0"
+                   data-endpoint="GETuser"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+            </div>
+                </form>
 
                     <h2 id="endpoints-GETuser--id-">GET user/{id}</h2>
 
@@ -1985,9 +1242,12 @@ fetch(url, {
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"firstname\": \"ut\",
-    \"lastname\": \"fuga\",
-    \"dob\": \"2023-03-14T13:29:52\"
+    \"firstname\": \"et\",
+    \"lastname\": \"cupiditate\",
+    \"last_login\": \"2023-03-19T16:23:50\",
+    \"verified\": false,
+    \"dob\": \"2023-03-19T16:23:50\",
+    \"password\": \"\\\"k^CxrSR3hut3&amp;\"
 }"
 </code></pre></div>
 
@@ -2006,9 +1266,12 @@ const headers = {
 };
 
 let body = {
-    "firstname": "ut",
-    "lastname": "fuga",
-    "dob": "2023-03-14T13:29:52"
+    "firstname": "et",
+    "lastname": "cupiditate",
+    "last_login": "2023-03-19T16:23:50",
+    "verified": false,
+    "dob": "2023-03-19T16:23:50",
+    "password": "\"k^CxrSR3hut3&amp;"
 };
 
 fetch(url, {
@@ -2131,24 +1394,56 @@ fetch(url, {
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>firstname</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="firstname"                data-endpoint="PUTuser--id-"
-               value="ut"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>lastname</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="lastname"                data-endpoint="PUTuser--id-"
-               value="fuga"
+               value="cupiditate"
                data-component="body">
     <br>
-<p>Example: <code>fuga</code></p>
+<p>Example: <code>cupiditate</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>last_login</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="last_login"                data-endpoint="PUTuser--id-"
+               value="2023-03-19T16:23:50"
+               data-component="body">
+    <br>
+<p>This field must be a valid date. Example: <code>2023-03-19T16:23:50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>verified</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="PUTuser--id-" style="display: none">
+            <input type="radio" name="verified"
+                   value="true"
+                   data-endpoint="PUTuser--id-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTuser--id-" style="display: none">
+            <input type="radio" name="verified"
+                   value="false"
+                   data-endpoint="PUTuser--id-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>dob</code></b>&nbsp;&nbsp;
@@ -2156,10 +1451,21 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="dob"                data-endpoint="PUTuser--id-"
-               value="2023-03-14T13:29:52"
+               value="2023-03-19T16:23:50"
                data-component="body">
     <br>
-<p>This field must be a valid date. Example: <code>2023-03-14T13:29:52</code></p>
+<p>This field must be a valid date. Example: <code>2023-03-19T16:23:50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="password"                data-endpoint="PUTuser--id-"
+               value=""k^CxrSR3hut3&"
+               data-component="body">
+    <br>
+<p>This field must be at least 8 characters. Example: <code>"k^CxrSR3hut3&amp;</code></p>
         </div>
         </form>
 
@@ -2315,6 +1621,721 @@ fetch(url, {
             </div>
                     </form>
 
+                    <h2 id="endpoints-GETtoken">GET token</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETtoken">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/token?order=desc&amp;offset=30&amp;limit=100&amp;orderBy=name&amp;relations=1" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/token"
+);
+
+const params = {
+    "order": "desc",
+    "offset": "30",
+    "limit": "100",
+    "orderBy": "name",
+    "relations": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETtoken">
+    </span>
+<span id="execution-results-GETtoken" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETtoken"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETtoken" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETtoken" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETtoken"></code></pre>
+</span>
+<form id="form-GETtoken" data-method="GET"
+      data-path="token"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETtoken', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETtoken"
+                    onclick="tryItOut('GETtoken');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETtoken"
+                    onclick="cancelTryOut('GETtoken');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETtoken" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>token</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="GETtoken"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETtoken"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETtoken"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="GETtoken"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="GETtoken"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="GETtoken"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Example: <code>desc</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>offset</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="offset"                data-endpoint="GETtoken"
+               value="30"
+               data-component="query">
+    <br>
+<p>Example: <code>30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETtoken"
+               value="100"
+               data-component="query">
+    <br>
+<p>Example: <code>100</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>orderBy</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="orderBy"                data-endpoint="GETtoken"
+               value="name"
+               data-component="query">
+    <br>
+<p>Example: <code>name</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>relations</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETtoken" style="display: none">
+            <input type="radio" name="relations"
+                   value="1"
+                   data-endpoint="GETtoken"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETtoken" style="display: none">
+            <input type="radio" name="relations"
+                   value="0"
+                   data-endpoint="GETtoken"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+            </div>
+                </form>
+
+                    <h2 id="endpoints-PUTtoken--id-">PUT token/{id}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTtoken--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/token/1" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token" \
+    --data "{
+    \"description\": \"Maiores harum voluptas ullam.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/token/1"
+);
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+let body = {
+    "description": "Maiores harum voluptas ullam."
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTtoken--id-">
+</span>
+<span id="execution-results-PUTtoken--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTtoken--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTtoken--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTtoken--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTtoken--id-"></code></pre>
+</span>
+<form id="form-PUTtoken--id-" data-method="PUT"
+      data-path="token/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTtoken--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTtoken--id-"
+                    onclick="tryItOut('PUTtoken--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTtoken--id-"
+                    onclick="cancelTryOut('PUTtoken--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTtoken--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>token/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="PUTtoken--id-"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTtoken--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTtoken--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="PUTtoken--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="PUTtoken--id-"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="PUTtoken--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the token. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="description"                data-endpoint="PUTtoken--id-"
+               value="Maiores harum voluptas ullam."
+               data-component="body">
+    <br>
+<p>Example: <code>Maiores harum voluptas ullam.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTtoken">POST token</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTtoken">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/token" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token" \
+    --data "{
+    \"user_id\": 9,
+    \"description\": \"Nobis beatae qui sit possimus aut sed facere.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/token"
+);
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+let body = {
+    "user_id": 9,
+    "description": "Nobis beatae qui sit possimus aut sed facere."
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTtoken">
+</span>
+<span id="execution-results-POSTtoken" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTtoken"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTtoken" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTtoken" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTtoken"></code></pre>
+</span>
+<form id="form-POSTtoken" data-method="POST"
+      data-path="token"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTtoken', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTtoken"
+                    onclick="tryItOut('POSTtoken');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTtoken"
+                    onclick="cancelTryOut('POSTtoken');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTtoken" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>token</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="POSTtoken"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTtoken"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTtoken"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="POSTtoken"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="POSTtoken"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="user_id"                data-endpoint="POSTtoken"
+               value="9"
+               data-component="body">
+    <br>
+<p>Example: <code>9</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="description"                data-endpoint="POSTtoken"
+               value="Nobis beatae qui sit possimus aut sed facere."
+               data-component="body">
+    <br>
+<p>Example: <code>Nobis beatae qui sit possimus aut sed facere.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-DELETEtoken--id-">DELETE token/{id}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEtoken--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/token/1" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/token/1"
+);
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEtoken--id-">
+</span>
+<span id="execution-results-DELETEtoken--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEtoken--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEtoken--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEtoken--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEtoken--id-"></code></pre>
+</span>
+<form id="form-DELETEtoken--id-" data-method="DELETE"
+      data-path="token/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEtoken--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEtoken--id-"
+                    onclick="tryItOut('DELETEtoken--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEtoken--id-"
+                    onclick="cancelTryOut('DELETEtoken--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEtoken--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>token/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="DELETEtoken--id-"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="DELETEtoken--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="DELETEtoken--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="DELETEtoken--id-"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="DELETEtoken--id-"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="DELETEtoken--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the token. Example: <code>1</code></p>
+            </div>
+                    </form>
+
                     <h2 id="endpoints-POSTproject">POST project</h2>
 
 <p>
@@ -2336,8 +2357,9 @@ fetch(url, {
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"name\": \"sit\",
-    \"user_id\": 10
+    \"name\": \"quaerat\",
+    \"main_branch\": \"assumenda\",
+    \"user_id\": 5
 }"
 </code></pre></div>
 
@@ -2356,8 +2378,9 @@ const headers = {
 };
 
 let body = {
-    "name": "sit",
-    "user_id": 10
+    "name": "quaerat",
+    "main_branch": "assumenda",
+    "user_id": 5
 };
 
 fetch(url, {
@@ -2471,10 +2494,21 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTproject"
-               value="sit"
+               value="quaerat"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>quaerat</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>main_branch</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="main_branch"                data-endpoint="POSTproject"
+               value="assumenda"
+               data-component="body">
+    <br>
+<p>Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -2482,10 +2516,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="user_id"                data-endpoint="POSTproject"
-               value="10"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>10</code></p>
+<p>Example: <code>5</code></p>
         </div>
         </form>
 
@@ -2655,7 +2689,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/project" \
+    --get "http://localhost:8000/project?order=desc&amp;offset=30&amp;limit=100&amp;orderBy=name&amp;relations=1" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2667,6 +2701,16 @@ fetch(url, {
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/project"
 );
+
+const params = {
+    "order": "desc",
+    "offset": "30",
+    "limit": "100",
+    "orderBy": "name",
+    "relations": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "api_token": "{YOUR_API_TOKEN}",
@@ -2779,7 +2823,73 @@ fetch(url, {
     <br>
 <p>Example: <code>string:token</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="GETproject"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Example: <code>desc</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>offset</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="offset"                data-endpoint="GETproject"
+               value="30"
+               data-component="query">
+    <br>
+<p>Example: <code>30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETproject"
+               value="100"
+               data-component="query">
+    <br>
+<p>Example: <code>100</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>orderBy</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="orderBy"                data-endpoint="GETproject"
+               value="name"
+               data-component="query">
+    <br>
+<p>Example: <code>name</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>relations</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETproject" style="display: none">
+            <input type="radio" name="relations"
+                   value="1"
+                   data-endpoint="GETproject"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETproject" style="display: none">
+            <input type="radio" name="relations"
+                   value="0"
+                   data-endpoint="GETproject"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+            </div>
+                </form>
 
                     <h2 id="endpoints-PUTproject--id-">PUT project/{id}</h2>
 
@@ -2802,7 +2912,9 @@ fetch(url, {
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"name\": \"debitis\"
+    \"name\": \"ut\",
+    \"main_branch\": \"quis\",
+    \"published_tags\": \"neque\"
 }"
 </code></pre></div>
 
@@ -2821,7 +2933,9 @@ const headers = {
 };
 
 let body = {
-    "name": "debitis"
+    "name": "ut",
+    "main_branch": "quis",
+    "published_tags": "neque"
 };
 
 fetch(url, {
@@ -2947,10 +3061,32 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTproject--id-"
-               value="debitis"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>debitis</code></p>
+<p>Example: <code>ut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>main_branch</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="main_branch"                data-endpoint="PUTproject--id-"
+               value="quis"
+               data-component="body">
+    <br>
+<p>Example: <code>quis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>published_tags</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="published_tags"                data-endpoint="PUTproject--id-"
+               value="neque"
+               data-component="body">
+    <br>
+<p>Example: <code>neque</code></p>
         </div>
         </form>
 
@@ -3127,7 +3263,7 @@ fetch(url, {
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"name\": \"modi\"
+    \"name\": \"maxime\"
 }"
 </code></pre></div>
 
@@ -3146,7 +3282,7 @@ const headers = {
 };
 
 let body = {
-    "name": "modi"
+    "name": "maxime"
 };
 
 fetch(url, {
@@ -3260,10 +3396,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTorganisation"
-               value="modi"
+               value="maxime"
                data-component="body">
     <br>
-<p>Example: <code>modi</code></p>
+<p>Example: <code>maxime</code></p>
         </div>
         </form>
 
@@ -3433,7 +3569,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/organisation" \
+    --get "http://localhost:8000/organisation?order=desc&amp;offset=30&amp;limit=100&amp;orderBy=name&amp;relations=1" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3445,6 +3581,16 @@ fetch(url, {
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/organisation"
 );
+
+const params = {
+    "order": "desc",
+    "offset": "30",
+    "limit": "100",
+    "orderBy": "name",
+    "relations": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "api_token": "{YOUR_API_TOKEN}",
@@ -3557,7 +3703,73 @@ fetch(url, {
     <br>
 <p>Example: <code>string:token</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="GETorganisation"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Example: <code>desc</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>offset</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="offset"                data-endpoint="GETorganisation"
+               value="30"
+               data-component="query">
+    <br>
+<p>Example: <code>30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETorganisation"
+               value="100"
+               data-component="query">
+    <br>
+<p>Example: <code>100</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>orderBy</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="orderBy"                data-endpoint="GETorganisation"
+               value="name"
+               data-component="query">
+    <br>
+<p>Example: <code>name</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>relations</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETorganisation" style="display: none">
+            <input type="radio" name="relations"
+                   value="1"
+                   data-endpoint="GETorganisation"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETorganisation" style="display: none">
+            <input type="radio" name="relations"
+                   value="0"
+                   data-endpoint="GETorganisation"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+            </div>
+                </form>
 
                     <h2 id="endpoints-PUTorganisation--id-">PUT organisation/{id}</h2>
 
@@ -3580,7 +3792,7 @@ fetch(url, {
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"name\": \"hic\"
+    \"name\": \"commodi\"
 }"
 </code></pre></div>
 
@@ -3599,7 +3811,7 @@ const headers = {
 };
 
 let body = {
-    "name": "hic"
+    "name": "commodi"
 };
 
 fetch(url, {
@@ -3725,10 +3937,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTorganisation--id-"
-               value="hic"
+               value="commodi"
                data-component="body">
     <br>
-<p>Example: <code>hic</code></p>
+<p>Example: <code>commodi</code></p>
         </div>
         </form>
 
@@ -3884,7 +4096,7 @@ fetch(url, {
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETtoken">GET token</h2>
+                    <h2 id="endpoints-POSTanalysis">POST analysis</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -3892,13 +4104,304 @@ fetch(url, {
 
 
 
-<span id="example-requests-GETtoken">
+<span id="example-requests-POSTanalysis">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/analysis" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token" \
+    --data "{
+    \"user_id\": 17,
+    \"run_at\": \"2023-03-19T16:23:50\",
+    \"violations\": \"[\\\"explicabo\\\",\\\"earum\\\"]\",
+    \"summary\": \"[\\\"dolorum\\\",\\\"magnam\\\"]\",
+    \"active_rules\": \"[\\\"omnis\\\",\\\"iure\\\"]\",
+    \"active_steps\": \"[\\\"perferendis\\\",\\\"impedit\\\"]\",
+    \"rules_version\": \"maxime\",
+    \"severities\": \"[\\\"dolor\\\",\\\"excepturi\\\"]\",
+    \"project_id\": 7,
+    \"branch\": \"sit\",
+    \"commit_hash\": \"et\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/analysis"
+);
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+let body = {
+    "user_id": 17,
+    "run_at": "2023-03-19T16:23:50",
+    "violations": "[\"explicabo\",\"earum\"]",
+    "summary": "[\"dolorum\",\"magnam\"]",
+    "active_rules": "[\"omnis\",\"iure\"]",
+    "active_steps": "[\"perferendis\",\"impedit\"]",
+    "rules_version": "maxime",
+    "severities": "[\"dolor\",\"excepturi\"]",
+    "project_id": 7,
+    "branch": "sit",
+    "commit_hash": "et"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTanalysis">
+</span>
+<span id="execution-results-POSTanalysis" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTanalysis"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTanalysis" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTanalysis" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTanalysis"></code></pre>
+</span>
+<form id="form-POSTanalysis" data-method="POST"
+      data-path="analysis"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTanalysis', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTanalysis"
+                    onclick="tryItOut('POSTanalysis');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTanalysis"
+                    onclick="cancelTryOut('POSTanalysis');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTanalysis" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>analysis</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="POSTanalysis"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTanalysis"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTanalysis"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="POSTanalysis"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="POSTanalysis"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="user_id"                data-endpoint="POSTanalysis"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>run_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="run_at"                data-endpoint="POSTanalysis"
+               value="2023-03-19T16:23:50"
+               data-component="body">
+    <br>
+<p>This field must be a valid date. Example: <code>2023-03-19T16:23:50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>violations</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="violations"                data-endpoint="POSTanalysis"
+               value="["explicabo","earum"]"
+               data-component="body">
+    <br>
+<p>This field must be a valid JSON string. Example: <code>["explicabo","earum"]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>summary</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="summary"                data-endpoint="POSTanalysis"
+               value="["dolorum","magnam"]"
+               data-component="body">
+    <br>
+<p>This field must be a valid JSON string. Example: <code>["dolorum","magnam"]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active_rules</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="active_rules"                data-endpoint="POSTanalysis"
+               value="["omnis","iure"]"
+               data-component="body">
+    <br>
+<p>This field must be a valid JSON string. Example: <code>["omnis","iure"]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active_steps</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="active_steps"                data-endpoint="POSTanalysis"
+               value="["perferendis","impedit"]"
+               data-component="body">
+    <br>
+<p>This field must be a valid JSON string. Example: <code>["perferendis","impedit"]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rules_version</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="rules_version"                data-endpoint="POSTanalysis"
+               value="maxime"
+               data-component="body">
+    <br>
+<p>Example: <code>maxime</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>severities</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="severities"                data-endpoint="POSTanalysis"
+               value="["dolor","excepturi"]"
+               data-component="body">
+    <br>
+<p>This field must be a valid JSON string. Example: <code>["dolor","excepturi"]</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>project_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="project_id"                data-endpoint="POSTanalysis"
+               value="7"
+               data-component="body">
+    <br>
+<p>Example: <code>7</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="branch"                data-endpoint="POSTanalysis"
+               value="sit"
+               data-component="body">
+    <br>
+<p>Example: <code>sit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>commit_hash</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="commit_hash"                data-endpoint="POSTanalysis"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETanalysis--id-">GET analysis/{id}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETanalysis--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/token" \
+    --get "http://localhost:8000/analysis/repellat" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3908,7 +4411,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/token"
+    "http://localhost:8000/analysis/repellat"
 );
 
 const headers = {
@@ -3926,45 +4429,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETtoken">
+<span id="example-responses-GETanalysis--id-">
     </span>
-<span id="execution-results-GETtoken" hidden>
+<span id="execution-results-GETanalysis--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETtoken"></span>:
+                id="execution-response-status-GETanalysis--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETtoken" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-GETanalysis--id-" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETtoken" hidden>
+<span id="execution-error-GETanalysis--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETtoken"></code></pre>
+    <pre><code id="execution-error-message-GETanalysis--id-"></code></pre>
 </span>
-<form id="form-GETtoken" data-method="GET"
-      data-path="token"
+<form id="form-GETanalysis--id-" data-method="GET"
+      data-path="analysis/{id}"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETtoken', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETanalysis--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETtoken"
-                    onclick="tryItOut('GETtoken');">Try it out ⚡
+                    id="btn-tryout-GETanalysis--id-"
+                    onclick="tryItOut('GETanalysis--id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETtoken"
-                    onclick="cancelTryOut('GETtoken');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETanalysis--id-"
+                    onclick="cancelTryOut('GETanalysis--id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETtoken" hidden>Send Request 💥
+                    id="btn-executetryout-GETanalysis--id-" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>token</code></b>
+            <b><code>analysis/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3972,7 +4475,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="GETtoken"
+               name="api_token" class="auth-value"               data-endpoint="GETanalysis--id-"
                value="{YOUR_API_TOKEN}"
                data-component="header">
     <br>
@@ -3983,7 +4486,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETtoken"
+               name="Content-Type"                data-endpoint="GETanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -3994,7 +4497,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETtoken"
+               name="Accept"                data-endpoint="GETanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -4005,7 +4508,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="GETtoken"
+               name="Accept-Version"                data-endpoint="GETanalysis--id-"
                value="v1"
                data-component="header">
     <br>
@@ -4016,15 +4519,27 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="user_token"                data-endpoint="GETtoken"
+               name="user_token"                data-endpoint="GETanalysis--id-"
                value="string:token"
                data-component="header">
     <br>
 <p>Example: <code>string:token</code></p>
             </div>
-                        </form>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="id"                data-endpoint="GETanalysis--id-"
+               value="repellat"
+               data-component="url">
+    <br>
+<p>The ID of the analysi. Example: <code>repellat</code></p>
+            </div>
+                    </form>
 
-                    <h2 id="endpoints-PUTtoken--id-">PUT token/{id}</h2>
+                    <h2 id="endpoints-GETanalysis">GET analysis</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -4032,27 +4547,243 @@ fetch(url, {
 
 
 
-<span id="example-requests-PUTtoken--id-">
+<span id="example-requests-GETanalysis">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/analysis?order=desc&amp;offset=30&amp;limit=100&amp;orderBy=name&amp;relations=1" \
+    --header "api_token: {YOUR_API_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Version: v1" \
+    --header "user_token: string:token"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/analysis"
+);
+
+const params = {
+    "order": "desc",
+    "offset": "30",
+    "limit": "100",
+    "orderBy": "name",
+    "relations": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "api_token": "{YOUR_API_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Version": "v1",
+    "user_token": "string:token",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETanalysis">
+    </span>
+<span id="execution-results-GETanalysis" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETanalysis"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETanalysis" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETanalysis" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETanalysis"></code></pre>
+</span>
+<form id="form-GETanalysis" data-method="GET"
+      data-path="analysis"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETanalysis', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETanalysis"
+                    onclick="tryItOut('GETanalysis');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETanalysis"
+                    onclick="cancelTryOut('GETanalysis');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETanalysis" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>analysis</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>api_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="api_token" class="auth-value"               data-endpoint="GETanalysis"
+               value="{YOUR_API_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>{YOUR_API_TOKEN}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETanalysis"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETanalysis"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Version</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept-Version"                data-endpoint="GETanalysis"
+               value="v1"
+               data-component="header">
+    <br>
+<p>Example: <code>v1</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_token</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="user_token"                data-endpoint="GETanalysis"
+               value="string:token"
+               data-component="header">
+    <br>
+<p>Example: <code>string:token</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="GETanalysis"
+               value="desc"
+               data-component="query">
+    <br>
+<p>Example: <code>desc</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>offset</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="offset"                data-endpoint="GETanalysis"
+               value="30"
+               data-component="query">
+    <br>
+<p>Example: <code>30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETanalysis"
+               value="100"
+               data-component="query">
+    <br>
+<p>Example: <code>100</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>orderBy</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="orderBy"                data-endpoint="GETanalysis"
+               value="name"
+               data-component="query">
+    <br>
+<p>Example: <code>name</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>relations</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETanalysis" style="display: none">
+            <input type="radio" name="relations"
+                   value="1"
+                   data-endpoint="GETanalysis"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETanalysis" style="display: none">
+            <input type="radio" name="relations"
+                   value="0"
+                   data-endpoint="GETanalysis"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>true</code></p>
+            </div>
+                </form>
+
+                    <h2 id="endpoints-PUTanalysis--id-">PUT analysis/{id}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTanalysis--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/token/1" \
+    "http://localhost:8000/analysis/aspernatur" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Version: v1" \
     --header "user_token: string:token" \
     --data "{
-    \"token\": \"voluptas\"
+    \"violations_meta\": \"[\\\"consequatur\\\",\\\"quam\\\"]\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/token/1"
+    "http://localhost:8000/analysis/aspernatur"
 );
 
 const headers = {
@@ -4064,7 +4795,7 @@ const headers = {
 };
 
 let body = {
-    "token": "voluptas"
+    "violations_meta": "[\"consequatur\",\"quam\"]"
 };
 
 fetch(url, {
@@ -4075,45 +4806,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-PUTtoken--id-">
+<span id="example-responses-PUTanalysis--id-">
 </span>
-<span id="execution-results-PUTtoken--id-" hidden>
+<span id="execution-results-PUTanalysis--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTtoken--id-"></span>:
+                id="execution-response-status-PUTanalysis--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTtoken--id-" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-PUTanalysis--id-" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTtoken--id-" hidden>
+<span id="execution-error-PUTanalysis--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTtoken--id-"></code></pre>
+    <pre><code id="execution-error-message-PUTanalysis--id-"></code></pre>
 </span>
-<form id="form-PUTtoken--id-" data-method="PUT"
-      data-path="token/{id}"
+<form id="form-PUTanalysis--id-" data-method="PUT"
+      data-path="analysis/{id}"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTtoken--id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTanalysis--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTtoken--id-"
-                    onclick="tryItOut('PUTtoken--id-');">Try it out ⚡
+                    id="btn-tryout-PUTanalysis--id-"
+                    onclick="tryItOut('PUTanalysis--id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTtoken--id-"
-                    onclick="cancelTryOut('PUTtoken--id-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-PUTanalysis--id-"
+                    onclick="cancelTryOut('PUTanalysis--id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTtoken--id-" hidden>Send Request 💥
+                    id="btn-executetryout-PUTanalysis--id-" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>token/{id}</code></b>
+            <b><code>analysis/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -4121,7 +4852,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="PUTtoken--id-"
+               name="api_token" class="auth-value"               data-endpoint="PUTanalysis--id-"
                value="{YOUR_API_TOKEN}"
                data-component="header">
     <br>
@@ -4132,7 +4863,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="PUTtoken--id-"
+               name="Content-Type"                data-endpoint="PUTanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -4143,7 +4874,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept"                data-endpoint="PUTtoken--id-"
+               name="Accept"                data-endpoint="PUTanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -4154,7 +4885,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="PUTtoken--id-"
+               name="Accept-Version"                data-endpoint="PUTanalysis--id-"
                value="v1"
                data-component="header">
     <br>
@@ -4165,7 +4896,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="user_token"                data-endpoint="PUTtoken--id-"
+               name="user_token"                data-endpoint="PUTanalysis--id-"
                value="string:token"
                data-component="header">
     <br>
@@ -4174,30 +4905,30 @@ fetch(url, {
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="id"                data-endpoint="PUTtoken--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the token. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>token</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="token"                data-endpoint="PUTtoken--id-"
-               value="voluptas"
+               name="id"                data-endpoint="PUTanalysis--id-"
+               value="aspernatur"
+               data-component="url">
+    <br>
+<p>The ID of the analysi. Example: <code>aspernatur</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>violations_meta</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="violations_meta"                data-endpoint="PUTanalysis--id-"
+               value="["consequatur","quam"]"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>This field must be a valid JSON string. Example: <code>["consequatur","quam"]</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTtoken">POST token</h2>
+                    <h2 id="endpoints-DELETEanalysis--id-">DELETE analysis/{id}</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -4205,27 +4936,23 @@ fetch(url, {
 
 
 
-<span id="example-requests-POSTtoken">
+<span id="example-requests-DELETEanalysis--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/token" \
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/analysis/ut" \
     --header "api_token: {YOUR_API_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Version: v1" \
-    --header "user_token: string:token" \
-    --data "{
-    \"user_id\": 20
-}"
-</code></pre></div>
+    --header "user_token: string:token"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/token"
+    "http://localhost:8000/analysis/ut"
 );
 
 const headers = {
@@ -4236,57 +4963,52 @@ const headers = {
     "user_token": "string:token",
 };
 
-let body = {
-    "user_id": 20
-};
-
 fetch(url, {
-    method: "POST",
+    method: "DELETE",
     headers,
-    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTtoken">
+<span id="example-responses-DELETEanalysis--id-">
 </span>
-<span id="execution-results-POSTtoken" hidden>
+<span id="execution-results-DELETEanalysis--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTtoken"></span>:
+                id="execution-response-status-DELETEanalysis--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTtoken" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-DELETEanalysis--id-" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTtoken" hidden>
+<span id="execution-error-DELETEanalysis--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTtoken"></code></pre>
+    <pre><code id="execution-error-message-DELETEanalysis--id-"></code></pre>
 </span>
-<form id="form-POSTtoken" data-method="POST"
-      data-path="token"
+<form id="form-DELETEanalysis--id-" data-method="DELETE"
+      data-path="analysis/{id}"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTtoken', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEanalysis--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTtoken"
-                    onclick="tryItOut('POSTtoken');">Try it out ⚡
+                    id="btn-tryout-DELETEanalysis--id-"
+                    onclick="tryItOut('DELETEanalysis--id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTtoken"
-                    onclick="cancelTryOut('POSTtoken');" hidden>Cancel 🛑
+                    id="btn-canceltryout-DELETEanalysis--id-"
+                    onclick="cancelTryOut('DELETEanalysis--id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTtoken" hidden>Send Request 💥
+                    id="btn-executetryout-DELETEanalysis--id-" hidden>Send Request 💥
             </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>token</code></b>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>analysis/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -4294,7 +5016,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="api_token" class="auth-value"               data-endpoint="POSTtoken"
+               name="api_token" class="auth-value"               data-endpoint="DELETEanalysis--id-"
                value="{YOUR_API_TOKEN}"
                data-component="header">
     <br>
@@ -4305,7 +5027,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTtoken"
+               name="Content-Type"                data-endpoint="DELETEanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -4316,7 +5038,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTtoken"
+               name="Accept"                data-endpoint="DELETEanalysis--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -4327,7 +5049,7 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept-Version"                data-endpoint="POSTtoken"
+               name="Accept-Version"                data-endpoint="DELETEanalysis--id-"
                value="v1"
                data-component="header">
     <br>
@@ -4338,25 +5060,25 @@ fetch(url, {
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="user_token"                data-endpoint="POSTtoken"
+               name="user_token"                data-endpoint="DELETEanalysis--id-"
                value="string:token"
                data-component="header">
     <br>
 <p>Example: <code>string:token</code></p>
             </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               name="user_id"                data-endpoint="POSTtoken"
-               value="20"
-               data-component="body">
+                <input type="text" style="display: none"
+               name="id"                data-endpoint="DELETEanalysis--id-"
+               value="ut"
+               data-component="url">
     <br>
-<p>Example: <code>20</code></p>
-        </div>
-        </form>
+<p>The ID of the analysi. Example: <code>ut</code></p>
+            </div>
+                    </form>
 
             
 

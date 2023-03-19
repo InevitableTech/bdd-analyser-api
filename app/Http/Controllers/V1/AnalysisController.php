@@ -26,6 +26,10 @@ class AnalysisController extends Controller
         'violations_meta' => 'required|json',
     ];
 
+    /**
+     * @queryParam project_id number
+     * @queryParam main_branch boolean
+     */
     protected function findByCriteria(Request $request, string $model): Builder
     {
         // Only that belongs to the user?
@@ -37,7 +41,14 @@ class AnalysisController extends Controller
                 ->where('id', $projectId)
                 ->firstOrFail();
 
-            return $model::whereRelation('project', 'project_id', $project->id);
+            $query = $model::whereRelation('project', 'project_id', $project->id);
+
+            $mainBranch = $request->query('main_branch');
+            if ($mainBranch) {
+                $query->where('branch', $project->main_branch);
+            }
+
+            return $query;
         }
 
         return $model::whereRelation('user', 'user_id', $request->user()->id);
