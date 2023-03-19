@@ -15,33 +15,21 @@ class TokenController extends Controller
 {
     public static $createInputs = [
         'user_id' => 'required|int',
+        'description' => 'nullable|string',
     ];
 
     public static $updateInputs = [
-        'token' => 'required|string',
+        'description' => 'nullable|string',
     ];
 
     protected function beforeCreate(Request $request, array $input): array
     {
         $input['token'] = Crypt::encryptString(Str::random(30));
         $input['expires_on'] = new DateTime('+3 months');
-        $input['allowed_endpoints'] = json_encode(['policies' => '*']);
+        $input['policies'] = json_encode('*');
+        $input['type'] = Token::TYPE_CLI;
 
         return $input;
-    }
-
-    public function create(Request $request): JsonResource
-    {
-        // They must login to the console, generate a token and then register it with the CLI tool.
-        // Its the only way.
-        $token = Token::whereRelation('user', 'user_id', $request->input('user_id'))
-            ->where('expires_on', '>', new \DateTime())->first();
-
-        if (! $token) {
-            return parent::create($request);
-        }
-
-        return $this->getResource($token);
     }
 
     public function findByCriteria(Request $request, string $model): Builder
@@ -53,5 +41,10 @@ class TokenController extends Controller
         }
 
         return $token;
+    }
+
+    protected function beforeDelete(Request $request, int $id): void
+    {
+        Token::where('id', $id)->where('type', Token::TYPE_CLI)->firstOrFail();
     }
 }

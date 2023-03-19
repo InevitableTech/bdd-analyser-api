@@ -14,6 +14,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         \App\Events\UserCreatedEvent::class => [
             \App\Listeners\SendWelcomeEmailListener::class,
+            \App\Listeners\CreateTokenForNewUserListener::class
         ],
     ];
 

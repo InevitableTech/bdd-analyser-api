@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
+use App\Models\Token;
 use File;
 
 class UsersTableSeeder extends Seeder
@@ -70,6 +71,8 @@ class UsersTableSeeder extends Seeder
             'expires_on' => new \DateTime('+3 years'),
             'user_id' => $consoleUserId,
             'policies' => json_encode(['resources' => '*']),
+            'type' => Token::TYPE_CONSOLE,
+            'description' => 'default',
             'created_at' => new \DateTime()
         ]);
 
@@ -88,6 +91,8 @@ class UsersTableSeeder extends Seeder
                     '/token' => '*'
                 ]
             ]),
+            'type' => Token::TYPE_CONSOLE,
+            'description' => 'default',
             'created_at' => new \DateTime()
         ]);
 

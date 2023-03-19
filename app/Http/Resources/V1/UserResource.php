@@ -13,6 +13,8 @@ class UserResource extends BaseResource
         'lastname',
         'dob',
         'email',
+        'last_login',
+        'verified',
         'created_at',
         'updated_at',
         'enabled'

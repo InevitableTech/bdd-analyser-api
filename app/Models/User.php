@@ -33,7 +33,7 @@ class User extends Authenticatable implements AuthenticatableContract, Authoriza
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'dob', 'enabled'
+        'firstname', 'lastname', 'email', 'dob', 'enabled', 'password_hash'
     ];
 
     /**

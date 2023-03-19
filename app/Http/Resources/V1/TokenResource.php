@@ -9,6 +9,8 @@ class TokenResource extends BaseResource
 {
     protected $expose = [
         'id',
+        'type',
+        'description',
         'token',
         'user_id',
         'expires_on',

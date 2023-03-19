@@ -17,22 +17,25 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('/', 'AuthController@auth');
 });
 
-Route::group(['middleware' => 'authenticate:api'], function () {
-    Route::group(['prefix' => 'analysis'], function () {
-        Route::post('/', 'AnalysisController@create');
-        Route::get('/{id}', 'AnalysisController@find');
-        Route::get('/', 'AnalysisController@findAll');
-        Route::put('/{id}', 'AnalysisController@update');
-        Route::delete('/{id}', 'AnalysisController@delete');
-    });
+Route::group(['prefix' => 'user'], function () {
+    Route::post('/', 'UserController@create');
+});
 
+Route::group(['middleware' => 'authenticate:api'], function () {
     Route::group(['prefix' => 'user'], function () {
         Route::get('/id/{email}', 'UserController@getId');
-        Route::post('/', 'UserController@create');
         Route::get('/', 'UserController@findAll');
         Route::get('/{id}', 'UserController@find');
         Route::put('/{id}', 'UserController@update');
         Route::delete('/{id}', 'UserController@delete');
+    });
+
+    Route::group(['prefix' => 'token'], function () {
+        Route::get('/', 'TokenController@findAll');
+        Route::put('/{id}', 'TokenController@update');
+        Route::post('/refresh', 'TokenController@refresh');
+        Route::post('/', 'TokenController@create');
+        Route::delete('/{id}', 'TokenController@delete');
     });
 
     Route::group(['prefix' => 'project'], function () {
@@ -51,10 +54,11 @@ Route::group(['middleware' => 'authenticate:api'], function () {
         Route::delete('/{id}', 'OrganisationController@delete');
     });
 
-    Route::group(['prefix' => 'token'], function () {
-        Route::get('/', 'TokenController@findAll');
-        Route::put('/{id}', 'TokenController@update');
-        Route::post('/refresh', 'TokenController@refresh');
-        Route::post('/', 'TokenController@create');
+    Route::group(['prefix' => 'analysis'], function () {
+        Route::post('/', 'AnalysisController@create');
+        Route::get('/{id}', 'AnalysisController@find');
+        Route::get('/', 'AnalysisController@findAll');
+        Route::put('/{id}', 'AnalysisController@update');
+        Route::delete('/{id}', 'AnalysisController@delete');
     });
 });

@@ -98,7 +98,8 @@ abstract class Controller extends BaseController
     public function delete(Request $request, int $id): array
     {
         $model = $this->getModel();
-        $model::delete(['id' => $id]);
+        $this->beforeDelete($request, $id);
+        $model::where('id', $id)->delete();
 
         return $this->createResponse(true);
     }
@@ -148,6 +149,10 @@ abstract class Controller extends BaseController
     protected function beforeCreate(Request $request, array $inputs): array
     {
         return $inputs;
+    }
+
+    protected function beforeDelete(Request $request, int $id): void
+    {
     }
 
     protected function afterCreate(Request $request, Model $model): void
