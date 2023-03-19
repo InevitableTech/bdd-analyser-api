@@ -23,8 +23,6 @@ class UserController extends Controller
     public static $updateInputs = [
         'firstname' => 'string',
         'lastname' => 'string',
-        'last_login' => 'nullable|date',
-        'verified' => 'nullable|boolean',
         'dob' => 'nullable|date',
         'password' => 'required|string|min:8'
     ];

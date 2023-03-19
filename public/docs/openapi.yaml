@@ -54,11 +54,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: beahan.macy@example.net
+                  example: flatley.daphnee@example.org
                 password:
                   type: string
                   description: ''
-                  example: 'B.xAmEk?~u'
+                  example: 3y>om86m7FAu0+BmI
               required:
                 - email
                 - password
@@ -160,23 +160,23 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: et
                 lastname:
                   type: string
                   description: ''
-                  example: aut
+                  example: consequatur
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:23:50'
+                  example: '2023-03-19T16:28:07'
                 email:
                   type: string
                   description: 'This field must be a valid email address.'
-                  example: jbernhard@example.org
+                  example: sincere90@example.com
                 password:
                   type: string
                   description: 'This field must be at least 8 characters.'
-                  example: '?-Z?r*K!#Mug8}g!['
+                  example: '/D8:{y<|b}f'
               required:
                 - firstname
                 - lastname
@@ -324,7 +324,7 @@ paths:
         in: path
         name: email
         description: ''
-        example: hdavis@example.org
+        example: ktoy@example.net
         required: true
         schema:
           type: string
@@ -425,27 +425,19 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: et
+                  example: omnis
                 lastname:
                   type: string
                   description: ''
-                  example: cupiditate
-                last_login:
-                  type: string
-                  description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:23:50'
-                verified:
-                  type: boolean
-                  description: ''
-                  example: false
+                  example: itaque
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:23:50'
+                  example: '2023-03-19T16:28:07'
                 password:
                   type: string
                   description: 'This field must be at least 8 characters.'
-                  example: '"k^CxrSR3hut3&'
+                  example: '`R/^Cq<Q\[)J:h$3rlZ'
               required:
                 - password
     delete:
@@ -647,11 +639,11 @@ paths:
                 user_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 12
                 description:
                   type: string
                   description: ''
-                  example: 'Nobis beatae qui sit possimus aut sed facere.'
+                  example: 'Doloremque minima quia molestias similique beatae in optio.'
               required:
                 - user_id
   '/token/{id}':
@@ -708,7 +700,7 @@ paths:
                 description:
                   type: string
                   description: ''
-                  example: 'Maiores harum voluptas ullam.'
+                  example: 'Vel cum dolore possimus facilis maxime.'
     delete:
       summary: ''
       operationId: deleteTokenId
@@ -815,15 +807,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: quaerat
+                  example: sunt
                 main_branch:
                   type: string
                   description: ''
-                  example: assumenda
+                  example: soluta
                 user_id:
                   type: integer
                   description: ''
-                  example: 5
+                  example: 12
               required:
                 - name
                 - user_id
@@ -1017,15 +1009,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ut
+                  example: reprehenderit
                 main_branch:
                   type: string
                   description: ''
-                  example: quis
+                  example: architecto
                 published_tags:
                   type: string
                   description: ''
-                  example: neque
+                  example: eaque
               required:
                 - name
     delete:
@@ -1134,7 +1126,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: maxime
+                  example: repellat
               required:
                 - name
     get:
@@ -1327,7 +1319,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: commodi
+                  example: reiciendis
               required:
                 - name
     delete:
@@ -1436,47 +1428,47 @@ paths:
                 user_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 13
                 run_at:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:23:50'
+                  example: '2023-03-19T16:28:07'
                 violations:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["explicabo","earum"]'
+                  example: '["mollitia","placeat"]'
                 summary:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["dolorum","magnam"]'
+                  example: '["in","fugit"]'
                 active_rules:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["omnis","iure"]'
+                  example: '["molestiae","ut"]'
                 active_steps:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["perferendis","impedit"]'
+                  example: '["laboriosam","consequuntur"]'
                 rules_version:
                   type: string
                   description: ''
-                  example: maxime
+                  example: fugit
                 severities:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["dolor","excepturi"]'
+                  example: '["aut","maiores"]'
                 project_id:
                   type: integer
                   description: ''
-                  example: 7
+                  example: 4
                 branch:
                   type: string
                   description: ''
-                  example: sit
+                  example: blanditiis
                 commit_hash:
                   type: string
                   description: ''
-                  example: et
+                  example: veniam
               required:
                 - user_id
                 - run_at
@@ -1677,7 +1669,7 @@ paths:
                 violations_meta:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["consequatur","quam"]'
+                  example: '["officiis","numquam"]'
               required:
                 - violations_meta
     delete:
@@ -1728,7 +1720,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the analysi.'
-        example: repellat
+        example: vero
         required: true
         schema:
           type: string

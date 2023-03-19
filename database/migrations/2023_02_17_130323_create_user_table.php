@@ -20,8 +20,9 @@ class CreateUserTable extends Migration
             $table->timestamp('dob')->nullable();
             $table->string('email')->unique();
             $table->string('password_hash')->nullable();
-            $table->boolean('enabled');
-            $table->boolean('verified')->nullable();
+            $table->boolean('enabled')->default(true);
+            $table->boolean('verified')->default(false);
+            $table->timestamp('verified_at')->nullable();
             $table->timestamp('last_login')->nullable();
             $table->integer('created_by_token_id')->nullable();
             $table->timestamps();
