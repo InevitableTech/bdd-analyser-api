@@ -41,5 +41,6 @@
         "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature76": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test.feature76",
         "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6",
         "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13"
-    }
+    },
+    "violationsCount": 3
 }
