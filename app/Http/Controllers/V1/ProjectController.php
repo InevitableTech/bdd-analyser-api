@@ -12,12 +12,14 @@ class ProjectController extends Controller
 {
     public static $createInputs = [
         'name' => 'required|string',
-        'main_branch' => 'nullable|string'
+        'repo_url' => 'nullable|string',
+        'main_branch' => 'nullable|string',
     ];
 
     public static $updateInputs = [
         'name' => 'required|string',
-        'main_branch' => 'string',
+        'main_branch' => 'nullable|string',
+        'repo_url' => 'nullable|string',
         'published_tags' => 'nullable|string',
     ];
 

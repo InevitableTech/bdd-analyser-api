@@ -48,7 +48,6 @@ class AnalysisTest extends TestCase
                         'active_steps',
                         'branch',
                         'commit_hash',
-                        'relations',
                         'severities',
                         'uri',
                         'user_id',

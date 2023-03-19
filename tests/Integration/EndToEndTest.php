@@ -87,4 +87,14 @@ class EndToEndTest extends TestCase
         self::assertArrayHasKey('id', $analysisResponse['data']);
         self::assertTrue(is_int($analysisResponse['data']['id']));
     }
+
+    public function testDeleteProject()
+    {
+        $token = file_get_contents($this->tokenFilePath);
+        $this->defaultHeaders['user_token'] = $token;
+
+        $projectResponse = $this->json('DELETE', sprintf("/project/%d", self::$data['projectId']), [], $this->defaultHeaders);
+
+        self::assertTrue($projectResponse['success']);
+    }
 }

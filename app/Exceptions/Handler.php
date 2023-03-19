@@ -50,9 +50,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        error_log($exception->getMessage());
+
         return new JsonResponse([
             'success' => false,
-            'message' => $exception->getMessage() . '::' . get_class($exception) . ' , trace: ' . $exception->getTraceAsString()
+            'message' => substr($exception->getMessage(), 0, 1024) . '::' . get_class($exception)
         ]);
     }
 }
