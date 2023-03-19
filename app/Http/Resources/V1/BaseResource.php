@@ -22,7 +22,7 @@ abstract class BaseResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $array = $this->expose($this->resource);
+        $array = $this->expose($request, $this->resource);
 
         return $array;
     }
@@ -39,7 +39,7 @@ abstract class BaseResource extends JsonResource
         ];
     }
 
-    protected function expose(Model $data): array
+    protected function expose(Request $request, Model $data): array
     {
         $response = [];
 
@@ -51,8 +51,10 @@ abstract class BaseResource extends JsonResource
             $response['uri'] = strtolower($this->getIdUrl($data->id));
         }
 
-        foreach ($this->relations as $relation => $pluck) {
-            $response['relations'][$relation] = $this->resource->$relation()->pluck($pluck[0], $pluck[1]);
+        if ($request->query('relations', false)) {
+            foreach ($this->relations as $relation => $pluck) {
+                $response['relations'][$relation] = $this->resource->$relation()->pluck($pluck[0], $pluck[1]);
+            }
         }
 
         return $response;

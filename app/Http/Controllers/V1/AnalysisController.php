@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -27,6 +28,18 @@ class AnalysisController extends Controller
 
     protected function findByCriteria(Request $request, string $model): Builder
     {
+        // Only that belongs to the user?
+        // We also want what belongs to the project that has multiple users.
+        $projectId = $request->query('project_id');
+
+        if ($projectId) {
+            $project = Project::whereRelation('users', 'user_id', $request->user()->id)
+                ->where('id', $projectId)
+                ->firstOrFail();
+
+            return $model::whereRelation('project', 'project_id', $project->id);
+        }
+
         return $model::whereRelation('user', 'user_id', $request->user()->id);
     }
 }

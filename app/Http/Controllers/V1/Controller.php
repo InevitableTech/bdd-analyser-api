@@ -71,7 +71,12 @@ abstract class Controller extends BaseController
     public function findAll(Request $request): ResourceCollection
     {
         $model = $this->getModel();
-        $data = $this->findByCriteria($request, $model)?->take(100)->get();
+        $data = $this->findByCriteria($request, $model)
+            ?->orderBy('id', $request->query('order', 'desc'))
+            ->skip($request->query('offset', 0))
+            ->take($request->query('limit', 100))
+            ->get();
+
         $this->afterFindAll($request, $data);
 
         if (! $data) {

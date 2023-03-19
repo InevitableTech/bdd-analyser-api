@@ -36,7 +36,7 @@ class AnalysisResource extends BaseResource
      */
     public function toArray(Request $request): array
     {
-        $array = $this->expose($this->resource);
+        $array = $this->expose($request, $this->resource);
 
         $array['summary'] = json_decode($this->resource->summary, true);
         $array['violations'] = json_decode($this->resource->violations, true);
