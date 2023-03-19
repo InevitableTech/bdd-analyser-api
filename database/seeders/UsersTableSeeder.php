@@ -56,6 +56,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'BDD Analyser',
             'organisation_id' => $organisationId,
             'enabled' => 1,
+            'main_branch' => 'main',
             'repo_url' => 'https://github.com/InevitableTech/bdd-analyser-api',
             'created_at' => new \DateTime()
         ]);

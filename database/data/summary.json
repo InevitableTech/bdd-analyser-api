@@ -42,5 +42,23 @@
         "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature6",
         "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13": "/automation-analyser/testproject/vendor/forceedge01/bdd-analyser/testproject/features/test2.feature13"
     },
-    "violationsCount": 3
+    "tags":
+    {
+        "@just-another": "@just-another",
+        "@regression": "@regression",
+        "@smoke": "@smoke",
+        "@dev": "@dev",
+        "@test-123": "@test-123",
+        "@check": "@check",
+        "@testing-tag": "@testing-tag",
+        "@wip": "@wip"
+    },
+    "totalLinesCount": 310,
+    "violationsCount": 144,
+    "violatedFilesCount": 11,
+    "scenariosCount": 30,
+    "activeStepsCount": 27,
+    "activeRulesCount": 18,
+    "backgroundsCount": 6,
+    "tagsCount": 8
 }

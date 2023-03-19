@@ -42,8 +42,8 @@ class ProjectController extends Controller
     {
         $projects = $model::whereRelation('users', 'user_id', $request->user()->id);
 
-        if ($request->input('name')) {
-            $projects->where('name', '=', $request->input('name'));
+        if ($request->query('enabled')) {
+            $projects->where('enabled', 1);
         }
 
         return $projects;
