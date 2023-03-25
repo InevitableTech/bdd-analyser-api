@@ -30,7 +30,7 @@ command:
 
 .PHONY: artisan
 artisan:
-	docker-compose exec -T api php artisan $(a)
+	docker-compose run api php artisan $(a)
 
 chown:
 	sudo chown -R forceedge01:forceedge01 app config tests public vendor database
