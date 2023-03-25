@@ -17,6 +17,7 @@ install-dirs:
 run:
 	docker-compose up -d
 	docker-compose run api php artisan config:clear
+	docker-compose run api php artisan cache:clear
 
 .PHONY: tests
 tests:
