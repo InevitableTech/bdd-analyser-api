@@ -54,10 +54,12 @@ if [[ $ENVIRONMENT == 'local' ]]; then
 fi
 
 # Issue, this path is relative to where the script is being executed from. Amend where the script is run from.
+echo '==> Clean up path to deploy path '$newPath
 rm -rf "$newPath" || true
 mkdir -p $newPath
 cp -R ./* "$newPath"
 
+echo '==> Setup env file'
 # Copy env files.
 cp "./.env.example" "$newPath/.env"
 
@@ -70,27 +72,27 @@ echo "DB_USERNAME=$DB_USERNAME" >> "$newPath/.env"
 echo "DB_PASSWORD=$DB_PASSWORD" >> "$newPath/.env"
 echo "AUTH_TOKEN=$AUTH_TOKEN" >> "$newPath/.env"
 
-# Migrate db changes.
-# Swap this for a docker-compose run.
-cd $newPath
-docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan key:generate
-docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan migrate
-docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan config:cache
-
 # Activate new deployment by symlink.
+echo '==> Link the new path to current API'
 rm -rf "$1/current" || true
 ln -s "$newPath" "$1/current"
 
 echo $inactive > "$1/inactive.txt"
 
 # Spin down active api if deployed.
+echo '==> Spin down old API'
 cd $oldPath
 if [[ -f docker-compose.yml ]]; then
     docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" down
 fi
 
+echo '==> Activating new API'
 cd $newPath
 docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" up -d api
+docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan key:generate
+docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan config:cache
+
+echo '==> Db setup'
 make migrate
 make seed
 
