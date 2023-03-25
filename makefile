@@ -1,6 +1,6 @@
 rebuild-db:
-	docker-compose exec api php artisan migrate:fresh
-	docker-compose exec api php artisan db:seed
+	docker-compose exec -T api php artisan migrate:fresh
+	docker-compose exec -T api php artisan db:seed
 
 migrate:
 	docker-compose exec -T api php artisan migrate
