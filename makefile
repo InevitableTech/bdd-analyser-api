@@ -12,7 +12,7 @@ update:
 	docker-compose exec api composer update
 
 install-dirs:
-	docker-compose exec api mkdir -p storage/logs bootstrap/cache tests/build
+	docker-compose run api mkdir -p storage/logs bootstrap/cache tests/build
 
 run:
 	docker-compose up -d
