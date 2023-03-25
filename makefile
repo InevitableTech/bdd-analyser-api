@@ -1,16 +1,22 @@
 rebuild-db:
-	docker-compose run api php artisan migrate:fresh
-	docker-compose run api php artisan db:seed
+	docker-compose exec api php artisan migrate:fresh
+	docker-compose exec api php artisan db:seed
+
+migrate:
+	docker-compose exec api php artisan migrate
+
+seed:
+	docker-compose exec api php artisan db:seed
 
 update:
-	docker-compose run api composer update
+	docker-compose exec api composer update
 
 install-dirs:
-	docker-compose run api mkdir -p storage/logs bootstrap/cache tests/build
+	docker-compose exec api mkdir -p storage/logs bootstrap/cache tests/build
 
 run:
 	docker-compose up -d
-	docker-compose run api php artisan config:clear
+	docker-compose exec api php artisan config:clear
 
 .PHONY: tests
 tests:
@@ -20,11 +26,11 @@ e2e:
 	docker-compose run api ./vendor/bin/phpunit --config=./phpunit.xml ./tests/Integration/EndToEndTest.php
 
 command:
-	docker-compose run api $(c)
+	docker-compose exec api $(c)
 
 .PHONY: artisan
 artisan:
-	docker-compose run api php artisan $(a)
+	docker-compose exec api php artisan $(a)
 
 chown:
 	sudo chown -R forceedge01:forceedge01 app config tests public vendor database

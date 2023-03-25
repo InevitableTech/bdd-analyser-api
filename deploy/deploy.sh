@@ -91,5 +91,7 @@ fi
 
 cd $newPath
 docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" up -d api
+make migrate
+make seed
 
 echo "Activated deployment server: $toActive"
