@@ -89,8 +89,10 @@ fi
 echo '==> Activating new API'
 cd $newPath
 docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" up -d api
-docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan key:generate
-docker-compose -f docker-compose.yml -f "docker-compose-$ENVIRONMENT.yml" run api php artisan config:cache
+docker-compose exec -T api php artisan key:generate
+docker-compose exec -T api php artisan config:clear
+docker-compose exec -T api php artisan cache:clear
+docker-compose -f "docker-compose.yml" -f "docker-compose-$ENVIRONMENT.yml" restart api
 
 echo '==> Db setup'
 make migrate
