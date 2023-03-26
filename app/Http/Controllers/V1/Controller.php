@@ -44,7 +44,7 @@ abstract class Controller extends BaseController
         return $this->getResource($data);
     }
 
-    protected function afterFind(Request $request, Model $model): void
+    protected function afterFind(Request $request, Model $model = null): void
     {
     }
 

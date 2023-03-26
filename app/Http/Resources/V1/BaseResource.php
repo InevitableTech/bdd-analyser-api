@@ -39,9 +39,13 @@ abstract class BaseResource extends JsonResource
         ];
     }
 
-    protected function expose(Request $request, Model $data): array
+    protected function expose(Request $request, Model $data = null): array
     {
         $response = [];
+
+        if ($data === null) {
+            return $response;
+        }
 
         foreach ($this->expose as $property) {
             $response[$property] = $this->$property;

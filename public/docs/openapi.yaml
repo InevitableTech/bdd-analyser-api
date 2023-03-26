@@ -54,11 +54,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: flatley.daphnee@example.org
+                  example: kerluke.cydney@example.net
                 password:
                   type: string
                   description: ''
-                  example: 3y>om86m7FAu0+BmI
+                  example: tCQAVBJx~vtRm~xQF
               required:
                 - email
                 - password
@@ -160,23 +160,23 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: et
+                  example: dolorum
                 lastname:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: in
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:28:07'
+                  example: '2023-03-26T01:42:16'
                 email:
                   type: string
                   description: 'This field must be a valid email address.'
-                  example: sincere90@example.com
+                  example: fredy.robel@example.net
                 password:
                   type: string
                   description: 'This field must be at least 8 characters.'
-                  example: '/D8:{y<|b}f'
+                  example: 'l|GH}\#t(T>q(huyZ'
               required:
                 - firstname
                 - lastname
@@ -324,7 +324,7 @@ paths:
         in: path
         name: email
         description: ''
-        example: ktoy@example.net
+        example: beer.cruz@example.com
         required: true
         schema:
           type: string
@@ -425,19 +425,19 @@ paths:
                 firstname:
                   type: string
                   description: ''
-                  example: omnis
+                  example: repellat
                 lastname:
                   type: string
                   description: ''
-                  example: itaque
+                  example: odio
                 dob:
                   type: string
                   description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:28:07'
+                  example: '2023-03-26T01:42:16'
                 password:
                   type: string
                   description: 'This field must be at least 8 characters.'
-                  example: '`R/^Cq<Q\[)J:h$3rlZ'
+                  example: '#/O;!(uxPPOj'
               required:
                 - password
     delete:
@@ -639,11 +639,11 @@ paths:
                 user_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 2
                 description:
                   type: string
                   description: ''
-                  example: 'Doloremque minima quia molestias similique beatae in optio.'
+                  example: 'Possimus et voluptatum repudiandae necessitatibus nostrum sit eos.'
               required:
                 - user_id
   '/token/{id}':
@@ -700,7 +700,7 @@ paths:
                 description:
                   type: string
                   description: ''
-                  example: 'Vel cum dolore possimus facilis maxime.'
+                  example: 'Qui nihil eius illo omnis occaecati amet perspiciatis.'
     delete:
       summary: ''
       operationId: deleteTokenId
@@ -807,15 +807,19 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sunt
+                  example: natus
+                repo_url:
+                  type: string
+                  description: ''
+                  example: 'http://wuckert.net/'
                 main_branch:
                   type: string
                   description: ''
-                  example: soluta
+                  example: aut
                 user_id:
                   type: integer
                   description: ''
-                  example: 12
+                  example: 7
               required:
                 - name
                 - user_id
@@ -1009,15 +1013,19 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: reprehenderit
+                  example: doloribus
                 main_branch:
                   type: string
                   description: ''
-                  example: architecto
+                  example: eius
+                repo_url:
+                  type: string
+                  description: ''
+                  example: 'https://collins.com/nobis-optio-porro-officia-qui-et-soluta.html'
                 published_tags:
                   type: string
                   description: ''
-                  example: eaque
+                  example: atque
               required:
                 - name
     delete:
@@ -1126,7 +1134,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: repellat
+                  example: enim
               required:
                 - name
     get:
@@ -1319,7 +1327,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: reiciendis
+                  example: qui
               required:
                 - name
     delete:
@@ -1429,48 +1437,49 @@ paths:
                   type: integer
                   description: ''
                   example: 13
-                run_at:
-                  type: string
-                  description: 'This field must be a valid date.'
-                  example: '2023-03-19T16:28:07'
-                violations:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["mollitia","placeat"]'
-                summary:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["in","fugit"]'
-                active_rules:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["molestiae","ut"]'
-                active_steps:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["laboriosam","consequuntur"]'
-                rules_version:
-                  type: string
-                  description: ''
-                  example: fugit
-                severities:
-                  type: string
-                  description: 'This field must be a valid JSON string.'
-                  example: '["aut","maiores"]'
                 project_id:
                   type: integer
                   description: ''
-                  example: 4
+                  example: 15
+                run_at:
+                  type: string
+                  description: 'This field must be a valid date.'
+                  example: '2023-03-26T01:42:16'
+                violations:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["repellat","esse"]'
+                summary:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["vitae","quae"]'
+                active_rules:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["veniam","sit"]'
+                active_steps:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["doloribus","numquam"]'
+                rules_version:
+                  type: string
+                  description: ''
+                  example: aut
+                severities:
+                  type: string
+                  description: 'This field must be a valid JSON string.'
+                  example: '["aut","incidunt"]'
                 branch:
                   type: string
                   description: ''
-                  example: blanditiis
+                  example: iste
                 commit_hash:
                   type: string
                   description: ''
-                  example: veniam
+                  example: deleniti
               required:
                 - user_id
+                - project_id
                 - run_at
                 - violations
                 - summary
@@ -1478,7 +1487,6 @@ paths:
                 - active_steps
                 - rules_version
                 - severities
-                - project_id
     get:
       summary: ''
       operationId: getAnalysis
@@ -1669,7 +1677,7 @@ paths:
                 violations_meta:
                   type: string
                   description: 'This field must be a valid JSON string.'
-                  example: '["officiis","numquam"]'
+                  example: '["nesciunt","a"]'
               required:
                 - violations_meta
     delete:
@@ -1720,7 +1728,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the analysi.'
-        example: vero
+        example: vel
         required: true
         schema:
           type: string
