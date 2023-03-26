@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1;
 
 use App\Models\Project;
+use App\Models\Token;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -25,6 +26,15 @@ class AnalysisController extends Controller
     public static $updateInputs = [
         'violations_meta' => 'required|json',
     ];
+
+    protected function beforeCreate(Request $request, array $data)
+    {
+        $token = Token::where('token', $request->header('user_token'))->get();
+
+        if ($token->type != 'cli') {
+            throw new \Exception('Analysis can only be created with CLI tokens. Use web console to generate one.');
+        }
+    }
 
     /**
      * @queryParam project_id number
