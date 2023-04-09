@@ -35,7 +35,7 @@ class EndToEndTest extends TestCase
         $token = file_get_contents($this->tokenFilePath);
         $this->defaultHeaders['user_token'] = $token;
 
-        $tokenDetails = $this->json('GET', '/token', $this->defaultHeaders);
+        $tokenDetails = $this->json('GET', '/token?type=cli', $this->defaultHeaders);
 
         self::assertTrue(is_int($tokenDetails['data'][0]['user_id']));
 
@@ -71,6 +71,7 @@ class EndToEndTest extends TestCase
             'project_id' => self::$data['projectId'],
             'run_at' => (new \DateTime('now'))->format('Y-m-d H:i:s'),
             'violations' => json_encode(['abc123' => 'issue1']),
+            'tags' => json_encode(['@dev' => 2, '@smoke' => 5]),
             'summary' => json_encode(['files' => 3]),
             'active_rules' => json_encode(['Forceedge01\\BDDStaticAnalyserRules\\Rules\\NoFeatureWithoutNarrative']),
             'active_steps' => json_encode(['I am on the dashboard']),

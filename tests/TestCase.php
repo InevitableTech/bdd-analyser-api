@@ -12,7 +12,7 @@ abstract class TestCase extends BaseTestCase
 
     protected $defaultHeaders = [
         'api_token' => 'averysecrettokenforapiauthorization==',
-        'user_token' => 'eyJpdiI6Im5mc20wMkhMbU5MRFMzanBSckh2Q2c9PSIsInZhbHVlIjoiYVNCMUF2UkJhRlV3ZnRzMzdGOVFJLzF4azhvVUlYc1AyQ3FwQ1NFdU1HRE9jWVJSRkdJL1ROMDN5cEllNTdSaSIsIm1hYyI6ImQ5NTk3NzgzNzEzNTQwN2E1MGNlZTE3MTM4NDA1YzAxMGE4M2Q1OTliNzYyN2E1MWIwYWMxZDQzYjE4NDJlYjMiLCJ0YWciOiIifQ==',
+        'user_token' => 'eyJpdiI6Im5mc20wMkhMbU5MRFMzanBSckh2Q2c9PSIsInZhbHVlIjoiYVNCMUF2UkJhRlV3ZnRzMzdGOVFJLzF4azhvVUlYc1AyQ3FwQ1NFdU1HRE9jWVJSRkdJL1RsMDN5cEllNTdSaSIsIm1hYyI6ImQ5NTk3NzgzNzEzNTQwN2E1MGNlZTE3MTM4NDA1YzAxMGE4M2Q1OTliNzYyN2E1MWIwYWMxZDQzYjE4NDJlYjMiLCJ0YWciOiIifQ==',
         'accept-version' => 'v1'
     ];
 

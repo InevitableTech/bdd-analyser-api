@@ -40,6 +40,10 @@ class TokenController extends Controller
             $token->where('expires_on', '>', new \DateTime())->first();
         }
 
+        if ($request->query('type')) {
+            $token->where('type', $request->query('type'));
+        }
+
         return $token;
     }
 
