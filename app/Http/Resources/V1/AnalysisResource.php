@@ -12,6 +12,7 @@ class AnalysisResource extends BaseResource
         'run_at',
         'rules_version',
         'summary',
+        'tags',
         'active_rules',
         'active_steps',
         'violations',
@@ -39,6 +40,7 @@ class AnalysisResource extends BaseResource
         $array = $this->expose($request, $this->resource);
 
         $array['summary'] = json_decode($this->resource->summary, true);
+        $array['tags'] = json_decode($this->resource->tags, true);
         $array['violations'] = json_decode($this->resource->violations, true);
         $array['active_steps'] = json_decode($this->resource->active_steps, true);
         $array['active_rules'] = json_decode($this->resource->active_rules, true);

@@ -51,5 +51,25 @@ class TokenTableSeeder extends Seeder
             'description' => 'default',
             'created_at' => new \DateTime()
         ], ['id' => $tokenId]);
+
+        $tokenId = 3;
+        DB::table('tokens')->upsert([
+            'id' => $tokenId,
+            'token' => 'eyJpdiI6Im5mc20wMkhMbU5MRFMzanBSckh2Q2c9PSIsInZhbHVlIjoiYVNCMUF2UkJhRlV3ZnRzMzdGOVFJLzF4azhvVUlYc1AyQ3FwQ1NFdU1HRE9jWVJSRkdJL1RsMDN5cEllNTdSaSIsIm1hYyI6ImQ5NTk3NzgzNzEzNTQwN2E1MGNlZTE3MTM4NDA1YzAxMGE4M2Q1OTliNzYyN2E1MWIwYWMxZDQzYjE4NDJlYjMiLCJ0YWciOiIifQ==',
+            'expires_on' => new \DateTime('+3 years'),
+            'user_id' => UsersTableSeeder::ID_WEB,
+            'policies' => json_encode([
+                'resources' => [
+                    '/user' => '*',
+                    '/project' => '*',
+                    '/analysis' => '*',
+                    '/organisation' => '*',
+                    '/token' => '*'
+                ]
+            ]),
+            'type' => Token::TYPE_CLI,
+            'description' => 'default',
+            'created_at' => new \DateTime()
+        ], ['id' => $tokenId]);
     }
 }

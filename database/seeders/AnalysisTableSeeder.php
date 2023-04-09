@@ -15,19 +15,21 @@ class AnalysisTableSeeder extends Seeder
     public function run(): void
     {
         $violationsJson = File::get("database/data/violations.json");
-        $activeRulesJson = File::get("database/data/violations.json");
-        $activeStepsJson = File::get("database/data/violations.json");
+        $activeRulesJson = File::get("database/data/active_rules.json");
+        $activeStepsJson = File::get("database/data/active_steps.json");
         $summaryJson = File::get("database/data/summary.json");
+        $tagsJson = File::get("database/data/tags.json");
 
         $analysisId = 1;
         DB::table('analysis')->upsert([
             'id' => $analysisId,
             'run_at' => new \DateTime('2023-01-01'),
             'rules_version' => 'v1',
-            'violations' => json_encode($violationsJson),
-            'summary' => json_encode($summaryJson),
-            'active_steps' => json_encode($activeStepsJson),
-            'active_rules' => json_encode($activeRulesJson),
+            'violations' => json_encode(json_decode($violationsJson)),
+            'tags' => json_encode(json_decode($tagsJson)),
+            'summary' => json_encode(json_decode($summaryJson)),
+            'active_steps' => json_encode(json_decode($activeStepsJson)),
+            'active_rules' => json_encode(json_decode($activeRulesJson)),
             'severities' => '"[\"0\",\"1\",\"2\",\"3\",\"4\"]"',
             'branch' => 'main',
             'commit_hash' => '7da73f3de7394a273587f872065f75a89c68066e',
@@ -41,10 +43,11 @@ class AnalysisTableSeeder extends Seeder
             'id' => $analysisIdSecond,
             'run_at' => new \DateTime('2023-01-03'),
             'rules_version' => 'v1',
-            'violations' => json_encode($violationsJson),
-            'summary' => json_encode($summaryJson),
-            'active_steps' => json_encode($activeStepsJson),
-            'active_rules' => json_encode($activeRulesJson),
+            'violations' => json_encode(json_decode($violationsJson)),
+            'tags' => json_encode(json_decode($tagsJson)),
+            'summary' => json_encode(json_decode($summaryJson)),
+            'active_steps' => json_encode(json_decode($activeStepsJson)),
+            'active_rules' => json_encode(json_decode($activeRulesJson)),
             'severities' => '"[\"0\",\"1\",\"2\",\"3\",\"4\"]"',
             'branch' => 'main',
             'commit_hash' => '7da73f3de7394a273587f872065f75a89c68066e',
@@ -59,8 +62,9 @@ class AnalysisTableSeeder extends Seeder
             'id' => $analysisIdThird,
             'run_at' => new \DateTime('2023-01-05'),
             'rules_version' => 'v1',
-            'violations' => json_encode($violationsJson),
-            'summary' => json_encode(json_encode($this->override(json_decode($summaryJson, true), [
+            'violations' => json_encode(json_decode($violationsJson)),
+            'tags' => json_encode(json_decode($tagsJson)),
+            'summary' => json_encode($this->override(json_decode($summaryJson, true), [
                 'files' => 15,
                 'totalLinesCount' => 379,
                 'violationsCount' => 33,
@@ -70,9 +74,9 @@ class AnalysisTableSeeder extends Seeder
                 "activeRulesCount" => 18,
                 "backgroundsCount" => 10,
                 "tagsCount" => 15
-            ]))),
-            'active_steps' => json_encode($activeStepsJson),
-            'active_rules' => json_encode($activeRulesJson),
+            ])),
+            'active_steps' => json_encode(json_decode($activeStepsJson)),
+            'active_rules' => json_encode(json_decode($activeRulesJson)),
             'severities' => '"[\"0\",\"1\",\"2\",\"3\",\"4\"]"',
             'branch' => 'another-git-branch',
             'commit_hash' => '7da73f3de7394a273587f872065f75a89c6806333',

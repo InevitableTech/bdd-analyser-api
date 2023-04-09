@@ -15,6 +15,7 @@ class AnalysisController extends Controller
         'run_at' => 'required|date',
         'violations' => 'required|json',
         'summary' => 'required|json',
+        'tags' => 'required|json',
         'active_rules' => 'required|json',
         'active_steps' => 'required|json',
         'rules_version' => 'required|string',
@@ -27,13 +28,15 @@ class AnalysisController extends Controller
         'violations_meta' => 'required|json',
     ];
 
-    protected function beforeCreate(Request $request, array $data)
+    protected function beforeCreate(Request $request, array $data): array
     {
-        $token = Token::where('token', $request->header('user_token'))->get();
+        $token = Token::where('token', $request->header('user_token'))->first();
 
         if ($token->type != 'cli') {
             throw new \Exception('Analysis can only be created with CLI tokens. Use web console to generate one.');
         }
+
+        return $data;
     }
 
     /**
