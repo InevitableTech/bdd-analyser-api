@@ -20,6 +20,7 @@ class CreateAnalysisTable extends Migration
             $table->json('violations');
             $table->json('violations_meta')->nullable();
             $table->json('summary');
+            $table->json('tags');
             $table->json('active_steps');
             $table->json('active_rules');
             $table->json('severities');

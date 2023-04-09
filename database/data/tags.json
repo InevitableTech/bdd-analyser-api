@@ -1,0 +1,10 @@
+{
+    "@just-another": 2,
+    "@regression": 2,
+    "@smoke": 1,
+    "@dev": 3,
+    "@test-123": 1,
+    "@check": 1,
+    "@testing-tag": 1,
+    "@wip": 1
+}
