@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use File;
 
 class ProjectTableSeeder extends Seeder
 {
@@ -23,7 +24,8 @@ class ProjectTableSeeder extends Seeder
             'enabled' => 1,
             'main_branch' => 'main',
             'repo_url' => 'https://github.com/InevitableTech/bdd-analyser-api',
-            'created_at' => new \DateTime()
+            'created_at' => new \DateTime(),
+            'resolutions' => json_encode(json_decode(File::get("database/data/project_resolutions.json")))
         ], ['id' => $projectId]);
 
         $projectUserId = 1;

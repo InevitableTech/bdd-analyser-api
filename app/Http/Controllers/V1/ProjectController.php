@@ -21,6 +21,7 @@ class ProjectController extends Controller
         'main_branch' => 'nullable|string',
         'repo_url' => 'nullable|string',
         'published_tags' => 'nullable|string',
+        'resolutions' => 'nullable|json',
     ];
 
     /**
