@@ -19,7 +19,7 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'enabled', 'user_id', 'main_branch', 'published_tags'
+        'name', 'enabled', 'user_id', 'main_branch', 'published_tags', 'resolutions',
     ];
 
     public function organisation(): BelongsTo

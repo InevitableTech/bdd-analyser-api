@@ -1,0 +1,9 @@
+{
+    "Forceedge01\\BDDStaticAnalyserRules\\Rules\\OnlyValidOrderAllowed":
+    {
+        "rule": "Forceedge01\\BDDStaticAnalyserRules\\Rules\\OnlyValidOrderAllowed",
+        "message": "This is the resolution for this rule.",
+        "analysisId": "2",
+        "issueId": 1
+    }
+}
