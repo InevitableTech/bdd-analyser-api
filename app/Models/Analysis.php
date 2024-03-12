@@ -12,6 +12,7 @@ class Analysis extends Model
 
     protected $casts = [
         'severities' => 'array',
+        'violations_meta' => 'json',
         'run_at' => 'datetime:Y-m-d H:i:s'
     ];
 
